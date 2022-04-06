@@ -30,14 +30,14 @@ yarn.lock
 
 src/config/config.json
 
-build/cluarData.js
-public/cluarData.js
+#build/cluarData.js
+#public/cluarData.js
 
-public/sitemap.xml
+#public/sitemap.xml
 
-public/images/banner/
-public/images/content/
-public/images/functionality/
-public/images/listing/
-public/images/listing_item/
+#public/images/banner/
+#public/images/content/
+#public/images/functionality/
+#public/images/listing/
+#public/images/listing_item/
 
