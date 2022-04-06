@@ -1,0 +1,190 @@
+@import "../../styles/variables.less";
+
+.ant-layout-footer {
+    z-index: 3;
+    width: 100%;
+    position: relative;
+    padding: 0 20px 20px 20px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2),
+        0 1px 1px 0 rgba(0, 0, 0, .14),
+        0 2px 1px -1px rgba(0, 0, 0, .12);
+    background: @footer-background !important;
+    color: @footer-color !important;
+
+    &__wrapper{
+      width: 100%;
+      max-width: @site-max-width;
+      margin: auto;
+    }
+
+    .open-source {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: fit-content;
+        margin-bottom: 12px;
+        font-size: 20px;
+  
+        &:hover svg {
+          fill: #5b5ddf;
+        }
+  
+        svg {
+          margin-right: 4px;
+        }
+
+        a {
+            display: inline;
+            color: #68a2ff;
+            text-decoration: none;
+    
+        &.share-icons {
+            color: #eeeeee;
+    
+            svg {
+            height: 25px;
+            width: auto;
+            margin-right: 15px;
+            margin-top: 15px;
+            }
+        }
+    
+        &:hover,
+        &:focus {
+            color: #5b5ddf;
+            text-decoration: none;
+        }
+        }
+      }
+   
+    .line {
+        height: 20px;
+        opacity: .5;
+        border: 0;
+        border-radius: 50%;
+        border-bottom: 2px solid @primary-color;
+        width: 100%;
+    }
+
+    .links-bar,
+    .copyright {
+        padding: 0 10px;
+        display: inline-block;
+        width: 50%;
+        font-size: .875em;
+
+        a {
+            color: @footer-color;
+            text-decoration: underline;
+        }
+
+        @media screen and (min-width: @header-desktop-width) {
+            width: calc(50% - calc((100% - @header-desktop-width) / 2));
+        }
+
+        @media only screen and (max-width: @header-mobile-width) {
+            display: block;
+            width: 100%;
+            margin: 20px auto !important;
+            font-size: 12px;
+            text-align: center;
+        }
+    }
+
+    .links-bar {
+        margin: 20px auto;
+
+        @media screen and (min-width: @header-desktop-width) {
+            margin-left: calc((100% - @header-desktop-width) / 2);
+        }
+    }
+
+    .copyright {
+        color: @footer-color;
+        text-align: right;
+
+        @media screen and (min-width: @header-desktop-width) {
+            margin-right: calc((100% - @header-desktop-width) / 2);
+        }
+    }
+
+    .cellphone {
+        color: @footer-color;
+        text-align: left;
+
+        @media screen and (min-width: @header-desktop-width) {
+            margin-right: calc((100% - @header-desktop-width) / 2);
+        }
+    }
+
+    .copyright,
+    .cellphone {
+        @media screen and (max-width: @header-mobile-width) {
+            text-align: center;
+        }
+    }
+    .container-links {
+        display: flex;
+        flex-direction: row !important;
+        gap: 15px;
+        place-items: center;
+        align-items: center;
+
+        .social-links {
+
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            margin-top: 15px;
+            gap: 8px;
+        
+            a {
+              display: flex;
+              color: #68a2ff;
+              text-decoration: none;
+              background: #121214;
+              -webkit-align-items: center;
+              -moz-box-align: center;
+              align-items: center;
+              border-radius: 5px;
+              -webkit-transition: all .3s ease;
+              transition: all .3s ease;
+    
+              &.share-icons {
+                color: #eeeeee;
+        
+                svg {
+                  height: 32px;
+                  width: auto;
+                  padding: 5px;
+                }
+              }
+        
+              &:hover,
+              &:focus {
+                color: #5b5ddf;
+                text-decoration: none;
+              }
+            }
+        
+            span {
+              flex: 1;
+            }
+          }
+        }
+        
+        .footer-icons {
+          height: 14px;
+          margin-right: 10px;
+        }
+        
+        @media (max-width: 590px) {
+          .sitemap {
+            flex-direction: column;
+        
+            div:nth-child(2) {
+              margin-top: 24px;
+            }
+        }
+    }
+    
+}

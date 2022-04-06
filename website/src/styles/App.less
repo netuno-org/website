@@ -1,0 +1,65 @@
+/*************
+ * Dark Mode *
+ *///////////*/
+//@import '~antd/lib/style/themes/dark.less';
+
+@import '~antd/dist/antd.less';
+
+@import '~@animated-burgers/burger-slip/dist/styles.css';
+@import '~sal.js/dist/sal.css';
+
+@import "./variables.less";
+
+html,
+body {
+    background-color: @site-background;
+    box-sizing: border-box;
+    scrollbar-color: #121214 #131315;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+img, svg {
+    vertical-align: middle;
+}
+
+hr {
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    border: none;
+    position: absolute;
+    background: linear-gradient(270deg,#323238,rgba(50,50,56,.25));
+}
+
+.ant-layout {
+    padding-top: @header-size;
+    background-color: @page-background;
+    min-height: 100vh;
+    overflow: hidden;
+
+    @media only screen and (max-width: @header-mobile-width) {
+        padding-top: @header-size-mobile;
+    }
+}
+
+.ant-layout-content {
+    background-color: @page-background !important;
+    z-index: 2;
+
+    a {
+        color: @primary-link-color;
+        text-decoration: underline;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: @primary-link-hover-color;
+            text-decoration: underline;
+        }
+    }
+}
