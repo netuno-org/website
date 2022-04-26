@@ -49,7 +49,7 @@ function Item({ section, type, image, image_title, image_alt, title, content, li
   } else if (type === 'cases-listing') {
     layout = (
       <li className="listing__item">
-        <div className={`listing__item`}>
+        <div>
           <div className='listing__image'>
             <img src={`/images/${section}/${image}`} alt={image_alt} title={image_title} />
           </div>
