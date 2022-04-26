@@ -4,15 +4,23 @@
     z-index: 3;
     width: 100%;
     position: relative;
-    padding: 0 20px 20px 20px;
+    padding: 24px calc((100% - @header-desktop-width) / 2) !important;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2),
         0 1px 1px 0 rgba(0, 0, 0, .14),
         0 2px 1px -1px rgba(0, 0, 0, .12);
-    background: @footer-background !important;
+    background: #121214 !important;
     color: @footer-color !important;
+    width: 100%;
+    .ant-row {
+      display: flex;
+      justify-content: end;
+      @media only screen and (max-width: @header-mobile-width) {
+        justify-content: center;
+      }
+    }
 
     &__wrapper{
-      width: 100%;
+      width: 90%;
       max-width: @site-max-width;
       margin: auto;
     }
@@ -24,19 +32,25 @@
         width: fit-content;
         margin-bottom: 12px;
         font-size: 20px;
-  
+        @media only screen and (max-width: @header-mobile-width) {
+          justify-content: center;
+          width: unset !important;
+        }
         &:hover svg {
-          fill: #5b5ddf;
+          fill: #8593ff;
         }
   
         svg {
           margin-right: 4px;
+          color: @primary-color !important;
+
         }
 
         a {
             display: inline;
             color: #68a2ff;
             text-decoration: none;
+
     
         &.share-icons {
             color: #eeeeee;
@@ -129,6 +143,10 @@
         gap: 15px;
         place-items: center;
         align-items: center;
+        @media only screen and (max-width: @header-mobile-width) {
+          display: flex;
+          justify-content: center;
+        }
 
         .social-links {
 
@@ -139,7 +157,7 @@
         
             a {
               display: flex;
-              color: #68a2ff;
+              color: @primary-color;
               text-decoration: none;
               background: #121214;
               -webkit-align-items: center;

@@ -1,15 +1,15 @@
 @import "../../styles/variables.less";
 
 .content {
-    width: 100%;
-    max-width: calc(@site-max-width + 120px);
-    margin: 50px auto;
-    padding: 0 60px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 calc((100% - @header-desktop-width) / 2)  50px !important;
+    padding-bottom: 50px;
     display: flex;
     flex-direction: column;
     @media only screen and (max-width: 800px) {
-        padding: 0 20px;
-        margin: 20px auto;
+        padding: 0 20px  50px !important;
+        margin: 0 auto;
         flex-wrap: wrap;
     }
 
@@ -284,7 +284,8 @@
     &__image-top {
 
         .image {
-            margin: -180px 0 20px 150px;
+            margin: -180px auto 40px;
+            padding: 25px;
 
             img {
                 max-width: 100%;
@@ -292,7 +293,8 @@
                 display: block;
                 padding: 0;
                 margin: 0 0 1.45rem;
-                height: 400px !important;
+                height: auto !important;
+                width: auto;
             }
         }
 
@@ -430,6 +432,7 @@
 
         padding-left: 8%;
         padding-right: 8%;
+        padding-bottom:128px;
         margin: 0 auto;
         width: 100%;
 
@@ -469,17 +472,15 @@
     &__call-discord {
         background: #121214 !important;
         border: 1.5px solid #282828;
-        width: 1120px !important;
         display: flex;
         -webkit-justify-content: space-between;
         justify-content: space-between !important;
-        margin: 0 24px;
         -moz-box-align: center;
         align-items: center;
-        justify-content: center;
+        justify-content: center !important;
         position: relative;
         padding: 32px 16px;
-        padding-left: 12rem;
+        width: 500px;
 
         @media only screen and (max-width: @header-mobile-width) { 
             flex-direction: column !important;
@@ -504,7 +505,9 @@
         }
 
         .container-img {
-            width: 256px;
+            width: 250px;
+            margin-left: auto;
+            margin-right: auto;
 
             @media only screen and (max-width: @header-mobile-width) {
                 width: 150px !important;
@@ -555,7 +558,7 @@
         }
 
         .container-text {
-            width: 480px;
+            word-break: break-all;
             margin-left: 25px;
 
             @media only screen and (max-width: @header-mobile-width) {

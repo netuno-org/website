@@ -106,14 +106,31 @@
         .banner__sub-banner {
             display: block;
         }
-        > div > div > div {
-            p {
-                margin-bottom: 0;
-                &:nth-last-child(1) {
-                    margin-bottom: 1em;
-                }
+        > div > div {
+            text-align: center;
+            h1 {
+                color: #fff!important; 
+                font-size: 56px;
+                line-height: 60px;
+                font-weight: 700;
+                padding: 0;
+                margin: 0;
+                max-width: 720px!important;
+                display: inline-block!important;
+                font-weight: 700!important;
             }
+            > div {
+                p {
+                    width: 90%;
+                    margin: 0 auto ;
+                    margin-bottom: 0;
+                    &:nth-last-child(1) {
+                        margin-bottom: 1em;
+                    }
+               }   }
         }
+
+        
         @media only screen and (max-width: @header-mobile-width) {
             > div > div > div {
                 margin: auto;
@@ -160,7 +177,7 @@
         align-items: center;
         justify-content: center;
         text-align: left;
-        padding: 0 50px;
+        padding: 0 calc((100% - @header-desktop-width) / 2);
         width: 100%;
         background-color: #777;
         background-size: cover;
@@ -177,7 +194,6 @@
             width: 100%;
             > div {
                 > div {
-                    width: calc(80% - 40px);
                     height: auto;
                     > h1 {
                         margin-bottom: 0;

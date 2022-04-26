@@ -67,6 +67,32 @@ window.cluarData = {
                     },
                     {
                         "image": "",
+                        "uid": "8852bc72-dd25-41c4-abe6-4f83f8780af3",
+                        "image_max_width": "0",
+                        "sorter": 20,
+                        "image_alt": "",
+                        "section": "content",
+                        "image_title": "",
+                        "title": "Mantenha se em \u00F3rbita",
+                        "type": "text",
+                        "actions": [],
+                        "content": "<p>Saiba o que de novo acontece no Netuno<\/p><p>Desfrute da melhor experi\u00EAncia de desenvolvimento de aplica\u00E7\u00F5es Net<\/p><p>O all-in-one para criar facilmente aplica\u00E7\u00F5es customiz\u00E1veis, agora ficou melhor.<br><\/p>"
+                    },
+                    {
+                        "image": "discord_1_-lWwj2hHD.png",
+                        "uid": "9ea2d883-93c0-4e29-b6d3-7e11ef8af0cb",
+                        "image_max_width": "0",
+                        "sorter": 20,
+                        "image_alt": "",
+                        "section": "content",
+                        "image_title": "",
+                        "title": "Acesse nosso servidor do Discord",
+                        "type": "call-discord",
+                        "actions": [],
+                        "content": "<div><p>E participe do servidor do Netuno para ficar \r\npor dentro de todas as nossas novidades, al\u00E9m de tirar d\u00FAvidas direta \r\ncom os nossos desenvolvedores.<\/p><\/div>"
+                    },
+                    {
+                        "image": "",
                         "uid": "682b00cb-8276-481b-b4c4-c746f204c654",
                         "sorter": 30,
                         "image_alt": "",
@@ -121,89 +147,6 @@ window.cluarData = {
                             }
                         ],
                         "content": ""
-                    },
-                    {
-                        "image": "",
-                        "uid": "8852bc72-dd25-41c4-abe6-4f83f8780af3",
-                        "image_max_width": "0",
-                        "sorter": 40,
-                        "image_alt": "",
-                        "section": "content",
-                        "image_title": "",
-                        "title": "Mantenha se em \u00F3rbita",
-                        "type": "text",
-                        "actions": [],
-                        "content": "<p>Saiba o que de novo acontece no Netuno<\/p>"
-                    },
-                    {
-                        "image": "",
-                        "uid": "11c34cdb-4587-4a10-870f-9229092174f0",
-                        "sorter": 50,
-                        "image_alt": "",
-                        "section": "listing",
-                        "image_title": "",
-                        "title": "",
-                        "type": "news-at-sitana",
-                        "items": [
-                            {
-                                "image": "icon-72x72-H2DGtjJA.png",
-                                "uid": "b7a07e5d-1969-4ed6-a06c-0edff271447d",
-                                "sorter": 10,
-                                "image_alt": "",
-                                "link": "",
-                                "section": "listing_item",
-                                "image_title": "",
-                                "title": "Netuno v7",
-                                "content": "<p>O all-in-one para criar facilmente aplica\u00E7\u00F5es customiz\u00E1veis, agora ficou melhor.<br><\/p>"
-                            },
-                            {
-                                "image": "icon-72x72-j7M1QGy4.png",
-                                "uid": "986ad50f-8556-4fa0-949e-424447dea98c",
-                                "sorter": 0,
-                                "image_alt": "",
-                                "link": "",
-                                "section": "listing_item",
-                                "image_title": "",
-                                "title": "Netuno Studio",
-                                "content": "<p>Desfrute da melhor experi\u00EAncia de desenvolvimento de aplica\u00E7\u00F5es Netuno.<br><\/p>"
-                            }
-                        ],
-                        "content": ""
-                    },
-                    {
-                        "image": "",
-                        "uid": "9d297948-d5d3-4552-8815-16b317f241ef",
-                        "sorter": 50,
-                        "image_alt": "",
-                        "section": "listing",
-                        "image_title": "",
-                        "title": "",
-                        "type": "listing-sociais",
-                        "items": [{
-                            "image": "",
-                            "uid": "0742017b-9569-4ed2-beae-2fd695f60cf4",
-                            "sorter": 10,
-                            "image_alt": "",
-                            "link": "",
-                            "section": "listing_item",
-                            "image_title": "",
-                            "title": " Siga-nos nas redes sociais: ",
-                            "content": "AiFillFacebook"
-                        }],
-                        "content": ""
-                    },
-                    {
-                        "image": "discord_1_-lWwj2hHD.png",
-                        "uid": "9ea2d883-93c0-4e29-b6d3-7e11ef8af0cb",
-                        "image_max_width": "0",
-                        "sorter": 60,
-                        "image_alt": "",
-                        "section": "content",
-                        "image_title": "",
-                        "title": "Acesse nosso servidor do Discord",
-                        "type": "call-discord",
-                        "actions": [],
-                        "content": "<div><p>E participe do servidor do Netuno para ficar \r\npor dentro de todas as nossas novidades, al\u00E9m de tirar d\u00FAvidas direta \r\ncom os nossos desenvolvedores.<\/p><\/div>"
                     }
                 ]
             },
@@ -357,7 +300,7 @@ window.cluarData = {
                             "y": ""
                         },
                         "title": "R\u00E1pido desenvolvimento de aplica\u00E7\u00F5es web",
-                        "type": "highlight-galaxies",
+                        "type": "default-sub-banner",
                         "actions": [],
                         "content": "<p><span>Sem uma \u00FAnica linha de c\u00F3digo \u00E9 poss\u00EDvel criar todo um sistema \r\ncomplexo para a recolha de dados, que pode extender e customizar \u00E0 \r\nmedida de qualquer necessidade e com f\u00E1cil integra\u00E7\u00E3o com qualquer \r\ninfraestrutura e aplica\u00E7\u00F5es.<\/span><\/p>"
                     },
@@ -778,7 +721,7 @@ window.cluarData = {
                             "y": ""
                         },
                         "title": "Rapid web application development",
-                        "type": "highlight-galaxies",
+                        "type": "default-sub-banner",
                         "actions": [],
                         "content": "<p>Without a single line of code it is possible to create an entire complex system for data collection, which you can extend and customize as needed and with easy integration with any infrastructure and applications.<\/p>"
                     },

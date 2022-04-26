@@ -128,9 +128,6 @@ function Content({ section, type, title, content, image, image_title, image_alt,
             </div>
           </Col>
           <Col span={12}>
-            <div className='styles-logo'>
-              <img src={logo} />
-            </div>
             <div className="container-text">
               <div className="text">
                 <h1>{title}</h1>

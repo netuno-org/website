@@ -11,13 +11,13 @@
         margin: 0 auto;
         grid-gap: 4rem;
         z-index: 0;
-        padding-top: 75px !important;
-        //counter-reset: heading;
-
+        padding-top: 50px !important;
         @media only screen and (max-width: @header-mobile-width) {
             display: flex !important;
-            flex-direction: column !important;
+            flex-wrap: wrap;
             align-items: center;
+            padding: 0 20px;
+            
         }
       
         > div {
@@ -37,10 +37,6 @@
                 font-size: 60px;
             }
             */
-            
-            &:nth-child(odd) {
-                margin-top: -25px;
-            }
 
         }
 
@@ -122,8 +118,7 @@
             border-radius: 4px;
             flex-direction: row !important;
             height: auto;
-            width: 480px; 
-            
+
             @media only screen and (max-width: @header-mobile-width) {
                 width: 100% !important; 
                 display: inline-flex;
@@ -220,7 +215,7 @@
             border-radius: 4px;
             flex-direction: row !important;
             height: 100%;
-            width: 480px; 
+            width: 100%; 
             
             @media only screen and (max-width: @header-mobile-width) {
              width: 350px !important; 
@@ -372,8 +367,12 @@
         margin-right: auto;
         flex-direction: column !important;
         margin: 0 25px;
-        padding: 0 25px !important;
+        padding: 50px 25px 0 !important;
         row-gap: 40px !important;
+        
+        .grid-container:first-of-type {
+            padding-top: 8rem !important;
+        }
 
         @media only screen and (max-width: @header-mobile-width) {
             flex-direction: column !important;
@@ -383,8 +382,6 @@
                 display: flex !important;
                 flex-direction: column !important;
                 padding-bottom: 4rem !important;
-
-
                 .grid-imagem {
                     order: 1 !important;
                 }
