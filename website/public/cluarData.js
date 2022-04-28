@@ -593,6 +593,32 @@ window.cluarData = {
                     },
                     {
                         "image": "",
+                        "uid": "c5a72fd7-fbcf-46d2-88d3-8c61ff9c1a1a",
+                        "image_max_width": "0",
+                        "sorter": 20,
+                        "image_alt": "",
+                        "section": "content",
+                        "image_title": "",
+                        "title": "Stay in orbit",
+                        "type": "text",
+                        "actions": [],
+                        "content": "<p>Find out what's new at Neptune<\/p>\r\n<p>Enjoy the best Net application development experience<\/p>\r\n<p>The all-in-one for easily creating customizable applications just got better<\/p>"
+                    },
+                    {
+                        "image": "discord_1_-wmVUOHK8.png",
+                        "uid": "6cf1980a-e5d7-440f-bccd-b9b863cd6da3",
+                        "image_max_width": "0",
+                        "sorter": 20,
+                        "image_alt": "",
+                        "section": "content",
+                        "image_title": "",
+                        "title": "Visit our Discord server",
+                        "type": "call-discord",
+                        "actions": [],
+                        "content": "<p>And join the Neptune server to stay on top of all our news, and ask questions directly to our developers.<br><\/p>"
+                    },
+                    {
+                        "image": "",
                         "uid": "476287d6-b27b-4856-a335-fdf83c4bf5b6",
                         "sorter": 30,
                         "image_alt": "",
@@ -647,54 +673,6 @@ window.cluarData = {
                             }
                         ],
                         "content": ""
-                    },
-                    {
-                        "image": "",
-                        "uid": "c5a72fd7-fbcf-46d2-88d3-8c61ff9c1a1a",
-                        "image_max_width": "0",
-                        "sorter": 40,
-                        "image_alt": "",
-                        "section": "content",
-                        "image_title": "",
-                        "title": "Stay in orbit",
-                        "type": "text",
-                        "actions": [],
-                        "content": "<p>Find out what's new at Neptune<\/p>"
-                    },
-                    {
-                        "image": "",
-                        "uid": "bee6a916-8fae-4393-b9d3-4c3ccc55ed5e",
-                        "sorter": 50,
-                        "image_alt": "",
-                        "section": "listing",
-                        "image_title": "",
-                        "title": "",
-                        "type": "listing-sociais",
-                        "items": [{
-                            "image": "",
-                            "uid": "8ed25251-d86e-43a4-ae0b-0602016a43d8",
-                            "sorter": 50,
-                            "image_alt": "",
-                            "link": "",
-                            "section": "listing_item",
-                            "image_title": "",
-                            "title": "Follow us on the social networks: ",
-                            "content": ""
-                        }],
-                        "content": ""
-                    },
-                    {
-                        "image": "discord_1_-wmVUOHK8.png",
-                        "uid": "6cf1980a-e5d7-440f-bccd-b9b863cd6da3",
-                        "image_max_width": "0",
-                        "sorter": 60,
-                        "image_alt": "",
-                        "section": "content",
-                        "image_title": "",
-                        "title": "Visit our Discord server",
-                        "type": "call-discord",
-                        "actions": [],
-                        "content": "<p>And join the Neptune server to stay on top of all our news, and ask questions directly to our developers.<br><\/p>"
                     }
                 ]
             },
@@ -736,7 +714,7 @@ window.cluarData = {
                         "type": "funcionality-netuno",
                         "items": [
                             {
-                                "image": "",
+                                "image": "Download.netuno-q21RA5qG.png",
                                 "uid": "cdb61212-1f78-4a79-96f0-8a6c90f6e799",
                                 "sorter": 10,
                                 "image_alt": "",
@@ -747,7 +725,7 @@ window.cluarData = {
                                 "content": "<b>Forms<\/b>\r\n<p>Creates the forms and at the same time the database tables. Controls the navigation structure and basic permissions<\/p>"
                             },
                             {
-                                "image": "",
+                                "image": "fields-pHYpjkju.png",
                                 "uid": "9577421a-2649-4f6a-878d-2c4509736469",
                                 "sorter": 20,
                                 "image_alt": "",
@@ -758,7 +736,7 @@ window.cluarData = {
                                 "content": "<b>Fields<\/b>\r\n<p>Creates the fields and columns in a database. Supports many types of fields like calendar, time, combos with millions of records, images, files, etc...<\/p>"
                             },
                             {
-                                "image": "",
+                                "image": "customize-BWDdbp7T.png",
                                 "uid": "1f29e17b-b2f8-40a6-81b9-8a5d61be0fdd",
                                 "sorter": 30,
                                 "image_alt": "",
@@ -769,7 +747,7 @@ window.cluarData = {
                                 "content": "<b>Customize<\/b>\r\n<p>Ready to be tailored to your needs. JavaScript on the server and in realtime! Non-stop guarantee! Protected from errors and managed against failure by memory or processor consumption. Easy integration with your system.<\/p>"
                             },
                             {
-                                "image": "",
+                                "image": "Download-oB6f0qew.png",
                                 "uid": "3fd5ad37-4c65-419b-9a1d-a220419450b4",
                                 "sorter": 40,
                                 "image_alt": "",
@@ -780,7 +758,7 @@ window.cluarData = {
                                 "content": "<b>Easy to Find and Analyze Data <\/b>\r\n<p>Easy control of the rules of the fields that appear in the search and in the results. Ready to support millions of records and to analyze databases simply and directly. Exports data to Excel.<\/p>"
                             },
                             {
-                                "image": "",
+                                "image": "Development-Yp3zn4SR.png",
                                 "uid": "56aac8cb-158e-4a9d-94a3-c18b01b1122a",
                                 "sorter": 50,
                                 "image_alt": "",
