@@ -73,7 +73,7 @@ window.cluarData = {
                         "image_alt": "",
                         "section": "content",
                         "image_title": "",
-                        "title": "Mantenha se em \u00F3rbita",
+                        "title": "Entre em \u00F3rbita",
                         "type": "text",
                         "actions": [],
                         "content": "<p>Saiba o que de novo acontece no Netuno<\/p><p>Desfrute da melhor experi\u00EAncia de desenvolvimento de aplica\u00E7\u00F5es Net<\/p><p>O all-in-one para criar facilmente aplica\u00E7\u00F5es customiz\u00E1veis, agora ficou melhor.<br><\/p>"
@@ -602,7 +602,7 @@ window.cluarData = {
                         "title": "Stay in orbit",
                         "type": "text",
                         "actions": [],
-                        "content": "<p>Find out what's new at Neptune<\/p>\r\n<p>Enjoy the best Net application development experience<\/p>\r\n<p>The all-in-one for easily creating customizable applications just got better<\/p>"
+                        "content": "<p>Find out what's new at Netuno<\/p>\r\n<p>Enjoy the best Net application development experience<\/p>\r\n<p>The all-in-one for easily creating customizable applications just got better<\/p>"
                     },
                     {
                         "image": "discord_1_-wmVUOHK8.png",
@@ -767,9 +767,55 @@ window.cluarData = {
                                 "image_title": "",
                                 "title": "",
                                 "content": "<b>Development <\/b>\r\n\r\n<p>Easy control of the rules of the fields that appear in the search and in the results. Ready to support millions of records and to analyze databases simply and directly. Exports data to Excel.<\/p>"
+                            },
+                            {
+                                "image": "Poliglota.netuno-uVcSpsQl.png",
+                                "uid": "64cf7b87-11c8-4bae-afd2-03464d0b764d",
+                                "sorter": 80,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "",
+                                "content": "<b>Polyglot<\/b>\r\n<p>Easy control of the rules that appears on the search and results fields. Prepared to support millions of records and to analyse databases in a simple and direct way. Export data to Excel.<\/p>"
+                            },
+                            {
+                                "image": "dashboard-DuN7SSX9.png",
+                                "uid": "5f41d079-8a0f-4d31-aa61-c12c64a867c9",
+                                "sorter": 50,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "",
+                                "content": "<b>A UNIVERSE AT YOUR FINGERTIPS<\/b>\r\n<p>Enjoy the best experience of Netuno development applications. All aspects of Netuno has been specially developed to maximize aplications development productivity.<\/p>"
+                            },
+                            {
+                                "image": "astronaut.netuno-ihirJ6hD.png",
+                                "uid": "18ed28f2-d8c9-463e-99c2-1d4594328791",
+                                "sorter": 80,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "",
+                                "content": "<b>THE BEST FOR YOU<\/b>\r\n<p>Create, parametrize and run your apllications. Integrated acess to source code and files, server centralized console and UI, error handling system at runtime, easy integration with NPM, WebPack, ReactJS and Ant.Design; Supports MariaDB, PostgreSQL, Microsoft SQL Server e H2 Database; Server-side programming languages: JavaScript, Kotlin, Groovy, Ruby, Python, and Java;\r\n<\/p>"
                             }
                         ],
                         "content": ""
+                    },
+                    {
+                        "image": "customize.netuno-ZrBqU0YE.png",
+                        "uid": "31cf4e50-5076-4905-881a-2093a2cc12a2",
+                        "image_max_width": "0",
+                        "sorter": 60,
+                        "image_alt": "",
+                        "section": "content",
+                        "image_title": "",
+                        "title": "",
+                        "type": "customize-netuno",
+                        "actions": [],
+                        "content": "<span>Usisng the latest technologies for the frontend and the most robust technologies for the backend.\r\nWith an elegant and reliable development environment that consumes little hardware, the result is applications that don't fail and that allow to be developed in realtime.<\/span>"
                     }
                 ]
             },
