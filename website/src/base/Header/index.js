@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { GlobalOutlined } from '@ant-design/icons';
+import Dictionary from '../../components/Dictionary';
 import Burger from '@animated-burgers/burger-slip';
 import '@animated-burgers/burger-slip/dist/styles.css';
 import classNames from 'classnames';
@@ -126,6 +127,16 @@ function BaseHeader() {
             defaultSelectedKeys={[activeMenu]}
             selectedKeys={[activeMenu]}>
             {menu}
+            <li style={{order: 2}}>
+              <span>
+                <a href='https://forum.netuno.org'><Dictionary entry="forum" oneLine/></a>
+              </span>
+            </li>
+            <li style={{order: 3}}>
+              <span>
+                <a href='https://doc.netuno.org'><Dictionary entry="documentation" oneLine/></a>
+              </span>
+            </li>
           </Menu>
         </div>
         <div className={
@@ -142,6 +153,16 @@ function BaseHeader() {
             selectedKeys={[activeMenu]}
             openKeys={subMenuKeys}>
             {menu}
+            <li style={{order: 2}}>
+              <span>
+                <a href='https://forum.netuno.org'><Dictionary entry="forum" oneLine/></a>
+              </span>
+            </li>
+            <li style={{order: 3}}>
+              <span>
+                <a href='https://doc.netuno.org'><Dictionary entry="documentation" oneLine/></a>
+              </span>
+            </li>
           </Menu>
         </div>
         <div className="menu-burger-button">

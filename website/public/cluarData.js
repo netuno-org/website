@@ -2,10 +2,12 @@ window.cluarData = {
     "dictionary": {
         "PT": {
             "contact-form-success": "<p>Os dados foram enviados com sucesso, obrigado.<\/p>",
+            "forum": "F\u00F3rum",
             "contact-form-send": "<p>Enviar<\/p>",
             "contact-form-name": "<p>Nome<\/p>",
             "contact-form-message": "<p>Mensagem<\/p>",
             "contact-form-validate-message-required": "<p>${label} \u00E9 de preenchimento obrigat\u00F3rio.<br><\/p>",
+            "documentation": "Documenta\u00E7\u00E3o",
             "contact-form-validate-message-email": "<p>${label} n\u00E3o \u00E9 um e-mail v\u00E1lido.<br><\/p>",
             "contact-form-fail": "<p>N\u00E3o foi poss\u00EDvel enviar os dados, tente novamente mais tarde.<\/p>",
             "contact-form-email": "<p>E-mail<\/p>",
@@ -13,10 +15,12 @@ window.cluarData = {
         },
         "EN": {
             "contact-form-success": "<p>Data has been sent successfully, thank you.<br><\/p>",
+            "forum": "<p>Forum<\/p>",
             "contact-form-send": "<p>Send<\/p>",
             "contact-form-name": "<p>Name<\/p>",
             "contact-form-message": "<p>Message<\/p>",
             "contact-form-validate-message-required": "<p>${label} is mandatory.<br><\/p>",
+            "documentation": "Documentation",
             "contact-form-validate-message-email": "<p>${label} is not a valid e-mail.<br><\/p>",
             "contact-form-fail": "<p>Unable to send data, please try again later.<br><\/p>",
             "contact-form-email": "<p>E-mail<\/p>",
@@ -154,8 +158,8 @@ window.cluarData = {
                 "parent": "",
                 "uid": "037965ef-7e8a-40e8-bb00-2c05b90a8ff2",
                 "keywords": "",
-                "sorter": 20,
-                "menu_title": "",
+                "sorter": 0,
+                "menu_title": "Casos de Uso",
                 "link": "/casos-de-uso",
                 "description": "",
                 "menu": true,
@@ -281,7 +285,7 @@ window.cluarData = {
                 "parent": "",
                 "uid": "f9c8c71c-5981-4214-9766-8c5a90d9b787",
                 "keywords": "",
-                "sorter": 30,
+                "sorter": 1,
                 "menu_title": "",
                 "link": "/funcionalidades",
                 "description": "",
@@ -419,30 +423,6 @@ window.cluarData = {
                         "content": "<span>Utilizando as tecnologias mais recentes para o frontend e as tecnologias mais robustas para o backend. <br>\r\n Com ambiente de desenvolvimento elegante, fi\u00E1vel e que consome pouco \r\nhardware, o resultado s\u00E3o aplica\u00E7\u00F5es que n\u00E3o falham e que permitem ser \r\ndesenvolvidas em realtime.<\/span>"
                     }
                 ]
-            },
-            {
-                "parent": "",
-                "uid": "b9356859-995f-40b2-8219-0b4a3a8beb6b",
-                "keywords": "",
-                "sorter": 40,
-                "menu_title": "",
-                "link": "/forum",
-                "description": "",
-                "menu": true,
-                "title": "F\u00F3rum",
-                "structure": []
-            },
-            {
-                "parent": "",
-                "uid": "faa23c94-36d0-4e10-80e9-e3617a2f1ad9",
-                "keywords": "",
-                "sorter": 50,
-                "menu_title": "",
-                "link": "/documentacao",
-                "description": "",
-                "menu": true,
-                "title": "Documenta\u00E7\u00E3o",
-                "structure": []
             }
         ],
         "EN": [
@@ -553,134 +533,9 @@ window.cluarData = {
             },
             {
                 "parent": "",
-                "uid": "5002a742-e092-4c0b-8536-546bd1319c7f",
-                "keywords": "",
-                "sorter": 10,
-                "menu_title": "",
-                "link": "/",
-                "description": "",
-                "menu": false,
-                "title": "Home",
-                "structure": [
-                    {
-                        "image": "home-background-yJn4UXqG.jpg",
-                        "uid": "9302bc90-d687-494d-bfc0-b4aeff4df09e",
-                        "sorter": 10,
-                        "image_alt": "",
-                        "section": "banner",
-                        "image_title": "",
-                        "position": {
-                            "x": "",
-                            "y": ""
-                        },
-                        "title": "Quickly create applications adapted to your business logic",
-                        "type": "highlight-galaxies",
-                        "actions": [],
-                        "content": "<p>Open Source development platform.<\/p>"
-                    },
-                    {
-                        "image": "dashboard-netuno-aKalz8JJ-UMSzAh6V.png",
-                        "uid": "d89bf72d-a30f-4a52-afd1-3c5b6f94cdad",
-                        "image_max_width": "0",
-                        "sorter": 20,
-                        "image_alt": "",
-                        "section": "content",
-                        "image_title": "",
-                        "title": "Accelerate your processes with NETUNO automation",
-                        "type": "image-top",
-                        "actions": [],
-                        "content": "<p>Digital transformation with process automation is a decisive factor in the success of companies as they increase productivity and keep up with the modern world.<\/p>\r\n<p>Reliable, secure, adaptable and agile solutions are needed.<\/p>\r\n<p>With Netuno you can do all this quickly and at low cost.<\/p>"
-                    },
-                    {
-                        "image": "",
-                        "uid": "c5a72fd7-fbcf-46d2-88d3-8c61ff9c1a1a",
-                        "image_max_width": "0",
-                        "sorter": 20,
-                        "image_alt": "",
-                        "section": "content",
-                        "image_title": "",
-                        "title": "Stay in orbit",
-                        "type": "text",
-                        "actions": [],
-                        "content": "<p>Find out what's new at Netuno<\/p>\r\n<p>Enjoy the best Net application development experience<\/p>\r\n<p>The all-in-one for easily creating customizable applications just got better<\/p>"
-                    },
-                    {
-                        "image": "discord_1_-wmVUOHK8.png",
-                        "uid": "6cf1980a-e5d7-440f-bccd-b9b863cd6da3",
-                        "image_max_width": "0",
-                        "sorter": 20,
-                        "image_alt": "",
-                        "section": "content",
-                        "image_title": "",
-                        "title": "Visit our Discord server",
-                        "type": "call-discord",
-                        "actions": [],
-                        "content": "<p>And join the Neptune server to stay on top of all our news, and ask questions directly to our developers.<br><\/p>"
-                    },
-                    {
-                        "image": "",
-                        "uid": "476287d6-b27b-4856-a335-fdf83c4bf5b6",
-                        "sorter": 30,
-                        "image_alt": "",
-                        "section": "listing",
-                        "image_title": "",
-                        "title": "How netuno works",
-                        "type": "operation-netuno",
-                        "items": [
-                            {
-                                "image": "",
-                                "uid": "06e9c3f7-b9bb-4a33-9965-4e42792422a5",
-                                "sorter": 10,
-                                "image_alt": "",
-                                "link": "",
-                                "section": "listing_item",
-                                "image_title": "",
-                                "title": "Forms and Fields",
-                                "content": "<p>Define the data model via the \"Build\" menu and Neptune handles the database structure for you.<\/p>"
-                            },
-                            {
-                                "image": "",
-                                "uid": "b4405755-48c4-408d-92f1-a8b38825e324",
-                                "sorter": 20,
-                                "image_alt": "",
-                                "link": "",
-                                "section": "listing_item",
-                                "image_title": "",
-                                "title": "Powerful Frontend",
-                                "content": "<p>Easily build the frontend by building on the integrations already done with React, Webpack, Sass/Less, and Ant Design.<\/p>"
-                            },
-                            {
-                                "image": "",
-                                "uid": "8aaab810-5b08-4308-a93d-08de2f6c1f69",
-                                "sorter": 30,
-                                "image_alt": "",
-                                "link": "",
-                                "section": "listing_item",
-                                "image_title": "",
-                                "title": "REST API",
-                                "content": "<p>Write the service layer in your favorite programming language, Neptune is polyglot!<\/p>"
-                            },
-                            {
-                                "image": "",
-                                "uid": "e93469b3-6a5e-4ceb-8751-f888f6ac0c4f",
-                                "sorter": 40,
-                                "image_alt": "",
-                                "link": "",
-                                "section": "listing_item",
-                                "image_title": "",
-                                "title": "Integrate with the world",
-                                "content": "<p>Out-of-the-box integrations and compatibility with multiple databases. If it already exists, don't do it, use it!<\/p>"
-                            }
-                        ],
-                        "content": ""
-                    }
-                ]
-            },
-            {
-                "parent": "",
                 "uid": "303d89f7-673e-4610-9e08-766ce41eabf2",
                 "keywords": "",
-                "sorter": 10,
+                "sorter": 1,
                 "menu_title": "",
                 "link": "/features",
                 "description": "",
@@ -821,27 +676,128 @@ window.cluarData = {
             },
             {
                 "parent": "",
-                "uid": "0a379a29-674f-4b60-a523-a748c2c9f068",
+                "uid": "5002a742-e092-4c0b-8536-546bd1319c7f",
                 "keywords": "",
-                "sorter": 30,
+                "sorter": 10,
                 "menu_title": "",
-                "link": "/forum",
+                "link": "/",
                 "description": "",
-                "menu": true,
-                "title": "forum",
-                "structure": []
-            },
-            {
-                "parent": "",
-                "uid": "259c1789-d810-4e26-8501-271a914b843a",
-                "keywords": "",
-                "sorter": 40,
-                "menu_title": "",
-                "link": "/documentation",
-                "description": "",
-                "menu": true,
-                "title": "documentation",
-                "structure": []
+                "menu": false,
+                "title": "Home",
+                "structure": [
+                    {
+                        "image": "home-background-yJn4UXqG.jpg",
+                        "uid": "9302bc90-d687-494d-bfc0-b4aeff4df09e",
+                        "sorter": 10,
+                        "image_alt": "",
+                        "section": "banner",
+                        "image_title": "",
+                        "position": {
+                            "x": "",
+                            "y": ""
+                        },
+                        "title": "Quickly create applications adapted to your business logic",
+                        "type": "highlight-galaxies",
+                        "actions": [],
+                        "content": "<p>Open Source development platform.<\/p>"
+                    },
+                    {
+                        "image": "dashboard-netuno-aKalz8JJ-UMSzAh6V.png",
+                        "uid": "d89bf72d-a30f-4a52-afd1-3c5b6f94cdad",
+                        "image_max_width": "0",
+                        "sorter": 20,
+                        "image_alt": "",
+                        "section": "content",
+                        "image_title": "",
+                        "title": "Accelerate your processes with NETUNO automation",
+                        "type": "image-top",
+                        "actions": [],
+                        "content": "<p>Digital transformation with process automation is a decisive factor in the success of companies as they increase productivity and keep up with the modern world.<\/p>\r\n<p>Reliable, secure, adaptable and agile solutions are needed.<\/p>\r\n<p>With Netuno you can do all this quickly and at low cost.<\/p>"
+                    },
+                    {
+                        "image": "",
+                        "uid": "c5a72fd7-fbcf-46d2-88d3-8c61ff9c1a1a",
+                        "image_max_width": "0",
+                        "sorter": 20,
+                        "image_alt": "",
+                        "section": "content",
+                        "image_title": "",
+                        "title": "Stay in orbit",
+                        "type": "text",
+                        "actions": [],
+                        "content": "<p>Find out what's new at Netuno<\/p>\r\n<p>Enjoy the best Net application development experience<\/p>\r\n<p>The all-in-one for easily creating customizable applications just got better<\/p>"
+                    },
+                    {
+                        "image": "discord_1_-wmVUOHK8.png",
+                        "uid": "6cf1980a-e5d7-440f-bccd-b9b863cd6da3",
+                        "image_max_width": "0",
+                        "sorter": 20,
+                        "image_alt": "",
+                        "section": "content",
+                        "image_title": "",
+                        "title": "Visit our Discord server",
+                        "type": "call-discord",
+                        "actions": [],
+                        "content": "<p>And join the Neptune server to stay on top of all our news, and ask questions directly to our developers.<br><\/p>"
+                    },
+                    {
+                        "image": "",
+                        "uid": "476287d6-b27b-4856-a335-fdf83c4bf5b6",
+                        "sorter": 30,
+                        "image_alt": "",
+                        "section": "listing",
+                        "image_title": "",
+                        "title": "How netuno works",
+                        "type": "operation-netuno",
+                        "items": [
+                            {
+                                "image": "",
+                                "uid": "06e9c3f7-b9bb-4a33-9965-4e42792422a5",
+                                "sorter": 10,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "Forms and Fields",
+                                "content": "<p>Define the data model via the \"Build\" menu and Neptune handles the database structure for you.<\/p>"
+                            },
+                            {
+                                "image": "",
+                                "uid": "b4405755-48c4-408d-92f1-a8b38825e324",
+                                "sorter": 20,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "Powerful Frontend",
+                                "content": "<p>Easily build the frontend by building on the integrations already done with React, Webpack, Sass/Less, and Ant Design.<\/p>"
+                            },
+                            {
+                                "image": "",
+                                "uid": "8aaab810-5b08-4308-a93d-08de2f6c1f69",
+                                "sorter": 30,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "REST API",
+                                "content": "<p>Write the service layer in your favorite programming language, Neptune is polyglot!<\/p>"
+                            },
+                            {
+                                "image": "",
+                                "uid": "e93469b3-6a5e-4ceb-8751-f888f6ac0c4f",
+                                "sorter": 40,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "Integrate with the world",
+                                "content": "<p>Out-of-the-box integrations and compatibility with multiple databases. If it already exists, don't do it, use it!<\/p>"
+                            }
+                        ],
+                        "content": ""
+                    }
+                ]
             }
         ]
     },

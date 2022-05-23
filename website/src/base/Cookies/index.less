@@ -11,24 +11,18 @@
         background-color: #fff;
         box-shadow: 0 -1px 10px 0 rgba(172, 171, 171, 0.3);
         &__content {
+            width: 90%;
+            margin: 0 auto;
             color: rgba(0, 0, 0, 0.85);
-            padding: 20px 50px;
-            @media only screen and (max-width: 800px) {
-                padding: 20px 20px;
-            }
-            display: flex;
+            padding: 20px calc((100% - 1200px) / 2);
+            display: flex !important;
             justify-content: space-between;
             flex-wrap: wrap;
-            p {
-                margin-bottom: 0;
-                margin: auto;
-            }
-            @media only screen and (max-width: 1270px) {
+
                 display: block;
                 p {
                     margin-bottom: 1em;
                 }
-            }
         }
     }
 }
