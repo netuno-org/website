@@ -293,7 +293,7 @@ window.cluarData = {
                 "title": "Funcionalidades",
                 "structure": [
                     {
-                        "image": "home-background-5huYm6dI.jpg",
+                        "image": "background-M72L69xa.jpg",
                         "uid": "3e8dd891-e47b-4fa5-9c8e-20985bdfdc8e",
                         "sorter": 0,
                         "image_alt": "",
@@ -543,7 +543,7 @@ window.cluarData = {
                 "title": "features",
                 "structure": [
                     {
-                        "image": "home-background-eUPewq6E.jpg",
+                        "image": "background-k4L3ZkRH.jpg",
                         "uid": "cedb1c3e-7574-49c0-94e2-833d27d11ecf",
                         "sorter": 0,
                         "image_alt": "",
@@ -751,7 +751,7 @@ window.cluarData = {
                         "type": "operation-netuno",
                         "items": [
                             {
-                                "image": "",
+                                "image": "formsandfields-S1A2yJna.png",
                                 "uid": "06e9c3f7-b9bb-4a33-9965-4e42792422a5",
                                 "sorter": 10,
                                 "image_alt": "",
@@ -762,7 +762,7 @@ window.cluarData = {
                                 "content": "<p>Define the data model via the \"Build\" menu and Neptune handles the database structure for you.<\/p>"
                             },
                             {
-                                "image": "",
+                                "image": "powerfulfrontend-OUhVJRoY.png",
                                 "uid": "b4405755-48c4-408d-92f1-a8b38825e324",
                                 "sorter": 20,
                                 "image_alt": "",
@@ -773,7 +773,7 @@ window.cluarData = {
                                 "content": "<p>Easily build the frontend by building on the integrations already done with React, Webpack, Sass/Less, and Ant Design.<\/p>"
                             },
                             {
-                                "image": "",
+                                "image": "restapi-eSaL3KfC.png",
                                 "uid": "8aaab810-5b08-4308-a93d-08de2f6c1f69",
                                 "sorter": 30,
                                 "image_alt": "",
@@ -784,7 +784,7 @@ window.cluarData = {
                                 "content": "<p>Write the service layer in your favorite programming language, Neptune is polyglot!<\/p>"
                             },
                             {
-                                "image": "",
+                                "image": "integrateword-KaS50XG8.png",
                                 "uid": "e93469b3-6a5e-4ceb-8751-f888f6ac0c4f",
                                 "sorter": 40,
                                 "image_alt": "",
