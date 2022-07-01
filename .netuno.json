@@ -1,5 +1,5 @@
 {
-    "name": "cluar",
+    "name": "netuno_website",
     "description": "A ready to use solution for content management and multilingual websites using Netuno, ReactJS and Ant Design.",
     "type": "app",
     "config": {
@@ -10,7 +10,7 @@
                 "cluar": {
                     "website": {
                         "url": "http://localhost:3000",
-                        "name": "Website Name",
+                        "name": "netuno_website",
                         "analytics": null,
                         "mapbox": {
                             "dark": false,
@@ -28,7 +28,7 @@
                 "enabled": true
             }],
             "smtp": {},
-            "name": "cluar",
+            "name": "netuno_website",
             "setup": {
                 "schema": {
                     "execution": true,
@@ -64,7 +64,7 @@
                 "engine": "h2",
                 "port": "",
                 "host": "",
-                "name": "cluar",
+                "name": "netuno_website",
                 "username": ""
             }}
         },
@@ -75,7 +75,7 @@
                 "cluar": {
                     "website": {
                         "url": "http://localhost:3000",
-                        "name": "Website Name",
+                        "name": "netuno_website",
                         "analytics": null,
                         "mapbox": {
                             "dark": false,
@@ -93,7 +93,7 @@
                 "enabled": true
             }],
             "smtp": {},
-            "name": "cluar",
+            "name": "netuno_website",
             "setup": {
                 "schema": {
                     "execution": true,
@@ -129,7 +129,7 @@
                 "engine": "h2",
                 "port": "",
                 "host": "",
-                "name": "cluar",
+                "name": "netuno_website",
                 "username": ""
             }}
         }
