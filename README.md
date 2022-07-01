@@ -13,7 +13,7 @@ A ready to use solution for content management and multilingual websites using [
 ## Automatic Application Install
 
 ```
-./netuno app github=netuno-org/cluar
+./netuno app github=netuno-org/website
 ```
 
 ### Running
@@ -21,7 +21,7 @@ A ready to use solution for content management and multilingual websites using [
 Start the Netuno Server:
 
 ```
-./netuno server app=cluar
+./netuno server app=netuno_website
 ```
 
 > May take while because is the first time and NPM Install will run to `ui` and `website` folder inside the application root folder.
