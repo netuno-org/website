@@ -241,7 +241,7 @@ window.cluarData = {
                                 "section": "listing_item",
                                 "image_title": "",
                                 "title": "LusoPanarcos",
-                                "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p><p>Sistema de vota\u00E7\u00E3o online seguro e audit\u00E1vel para os associados.<\/p>"
+                                "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p><p>Website feito com CLUAR (Netuno CMS) com funcionalidades \u00E0 medida.<\/p>"
                             },
                             {
                                 "image": "use-case-cuidados-40bfd07a36ae68e9c9750c2d4c7557f2-7ykeCou0.jpg",
@@ -255,7 +255,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, PostgreSQL, ReactJS, Bizcharts, Ant.Design<\/p>\r\n<p>Dados da pandemia de COVID-19 em Portugal e agendamento de testes online. <\/p>"
                             },
                             {
-                                "image": "use-case-veks-d428c444e433182a5e2606f2e5981094-VrpEJZ03.jpg",
+                                "image": "imagem_2022-07-04_143825673-Xjg6Fi57.png",
                                 "uid": "83f82966-9979-4a84-bc22-1dae504c50ae",
                                 "sorter": 70,
                                 "image_alt": "",
@@ -263,18 +263,51 @@ window.cluarData = {
                                 "section": "listing_item",
                                 "image_title": "",
                                 "title": "Veks",
-                                "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Painel de gest\u00E3o das m\u00E1quinas virtuais. <\/p>"
+                                "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Servi\u00E7o de alojamento, containers e servidores dedicados <\/p>"
                             },
                             {
-                                "image": "use-case-veks-d428c444e433182a5e2606f2e5981094-VrpEJZ03-7OUysF2J.jpg",
-                                "uid": "79057fd6-9e1b-4a40-b18c-ca756ae87f9f",
-                                "sorter": 70,
+                                "image": "imagem_2022-07-05_082515884-X60eHFQu.png",
+                                "uid": "c2a5d099-53b4-4d66-8ee5-4dc42b9d8e23",
+                                "sorter": 80,
                                 "image_alt": "",
                                 "link": "",
                                 "section": "listing_item",
                                 "image_title": "",
-                                "title": "Veks",
-                                "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Painel de gest\u00E3o das m\u00E1quinas virtuais. <\/p>"
+                                "title": "Positive Cycle",
+                                "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Pesquisa e inova\u00E7\u00E3o em engenharia civil para a sustentabilidade. <\/p>"
+                            },
+                            {
+                                "image": "Screenshot-2022-07-05-at-12.25.01-oQuFfmAb.png",
+                                "uid": "65940a44-77e6-4cac-864c-3fed383685d9",
+                                "sorter": 90,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "C+D",
+                                "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Plataforma desenvolvida para calcular os benef\u00EDcios econ\u00F4micos e ambientais (2E) associados ao processo de desconstru\u00E7\u00E3o e reutiliza\u00E7\u00E3o.\r\n <\/p>"
+                            },
+                            {
+                                "image": "imagem_2022-07-04_233229932-7St5HrPd.png",
+                                "uid": "b48d5c37-cad6-4229-ac1c-88777f0c007c",
+                                "sorter": 100,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "Sitana",
+                                "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Website feito com CLUAR (Netuno CMS) com funcionalidades \u00E0 medida.<\/p>"
+                            },
+                            {
+                                "image": "imagem_2022-07-05_082640504-hmfUM1Z5.png",
+                                "uid": "db2b68b8-7a3c-4d94-9b88-5849ea987dde",
+                                "sorter": 110,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "Netuno DEV",
+                                "content": "<p class=\"technology\">Netuno, PostgreSQL, ReactJS, Ant.Design<\/p><p>Plataforma de forma\u00E7\u00F5es e eventos sobre tecnologia.<br><\/p>"
                             }
                         ],
                         "content": ""
@@ -491,7 +524,7 @@ window.cluarData = {
                                 "section": "listing_item",
                                 "image_title": "",
                                 "title": "AdvanceCare Workshops",
-                                "content": "<h2 class=\"technology\">Netuno, PostgreSQL, ReactJS, Ant.Design<\/h2>\r\n<p>Gest\u00E3o de vouchers integrados com a loja.<\/p>"
+                                "content": "<p class=\"technology\">Netuno, PostgreSQL, ReactJS, Ant.Design<\/p>\r\n<p>Gest\u00E3o de vouchers integrados com a loja.<\/p>"
                             },
                             {
                                 "image": "use-case-sipla-voto-586bafb1a3947c17e568ac5972f36b12-EdcwjrMw-05QnxeE3.jpg",
@@ -513,7 +546,7 @@ window.cluarData = {
                                 "section": "listing_item",
                                 "image_title": "",
                                 "title": "LusoPanarcos",
-                                "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Secure and auditable online voting system for members.<\/p>"
+                                "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Website made with CLUAR (Netuno CMS) with bespoke features.<\/p>"
                             },
                             {
                                 "image": "use-case-cuidados-40bfd07a36ae68e9c9750c2d4c7557f2-7ykeCou0-egnieH9l.jpg",
@@ -525,6 +558,61 @@ window.cluarData = {
                                 "image_title": "",
                                 "title": "Cuidados",
                                 "content": "<p class=\"technology\">Netuno, PostgreSQL, ReactJS, Bizcharts, Ant.Design<\/p>\r\n<p>Data on the pandemic of COVID-19 in Portugal and online test scheduling. <\/p>"
+                            },
+                            {
+                                "image": "cdu_veks-eviIWNDS.jpg",
+                                "uid": "6246b69c-ae2f-4eb3-82fa-1fc583843fdd",
+                                "sorter": 70,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "Veks",
+                                "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Hosting service, containers and dedicated servers <\/p>"
+                            },
+                            {
+                                "image": "imagem_2022-07-05_082442681-oDorolFl.png",
+                                "uid": "6b8723d5-4086-462a-bfc6-865e519fa653",
+                                "sorter": 80,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "Positive Cycle",
+                                "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Research and innovation in civil engineering for sustainability. <\/p>"
+                            },
+                            {
+                                "image": "Screenshot-2022-07-05-at-12.25.01-MTaAtAtd.png",
+                                "uid": "5c7885de-26cc-40d7-9612-204a83e6ccef",
+                                "sorter": 90,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "C+D",
+                                "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Platform developed to calculate the economic and environmental benefits (2E) associated with the deconstruction and reuse process.\r\n <\/p>"
+                            },
+                            {
+                                "image": "imagem_2022-07-05_000511936-F9ZGMIyA.png",
+                                "uid": "e624bd08-c51d-42c5-9c21-164227006c26",
+                                "sorter": 100,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "Sitana",
+                                "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Website made with CLUAR (Netuno CMS) with bespoke features.<\/p>"
+                            },
+                            {
+                                "image": "imagem_2022-07-05_082724008-5Z23NuWP.png",
+                                "uid": "f4884b04-ab2c-4a2a-960b-295b999a9201",
+                                "sorter": 110,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "Netuno DEV",
+                                "content": "<p class=\"technology\">Netuno, PostgreSQL, ReactJS, Ant.Design<\/p><p>Platform for training and technology events.<br><\/p>"
                             }
                         ],
                         "content": ""
