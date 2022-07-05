@@ -1,8 +1,6 @@
-![Logo](https://raw.githubusercontent.com/netuno-org/cluar/main/docs/logo.svg)
+# NETUNO WEBSITE
 
-# CLUAR CMS
-
-A ready to use solution for content management and multilingual websites using [Netuno](https://www.netuno.org/), [ReactJS](https://reactjs.org/) and [Ant Design](https://ant.design/).
+Quickly build applications adapted to your business logic.
 
 ## Requirement
 
@@ -13,7 +11,7 @@ A ready to use solution for content management and multilingual websites using [
 ## Automatic Application Install
 
 ```
-./netuno app github=netuno-org/cluar
+./netuno app github=netuno-org/website
 ```
 
 ### Running
@@ -21,7 +19,7 @@ A ready to use solution for content management and multilingual websites using [
 Start the Netuno Server:
 
 ```
-./netuno server app=cluar
+./netuno server app=netuno_website
 ```
 
 > May take while because is the first time and NPM Install will run to `ui` and `website` folder inside the application root folder.
@@ -48,19 +46,13 @@ Then execute the command below inside the `website` folder:
 
 ### Clone and Setup
 
-Create an app with Netuno named `cluar` by running (in the Netuno root directory) 
-
-`./netuno app name=cluar`
-
-and selecting the desired configurations (database type, database name and app language).
-
-Then clone this project to the newly created `(Netuno Root directory)/apps/cluar/` directory.
+Clone this project to the directory (Neptune Root directory)/apps/netuno_website/.
 
 Then install the NPM dependencies by running 
 
 `npm install --force` 
 
-in the `cluar/website/` directory.
+in the `netuno_website/website/` directory.
 
 ### Configuration
 
@@ -74,9 +66,9 @@ and modifying to match your local environment configuration.
 
 In the Netuno root directory run
 
-`./netuno server app=cluar`
+`./netuno server app=netuno_website`
 
-to start the backend server and then in the `(cluar app directory)/website/` run
+to start the backend server and then in the `(netuno_website app directory)/website/` run
 
 `npm run start`
 
