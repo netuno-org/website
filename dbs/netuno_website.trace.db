@@ -13,3 +13,9 @@ select * from "page" where uid = '<font style="vertical-align: inherit;"><font s
 2022-07-05 11:16:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "<font style=""vertical-align: inherit;""><font style=""vertical-align: inherit;"">037965ef-7e8a-40e8-bb00-2c05b90a8ff2</font></font>"; SQL statement:
 select * from "page" where uid = '<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">037965ef-7e8a-40e8-bb00-2c05b90a8ff2</font></font>' [22018-200]
+2022-07-06 03:26:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "<font style=""vertical-align: inherit;""><font style=""vertical-align: inherit;"">037965ef-7e8a-40e8-bb00-2c05b90a8ff2</font></font>"; SQL statement:
+select * from "page" where uid = '<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">037965ef-7e8a-40e8-bb00-2c05b90a8ff2</font></font>' [22018-200]
+2022-07-06 13:13:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "<font style=""vertical-align: inherit;""><font style=""vertical-align: inherit;"">037965ef-7e8a-40e8-bb00-2c05b90a8ff2</font></font>"; SQL statement:
+select * from "page" where uid = '<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">037965ef-7e8a-40e8-bb00-2c05b90a8ff2</font></font>' [22018-200]

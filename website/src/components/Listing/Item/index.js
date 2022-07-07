@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Space, Row } from 'antd';
+import { Col, Space, Row, link } from 'antd';
 
 import {
   FaHome,
@@ -48,6 +48,7 @@ function Item({ section, type, image, image_title, image_alt, title, content, li
     );
   } else if (type === 'cases-listing') {
     layout = (
+      <a href={link}>
       <li className="listing__item">
         <div>
           <div className='listing__image'>
@@ -57,6 +58,7 @@ function Item({ section, type, image, image_title, image_alt, title, content, li
           <div dangerouslySetInnerHTML={{ __html: content }}></div>
         </div>
       </li>
+      </a>
     );
   } else if (type === 'funcionality-netuno') {
     layout = (

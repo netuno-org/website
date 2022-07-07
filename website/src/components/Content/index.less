@@ -52,12 +52,15 @@
         margin: 0 auto;
 
         h1 {
-            font-size: 56px;
+            font-size: 44px;
             line-height: 60px;
             font-weight: 700;
             padding: 0;
             margin: 0;
             color: #fff;
+            @media only screen and (max-width: @header-mobile-width) {
+                font-size: 22px;
+            }
         }
 
         > div {
@@ -329,7 +332,7 @@
                 max-width: 240px;
                 height: 64px;
                 padding: 20px;
-                margin: 0 auto !important;
+                margin: 0 auto;
             
                     @media only screen and (max-width: @header-mobile-width) {
                         margin: 0 auto !important;
