@@ -1,28 +1,32 @@
 window.cluarData = {
     "dictionary": {
         "PT": {
+            "contact-form-message": "<p>Mensagem<\/p>",
+            "documentation": "Documenta\u00E7\u00E3o",
+            "start-now": "<p>COMECE J\u00C1<\/p>",
+            "contact-form-fail": "<p>N\u00E3o foi poss\u00EDvel enviar os dados, tente novamente mais tarde.<\/p>",
             "contact-form-success": "<p>Os dados foram enviados com sucesso, obrigado.<\/p>",
             "forum": "F\u00F3rum",
             "contact-form-send": "<p>Enviar<\/p>",
             "contact-form-name": "<p>Nome<\/p>",
-            "contact-form-message": "<p>Mensagem<\/p>",
             "contact-form-validate-message-required": "<p>${label} \u00E9 de preenchimento obrigat\u00F3rio.<br><\/p>",
-            "documentation": "Documenta\u00E7\u00E3o",
             "contact-form-validate-message-email": "<p>${label} n\u00E3o \u00E9 um e-mail v\u00E1lido.<br><\/p>",
-            "contact-form-fail": "<p>N\u00E3o foi poss\u00EDvel enviar os dados, tente novamente mais tarde.<\/p>",
+            "join-us": "<p>JUNTE-SE A N\u00D3S<\/p>",
             "contact-form-email": "<p>E-mail<\/p>",
             "contact-form-subject": "<p>T\u00EDtulo<\/p>"
         },
         "EN": {
+            "contact-form-message": "<p>Message<\/p>",
+            "documentation": "Documentation",
+            "start-now": "<p>START NOW<\/p>",
+            "contact-form-fail": "<p>Unable to send data, please try again later.<br><\/p>",
             "contact-form-success": "<p>Data has been sent successfully, thank you.<br><\/p>",
             "forum": "<p>Forum<\/p>",
             "contact-form-send": "<p>Send<\/p>",
             "contact-form-name": "<p>Name<\/p>",
-            "contact-form-message": "<p>Message<\/p>",
             "contact-form-validate-message-required": "<p>${label} is mandatory.<br><\/p>",
-            "documentation": "Documentation",
             "contact-form-validate-message-email": "<p>${label} is not a valid e-mail.<br><\/p>",
-            "contact-form-fail": "<p>Unable to send data, please try again later.<br><\/p>",
+            "join-us": "<p>JOIN US<\/p>",
             "contact-form-email": "<p>E-mail<\/p>",
             "contact-form-subject": "<p>Subject<\/p>"
         }
@@ -64,9 +68,15 @@ window.cluarData = {
                         "image_alt": "",
                         "section": "content",
                         "image_title": "",
-                        "title": "Acelere seus processos com a automatiza\u00E7\u00E3o do NETUNO",
+                        "title": "Acelere seus processos com a automatiza\u00E7\u00E3o do Netuno",
                         "type": "image-top",
-                        "actions": [],
+                        "actions": [{
+                            "sorter": -1,
+                            "link": "https://doc.netuno.org/pt-PT/",
+                            "indication": "COMECE J\u00C1",
+                            "title": "Comece j\u00E1",
+                            "content": ""
+                        }],
                         "content": "<p>A transforma\u00E7\u00E3o digital com a automatiza\u00E7\u00E3o de processos \u00E9 um factor decisivo no sucesso das empresas visto aumentar a produtividade e manter-se atualizada com o mundo moderno.<\/p>\r\n<p>S\u00E3o necess\u00E1rias solu\u00E7\u00F5es fi\u00E1veis, seguras, adapt\u00E1veis e de \u00E1gil utiliza\u00E7\u00E3o.<\/p>\r\n<p>Com o Netuno pode fazer tudo isto rapidamente e com baixo custo.<\/p>"
                     },
                     {
@@ -92,7 +102,13 @@ window.cluarData = {
                         "image_title": "",
                         "title": "Acesse nosso servidor do Discord",
                         "type": "call-discord",
-                        "actions": [],
+                        "actions": [{
+                            "sorter": -1,
+                            "link": "https://discord.com/channels/898684423116038154/910649961891381267",
+                            "indication": "JUNTE-SE A N\u00D3S",
+                            "title": "JUNTE-SE A N\u00D3S",
+                            "content": ""
+                        }],
                         "content": "<div><p>E participe do servidor do Netuno para ficar \r\npor dentro de todas as nossas novidades, al\u00E9m de tirar d\u00FAvidas direta \r\ncom os nossos desenvolvedores.<\/p><\/div>"
                     },
                     {
@@ -102,7 +118,7 @@ window.cluarData = {
                         "image_alt": "",
                         "section": "listing",
                         "image_title": "",
-                        "title": "Como funciona o netuno",
+                        "title": "Como funciona o Netuno",
                         "type": "operation-netuno",
                         "items": [
                             {
@@ -797,9 +813,15 @@ window.cluarData = {
                         "image_alt": "",
                         "section": "content",
                         "image_title": "",
-                        "title": "Accelerate your processes with NETUNO automation",
+                        "title": "Accelerate your processes with Netuno automation",
                         "type": "image-top",
-                        "actions": [],
+                        "actions": [{
+                            "sorter": -1,
+                            "link": "https://doc.netuno.org/pt-PT/",
+                            "indication": "START NOW",
+                            "title": "START NOW",
+                            "content": ""
+                        }],
                         "content": "<p>Digital transformation with process automation is a decisive factor in the success of companies as they increase productivity and keep up with the modern world.<\/p>\r\n<p>Reliable, secure, adaptable and agile solutions are needed.<\/p>\r\n<p>With Netuno you can do all this quickly and at low cost.<\/p>"
                     },
                     {
@@ -825,8 +847,14 @@ window.cluarData = {
                         "image_title": "",
                         "title": "Visit our Discord server",
                         "type": "call-discord",
-                        "actions": [],
-                        "content": "<p>And join the Neptune server to stay on top of all our news, and ask questions directly to our developers.<br><\/p>"
+                        "actions": [{
+                            "sorter": -1,
+                            "link": "https://discord.com/channels/898684423116038154/910649961891381267",
+                            "indication": "JOIN US",
+                            "title": "JOIN US",
+                            "content": ""
+                        }],
+                        "content": "<p>And join the Netuno server to stay on top of all our news, and ask questions directly to our developers.<br><\/p>"
                     },
                     {
                         "image": "",
@@ -835,7 +863,7 @@ window.cluarData = {
                         "image_alt": "",
                         "section": "listing",
                         "image_title": "",
-                        "title": "How netuno works",
+                        "title": "How Netuno works",
                         "type": "operation-netuno",
                         "items": [
                             {
@@ -847,7 +875,7 @@ window.cluarData = {
                                 "section": "listing_item",
                                 "image_title": "",
                                 "title": "Forms and Fields",
-                                "content": "<p>Define the data model via the \"Build\" menu and Neptune handles the database structure for you.<\/p>"
+                                "content": "<p>Define the data model via the \"Build\" menu and Netuno handles the database structure for you.<\/p>"
                             },
                             {
                                 "image": "powerfulfrontend-OUhVJRoY.png",
@@ -869,7 +897,7 @@ window.cluarData = {
                                 "section": "listing_item",
                                 "image_title": "",
                                 "title": "REST API",
-                                "content": "<p>Write the service layer in your favorite programming language, Neptune is polyglot!<\/p>"
+                                "content": "<p>Write the service layer in your favorite programming language, Netuno is polyglot!<\/p>"
                             },
                             {
                                 "image": "integrateword-KaS50XG8.png",

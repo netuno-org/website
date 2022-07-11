@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Button } from 'antd';
 import { RightOutlined } from '@ant-design/icons';
 import logo from '../../assets/images/netunologolight.svg';
-
+import Cluar from '../../common/Cluar';
 import Actions from '../Actions';
 
 import './index.less';
@@ -81,7 +81,7 @@ function Content({ section, type, title, content, image, image_title, image_alt,
             <div className="text">
               <h1>{title}</h1>
               <div dangerouslySetInnerHTML={{ __html: content }}></div>
-              <Button>Comece já</Button>
+              <Actions {... { section, type, actions }} />
             </div>
           </div>
         </Col>
@@ -132,7 +132,7 @@ function Content({ section, type, title, content, image, image_title, image_alt,
               <div className="text">
                 <h1>{title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: content }}></div>
-                <Button>Junte-se a nós</Button>
+                <Actions {... { section, type, actions }} />
               </div>
             </div>
           </Col>
@@ -163,7 +163,7 @@ function Content({ section, type, title, content, image, image_title, image_alt,
   return (
     <section className="content">
       {layout}
-      <Actions {... { section, type, actions }} />
+      
     </section>
   );
 }
