@@ -34,7 +34,7 @@ function BaseFooter() {
               className="open-source"
               target="_blank"
             >
-              <DiOpensource size={32} color="#68a2ff" />
+              <DiOpensource size={40} color="#68a2ff" />
               Open Source
             </a>
           </div>
@@ -85,7 +85,7 @@ function BaseFooter() {
             <Col>
               <Col>
                 <p>
-                  <FaEnvelope style={{ fontSize: 14, marginRight: 10 }} />
+                  <FaEnvelope style={{ fontSize: 20, marginRight: 10 }} />
                   <span>
                     <a netuno-mail="admin" href="mailto:admin@netuno.org">
                       admin@netuno.org
@@ -98,7 +98,7 @@ function BaseFooter() {
           <Row>
             <Col>
               <p>
-                <FaEnvelope style={{ fontSize: 14, marginRight: 10 }} />
+                <FaEnvelope style={{ fontSize: 20, marginRight: 10 }} />
                 <span>
                   <a netuno-mail="support" href="mailto:support@netuno.org">
                     support@netuno.org
