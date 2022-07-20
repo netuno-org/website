@@ -133,7 +133,7 @@ window.cluarData = {
                                 "content": "<p>Defina o modelo de dados atrav\u00E9s do menu \"Constr\u00F3i\" que o Netuno trata da estrutura da base de dados por s\u00ED.<\/p><p><\/p>"
                             },
                             {
-                                "image": "frontend-300x123-5f616f5be0c26414bf3110dfe67d99a2-wC8AQpiT.png",
+                                "image": "home-frontend-H1Sjnx9a.png",
                                 "uid": "77693eab-b9c8-455e-87d5-e2a731ab6e74",
                                 "sorter": 20,
                                 "image_alt": "",
@@ -144,7 +144,7 @@ window.cluarData = {
                                 "content": "<p>Construa facilmente o frontend tirando partida das integra\u00E7\u00F5es j\u00E1 feitas com React, Webpack, Sass/Less e Ant Design.<\/p><p><\/p>"
                             },
                             {
-                                "image": "linguagens-300x123-88a99bc1ecd621f6f97966a5d294365c-Xubnd5Bl.png",
+                                "image": "home-langs-UAmMuonM.png",
                                 "uid": "a592d24e-1d75-467e-b3d4-a15d343e446d",
                                 "sorter": 30,
                                 "image_alt": "",
@@ -155,7 +155,7 @@ window.cluarData = {
                                 "content": "<p>Escreva a camada de servi\u00E7os na sua linguagem de programa\u00E7\u00E3o favorita, o Netuno \u00E9 poliglota!<\/p><p><\/p>"
                             },
                             {
-                                "image": "integracoes-300x123-c18006f4f62dc6d59c67badeb9f713ff-T44xqp75.png",
+                                "image": "home-integrations-qp6p7Ii1.png",
                                 "uid": "cff421e8-1090-4077-9cb2-bb7dbc86d74e",
                                 "sorter": 40,
                                 "image_alt": "",
@@ -216,7 +216,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, MariaDB, ReactJS, Ant.Design<\/p><p>Sistema de centraliza\u00E7\u00E3o de informa\u00E7\u00E3o fabril.<br><\/p>"
                             },
                             {
-                                "image": "use-case-yal-play-6258bccf4110c6397c6410ee4122ffbe-zmEDmxqL.jpg",
+                                "image": "yal-use-cases-min-nvkFLpjl.jpg",
                                 "uid": "21a28760-9e29-408d-8abc-3f414f621eed",
                                 "sorter": 10,
                                 "image_alt": "",
@@ -249,7 +249,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, PostgreSQL, ReactJS, Ant.Design<\/p><p>Sistema de vota\u00E7\u00E3o online seguro e audit\u00E1vel para os associados.<br><\/p>"
                             },
                             {
-                                "image": "use-case-lusopanarcos-af27203fc02f95299e3ad51cbcc3aa03-YUkpQxyY.jpg",
+                                "image": "lusopanarcos-use-cases-min-NMLjwl5I.jpg",
                                 "uid": "b0cb0533-7459-4983-b494-e6602b2570e1",
                                 "sorter": 50,
                                 "image_alt": "",
@@ -271,7 +271,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, PostgreSQL, ReactJS, Bizcharts, Ant.Design<\/p>\r\n<p>Dados da pandemia de COVID-19 em Portugal e agendamento de testes online. <\/p>"
                             },
                             {
-                                "image": "imagem_2022-07-04_143825673-Xjg6Fi57.png",
+                                "image": "veksUseCases-min-aPtsnFS5.jpg",
                                 "uid": "83f82966-9979-4a84-bc22-1dae504c50ae",
                                 "sorter": 70,
                                 "image_alt": "",
@@ -282,7 +282,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Servi\u00E7o de alojamento, containers e servidores dedicados <\/p>"
                             },
                             {
-                                "image": "imagem_2022-07-05_082515884-X60eHFQu.png",
+                                "image": "positiveCycle-use-cases-min-XcSwsrJN.jpg",
                                 "uid": "c2a5d099-53b4-4d66-8ee5-4dc42b9d8e23",
                                 "sorter": 80,
                                 "image_alt": "",
@@ -293,7 +293,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Pesquisa e inova\u00E7\u00E3o em engenharia civil para a sustentabilidade. <\/p>"
                             },
                             {
-                                "image": "imagem_2022-07-06_150508600-zs7BlsqA.png",
+                                "image": "cplusd-use-cases-min-NfDAEjFG.jpg",
                                 "uid": "65940a44-77e6-4cac-864c-3fed383685d9",
                                 "sorter": 90,
                                 "image_alt": "",
@@ -304,7 +304,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Plataforma de sustentabilidade nos processo de constru\u00E7\u00E3o. <\/p>"
                             },
                             {
-                                "image": "imagem_2022-07-04_233229932-7St5HrPd.png",
+                                "image": "sitana-use-cases-min-n479oNi4.jpg",
                                 "uid": "b48d5c37-cad6-4229-ac1c-88777f0c007c",
                                 "sorter": 100,
                                 "image_alt": "",
@@ -315,7 +315,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Website feito com CLUAR (Netuno CMS) com funcionalidades \u00E0 medida.<\/p>"
                             },
                             {
-                                "image": "imagem_2022-07-06_151420349-rBsN1rFY.png",
+                                "image": "netuno-use-cases-min-QroddKvD.jpg",
                                 "uid": "db2b68b8-7a3c-4d94-9b88-5849ea987dde",
                                 "sorter": 110,
                                 "image_alt": "",
@@ -329,6 +329,30 @@ window.cluarData = {
                         "content": ""
                     }
                 ]
+            },
+            {
+                "parent": "",
+                "uid": "daffcf31-bb62-4bd0-919a-099c96f0c136",
+                "keywords": "",
+                "sorter": 0,
+                "menu_title": "",
+                "link": "/politica-privacidade",
+                "description": "",
+                "menu": false,
+                "title": "Pol\u00EDtica de Privacidade",
+                "structure": [{
+                    "image": "",
+                    "uid": "4463c008-252f-4602-ba64-7ffc6e134a39",
+                    "image_max_width": "0",
+                    "sorter": 0,
+                    "image_alt": "",
+                    "section": "content",
+                    "image_title": "",
+                    "title": "Pol\u00EDtica de Privacidade",
+                    "type": "privacy-policy",
+                    "actions": [],
+                    "content": "<p>1. Recolha de informa\u00E7\u00E3o<br>A garantia da confidencialidade dos dados pessoais dos utilizadores do nosso site \u00E9 importante para a www.sitana.pt/. Sempre que for necess\u00E1rio a recolha de informa\u00E7\u00E3o pessoal para a disponibiliza\u00E7\u00E3o de servi\u00E7os, a utiliza\u00E7\u00E3o dessa mesma informa\u00E7\u00E3o ser\u00E1 efetuada no cumprimento da legisla\u00E7\u00E3o aplic\u00E1vel \u00E0 Pol\u00EDtica de Prote\u00E7\u00E3o de Dados imposta pela CNPD (Comiss\u00E3o Nacional da Prote\u00E7\u00E3o de Dados, de acordo com o Decreto de Lei n\u00BA 67/98 de 26 de Outubro, de forma a ser assegurada a confidencialidade e seguran\u00E7a dos dados pessoais fornecidos.<br><br>2. Utiliza\u00E7\u00E3o da informa\u00E7\u00E3o recolhida<br>Todas as suas informa\u00E7\u00F5es pessoais recolhidas resultam da ced\u00EAncia volunt\u00E1ria dos dados pelo cliente ou visitante.<br>Os dados s\u00E3o recolhidos e tratados \u00FAnico e exclusivamente para efeitos de presta\u00E7\u00E3o de servi\u00E7os (desenvolvimento, alojamento web, consultoria, entre outros), fatura\u00E7\u00E3o e/ou resposta a pedidos de teor comercial, previamente solicitados pelo cliente ou visitante. A informa\u00E7\u00E3o pessoal recolhida pode incluir o seu nome, e-mail, n\u00FAmero de telefone e/ou telem\u00F3vel, morada, e/ou outros dados relevantes \u00E0 presta\u00E7\u00E3o do servi\u00E7o ou pedido do cliente /visitante.<br><br>3. Protec\u00E7\u00E3o de dados<br>Sitana compromete-se a adotar as medidas de seguran\u00E7a necess\u00E1rias para garantir a salvaguarda dos dados pessoais dos utilizadores contra a sua eventual utiliza\u00E7\u00E3o abusiva ou contra o acesso n\u00E3o autorizado.<br><br>4. Concord\u00E2ncia<br>O uso do site sitana.pt e ced\u00EAncia de dados, pressup\u00F5e a aceita\u00E7\u00E3o e concord\u00E2ncia com este Acordo de Privacidade.<br><br>5. Altera\u00E7\u00F5es \u00E0 Pol\u00EDtica de Privacidade<br>A equipa sitana.pt reserva-se ao direito de alterar este acordo sem aviso pr\u00E9vio. Deste modo, recomendamos que consulte a nossa pol\u00EDtica de privacidade com regularidade de forma a estar sempre atualizado.<br><br>6. Responsabilidade<br>O site sitana.pt pode possuir liga\u00E7\u00F5es para outros sites que podem conter informa\u00E7\u00F5es \u00FAteis para os nossos visitantes. A nossa pol\u00EDtica de privacidade n\u00E3o se aplica a sites de terceiros, pelo que, caso visite outro site a partir do nosso dever\u00E1, n\u00E3o nos responsabilizamos pela pol\u00EDtica de privacidade ou conte\u00FAdo presente nesses mesmos sites.<br><\/p><p><\/p>"
+                }]
             },
             {
                 "parent": "",
@@ -368,7 +392,7 @@ window.cluarData = {
                         "type": "funcionality-netuno",
                         "items": [
                             {
-                                "image": "Ativo-1-2W2577Uk.png",
+                                "image": "forms-features-GUTVslp7.png",
                                 "uid": "3a28ebef-ae34-4be1-a73e-d8e609cc6d11",
                                 "sorter": 0,
                                 "image_alt": "",
@@ -379,7 +403,7 @@ window.cluarData = {
                                 "content": "<b>Formul\u00E1rios<\/b>\r\n<p>Cria os formul\u00E1rios e ao mesmo tempo as tabelas em base de dados. Controla a estrutura de navega\u00E7\u00E3o e as permiss\u00F5es b\u00E1sicas<\/p>"
                             },
                             {
-                                "image": "campos-dOFhvzMc.png",
+                                "image": "fields-features-6JNJWK2I.png",
                                 "uid": "e8e84fc7-892c-4dc9-b289-787459f0b6d1",
                                 "sorter": 10,
                                 "image_alt": "",
@@ -390,7 +414,7 @@ window.cluarData = {
                                 "content": "<b>Campos<\/b>\r\n<p>Cria os campos e as colunas em base de dados. Suporta diversos tipos de campos como calend\u00E1rio, hora, combos com milh\u00F5es de registos, imagens, ficheiros, etc\u2026<\/p>"
                             },
                             {
-                                "image": "Ativo-1-copy-gfJM8ClT.png",
+                                "image": "customize-features-lrtEqe6Q.png",
                                 "uid": "89dc057a-6554-4960-960c-d6b4f183d23e",
                                 "sorter": 20,
                                 "image_alt": "",
@@ -401,7 +425,7 @@ window.cluarData = {
                                 "content": "<b>Customizar<\/b>\r\n<p>Preparado para ser adaptado \u00E0 sua medida. JavaScript no servidor e em realtime! Garantia que n\u00E3o p\u00E1ra! Protegido de erros e gest\u00E3o contra falha por consumo de mem\u00F3ria ou processador. F\u00E1cil integra\u00E7\u00E3o com o seu sistema.<\/p>"
                             },
                             {
-                                "image": "select-eFXLv4B8.png",
+                                "image": "data-features-bvHB8pTJ.png",
                                 "uid": "770a202e-9b43-4f45-9c40-4b2ee5dd8db5",
                                 "sorter": 30,
                                 "image_alt": "",
@@ -412,7 +436,7 @@ window.cluarData = {
                                 "content": "<b>F\u00E1cil de Encontrar e Analisar Dados<\/b>\r\n<p>F\u00E1cil controlo das regras dos campos que aparecem na pesquisa e nos resultados. Preparado para suportar milh\u00F5es de registos e para analisar as bases de dados de forma simples e direta.\r\nExporta dados para Excel.<\/p>"
                             },
                             {
-                                "image": "programar-7GjmqUhM.png",
+                                "image": "developmente-features-teste-WQVsIgq3.png",
                                 "uid": "79bc3f52-0dc3-4d39-9638-94fb36821715",
                                 "sorter": 40,
                                 "image_alt": "",
@@ -423,7 +447,7 @@ window.cluarData = {
                                 "content": "<b>Desenvolvimento<\/b>\r\n<p>F\u00E1cil controlo das regras dos campos que aparecem na pesquisa e nos resultados. Preparado para suportar milh\u00F5es de registos e para analisar as bases de dados de forma simples e direta. Exporta dados para Excel.<\/p>"
                             },
                             {
-                                "image": "poliglota-19ed821133fcb86f450e48add06eec99-tDkn9xrp.png",
+                                "image": "Poliglota_1_-1YnxvPxB.png",
                                 "uid": "b6bfb56d-0765-4092-86a2-74f8a0e78860",
                                 "sorter": 80,
                                 "image_alt": "",
@@ -434,7 +458,7 @@ window.cluarData = {
                                 "content": "<b>Poliglota<\/b>\r\n<p>F\u00E1cil controlo das regras dos campos que aparecem na pesquisa e nos resultados. Preparado para suportar milh\u00F5es de registos e para analisar as bases de dados de forma simples e direta. Exporta dados para Excel.<\/p>"
                             },
                             {
-                                "image": "app-demo-32ed44e04db2289fa5aa6567522f5943-t5mGCjK3.png",
+                                "image": "dashboard-features-JCnt0X28.png",
                                 "uid": "d03cc663-b9e0-40df-a055-aac24cf16c66",
                                 "sorter": 50,
                                 "image_alt": "",
@@ -459,7 +483,7 @@ window.cluarData = {
                         "content": ""
                     },
                     {
-                        "image": "tecnologias-0eb26f7910325081c901174ec2eb3171-AMCFEyya.png",
+                        "image": "Customize_1_-BdfLqLgv.png",
                         "uid": "529b668f-4181-4d18-a0ef-24b2f27adca8",
                         "image_max_width": "0",
                         "sorter": 60,
@@ -475,6 +499,30 @@ window.cluarData = {
             }
         ],
         "EN": [
+            {
+                "parent": "",
+                "uid": "5e24f634-4383-45a0-b1f3-23cb0a80ab09",
+                "keywords": "",
+                "sorter": 0,
+                "menu_title": "",
+                "link": "/privacy-policy",
+                "description": "",
+                "menu": false,
+                "title": "Privacy Policy",
+                "structure": [{
+                    "image": "",
+                    "uid": "bba89669-a6dd-4964-ba3e-1c56a47292f7",
+                    "image_max_width": "0",
+                    "sorter": 0,
+                    "image_alt": "",
+                    "section": "content",
+                    "image_title": "",
+                    "title": "Privacy policy",
+                    "type": "privacy-policy",
+                    "actions": [],
+                    "content": "<p>\r\n1. Collection of information<br>The guarantee of confidentiality of the personal data of our website users is important to www.sitana.pt/. Whenever it is necessary to collect personal information to provide services, the use of this information will be made in compliance with the legislation applicable to the Data Protection Policy imposed by the CNPD (National Commission for Data Protection, in accordance with Decree Law No. 67/98 of 26 October, to ensure the confidentiality and security of personal data provided.<br><br>2. Use of the information collected<br>All your personal information collected results from the voluntary provision of data by the customer or visitor.<br>The data is collected and processed solely and exclusively for the purpose of providing services (development, web hosting, consulting, among others), billing and/or responding to requests of a commercial nature, previously requested by the customer or visitor. The personal information collected may include your name, email, phone number and/or cell phone, address, and/or other data relevant to the provision of the service or request of the customer / visitor.<br><br>3. Data Protection<br>Sitana undertakes to adopt the necessary security measures to ensure the safeguarding of users' personal data against possible misuse or unauthorized access.<br><br>4. Agreement<br>The use of the sitana.pt site and the transfer of data, implies acceptance of and agreement with this Privacy Agreement.<br><br>5. Changes to Privacy Policy<br>The sitana.pt team reserves the right to change this agreement without notice. Thus, we recommend that you consult our privacy policy regularly to be always updated.<br><br>6. Responsibility<br>The sitana.pt site may have links to other sites that may contain useful information for our visitors. Our privacy policy does not apply to third party sites, so if you visit another site from ours, we are not responsible for the privacy policy or content present in those sites.<\/p>"
+                }]
+            },
             {
                 "parent": "",
                 "uid": "c44dcac8-e2f4-4992-9d92-c042666ed56d",
@@ -521,7 +569,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, MariaDB, ReactJS, Ant.Design<\/p>\r\n<p>Manufacturing information centralization system.<\/p>"
                             },
                             {
-                                "image": "use-case-yal-play-6258bccf4110c6397c6410ee4122ffbe-zmEDmxqL-sAz07Q7R.jpg",
+                                "image": "yal-use-cases-min-OPTfu4wy.jpg",
                                 "uid": "070ece40-98cf-4848-ae9e-25cd1dc10ce1",
                                 "sorter": 20,
                                 "image_alt": "",
@@ -554,7 +602,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, PostgreSQL, ReactJS, Ant.Design<\/p>\r\n<p>Secure and auditable online voting system for members.<\/p>"
                             },
                             {
-                                "image": "use-case-lusopanarcos-af27203fc02f95299e3ad51cbcc3aa03-YUkpQxyY-Q5LEpwPu.jpg",
+                                "image": "lusopanarcos-use-cases-min-8W0fvRQr.jpg",
                                 "uid": "97b386c0-bb1c-4d42-9875-8e762c615aac",
                                 "sorter": 50,
                                 "image_alt": "",
@@ -576,7 +624,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, PostgreSQL, ReactJS, Bizcharts, Ant.Design<\/p>\r\n<p>Data on the pandemic of COVID-19 in Portugal and online test scheduling. <\/p>"
                             },
                             {
-                                "image": "cdu_veks-eviIWNDS.jpg",
+                                "image": "veksUseCases-min-2OlG2omt.jpg",
                                 "uid": "6246b69c-ae2f-4eb3-82fa-1fc583843fdd",
                                 "sorter": 70,
                                 "image_alt": "",
@@ -587,7 +635,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Hosting service, containers and dedicated servers <\/p>"
                             },
                             {
-                                "image": "imagem_2022-07-05_082442681-oDorolFl.png",
+                                "image": "positiveCycle-use-cases-min-mebNJxlN.jpg",
                                 "uid": "6b8723d5-4086-462a-bfc6-865e519fa653",
                                 "sorter": 80,
                                 "image_alt": "",
@@ -598,7 +646,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Research and innovation in civil engineering for sustainability. <\/p>"
                             },
                             {
-                                "image": "imagem_2022-07-06_150617215-2MCST7ex.png",
+                                "image": "cplusd-use-cases-min-UKTNOmZ4.jpg",
                                 "uid": "5c7885de-26cc-40d7-9612-204a83e6ccef",
                                 "sorter": 90,
                                 "image_alt": "",
@@ -609,7 +657,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Platform for sustainability in the construction process.<\/p>"
                             },
                             {
-                                "image": "imagem_2022-07-05_000511936-F9ZGMIyA.png",
+                                "image": "sitana-use-cases-min-jQgNRrHd.jpg",
                                 "uid": "e624bd08-c51d-42c5-9c21-164227006c26",
                                 "sorter": 100,
                                 "image_alt": "",
@@ -620,7 +668,7 @@ window.cluarData = {
                                 "content": "<p class=\"technology\">Netuno, H2 Database, ReactJS, Ant.Design<\/p>\r\n<p>Website made with CLUAR (Netuno CMS) with bespoke features.<\/p>"
                             },
                             {
-                                "image": "imagem_2022-07-05_082724008-5Z23NuWP.png",
+                                "image": "netuno-use-cases-min-HcoNnKp0.jpg",
                                 "uid": "f4884b04-ab2c-4a2a-960b-295b999a9201",
                                 "sorter": 110,
                                 "image_alt": "",
@@ -644,7 +692,7 @@ window.cluarData = {
                 "link": "/features",
                 "description": "",
                 "menu": true,
-                "title": "features",
+                "title": "Features",
                 "structure": [
                     {
                         "image": "background-k4L3ZkRH.jpg",
@@ -673,7 +721,7 @@ window.cluarData = {
                         "type": "funcionality-netuno",
                         "items": [
                             {
-                                "image": "Download.netuno-q21RA5qG.png",
+                                "image": "forms-features-JAhEzOBF.png",
                                 "uid": "cdb61212-1f78-4a79-96f0-8a6c90f6e799",
                                 "sorter": 10,
                                 "image_alt": "",
@@ -684,7 +732,7 @@ window.cluarData = {
                                 "content": "<b>Forms<\/b>\r\n<p>Creates the forms and at the same time the database tables. Controls the navigation structure and basic permissions<\/p>"
                             },
                             {
-                                "image": "fields-pHYpjkju.png",
+                                "image": "fields-features-gWMwqJ82.png",
                                 "uid": "9577421a-2649-4f6a-878d-2c4509736469",
                                 "sorter": 20,
                                 "image_alt": "",
@@ -695,7 +743,7 @@ window.cluarData = {
                                 "content": "<b>Fields<\/b>\r\n<p>Creates the fields and columns in a database. Supports many types of fields like calendar, time, combos with millions of records, images, files, etc...<\/p>"
                             },
                             {
-                                "image": "customize-BWDdbp7T.png",
+                                "image": "customize-features-f9nQXGqL.png",
                                 "uid": "1f29e17b-b2f8-40a6-81b9-8a5d61be0fdd",
                                 "sorter": 30,
                                 "image_alt": "",
@@ -706,7 +754,7 @@ window.cluarData = {
                                 "content": "<b>Customize<\/b>\r\n<p>Ready to be tailored to your needs. JavaScript on the server and in realtime! Non-stop guarantee! Protected from errors and managed against failure by memory or processor consumption. Easy integration with your system.<\/p>"
                             },
                             {
-                                "image": "Download-oB6f0qew.png",
+                                "image": "data-features-iXk3MOvY.png",
                                 "uid": "3fd5ad37-4c65-419b-9a1d-a220419450b4",
                                 "sorter": 40,
                                 "image_alt": "",
@@ -717,7 +765,7 @@ window.cluarData = {
                                 "content": "<b>Easy to Find and Analyze Data <\/b>\r\n<p>Easy control of the rules of the fields that appear in the search and in the results. Ready to support millions of records and to analyze databases simply and directly. Exports data to Excel.<\/p>"
                             },
                             {
-                                "image": "Development-Yp3zn4SR.png",
+                                "image": "developmente-features-teste-2cH6B1vH.png",
                                 "uid": "56aac8cb-158e-4a9d-94a3-c18b01b1122a",
                                 "sorter": 50,
                                 "image_alt": "",
@@ -728,7 +776,7 @@ window.cluarData = {
                                 "content": "<b>Development <\/b>\r\n\r\n<p>Easy control of the rules of the fields that appear in the search and in the results. Ready to support millions of records and to analyze databases simply and directly. Exports data to Excel.<\/p>"
                             },
                             {
-                                "image": "Poliglota.netuno-uVcSpsQl.png",
+                                "image": "Poliglota_1_-aJH9Ezfx.png",
                                 "uid": "64cf7b87-11c8-4bae-afd2-03464d0b764d",
                                 "sorter": 80,
                                 "image_alt": "",
@@ -739,7 +787,7 @@ window.cluarData = {
                                 "content": "<b>Polyglot<\/b>\r\n<p>Easy control of the rules that appears on the search and results fields. Prepared to support millions of records and to analyse databases in a simple and direct way. Export data to Excel.<\/p>"
                             },
                             {
-                                "image": "dashboard-DuN7SSX9.png",
+                                "image": "dashboard-features-N1SlITyO.png",
                                 "uid": "5f41d079-8a0f-4d31-aa61-c12c64a867c9",
                                 "sorter": 50,
                                 "image_alt": "",
@@ -764,7 +812,7 @@ window.cluarData = {
                         "content": ""
                     },
                     {
-                        "image": "customize.netuno-ZrBqU0YE.png",
+                        "image": "Customize_1_-RRg22vjm.png",
                         "uid": "31cf4e50-5076-4905-881a-2093a2cc12a2",
                         "image_max_width": "0",
                         "sorter": 60,
@@ -878,7 +926,7 @@ window.cluarData = {
                                 "content": "<p>Define the data model via the \"Build\" menu and Netuno handles the database structure for you.<\/p>"
                             },
                             {
-                                "image": "powerfulfrontend-OUhVJRoY.png",
+                                "image": "home-frontend-fE6v7oiF.png",
                                 "uid": "b4405755-48c4-408d-92f1-a8b38825e324",
                                 "sorter": 20,
                                 "image_alt": "",
@@ -889,7 +937,7 @@ window.cluarData = {
                                 "content": "<p>Easily build the frontend by building on the integrations already done with React, Webpack, Sass/Less, and Ant Design.<\/p>"
                             },
                             {
-                                "image": "restapi-eSaL3KfC.png",
+                                "image": "home.lang-wCxiuetl.png",
                                 "uid": "8aaab810-5b08-4308-a93d-08de2f6c1f69",
                                 "sorter": 30,
                                 "image_alt": "",
@@ -900,7 +948,7 @@ window.cluarData = {
                                 "content": "<p>Write the service layer in your favorite programming language, Netuno is polyglot!<\/p>"
                             },
                             {
-                                "image": "integrateword-KaS50XG8.png",
+                                "image": "home-integrations-t6Rpp48G.png",
                                 "uid": "e93469b3-6a5e-4ceb-8751-f888f6ac0c4f",
                                 "sorter": 40,
                                 "image_alt": "",

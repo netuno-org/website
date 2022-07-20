@@ -19,7 +19,6 @@ function Content({ section, type, title, content, image, image_title, image_alt,
         <div className="text">
           <h1>{title}</h1>
           <div dangerouslySetInnerHTML={{ __html: content }}></div>
-          {title ? <div className="text__title-border"></div> : null}
           {/*
           <div className='ring__container'>
             <div className='ring'></div>
@@ -31,24 +30,24 @@ function Content({ section, type, title, content, image, image_title, image_alt,
         </div>
       </div>
     );
-  } else if (type === 'image-left') {
+  } else if (type === 'privacy-policy') {
     layout = (
-      <div className="content__image-left">
-        <Row>
-          <Col md={8}>
-            <div className="image">
-              <img src={`/images/${section}/${image}`} alt={image_alt} title={image_title} style={imageStyle} />
-            </div>
-          </Col>
-          <Col md={16}>
-            <div className="text">
-              <h1>{title}</h1>
-              <div dangerouslySetInnerHTML={{ __html: content }}></div>
-            </div>
-          </Col>
-        </Row>
+      <div className="content__text">
+      <div className="privacy-policy">
+        <h1>{title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: content }}></div>
+        {/*
+        <div className='ring__container'>
+          <div className='ring'></div>
+          <div className='ring'></div>
+          <div className='ring'></div>
+        </div>
       </div>
-    );
+        */}
+      </div>
+    </div>
+  );
+  
   } else if (type === 'image-right') {
     layout = (
       <div className="content__image-right">

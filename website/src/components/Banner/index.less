@@ -35,7 +35,6 @@
 
                 p {
                     color: #fff;
-                    font-size: 16px;
                     line-height: 26px;
                     font-weight: 400;
                     padding: 5px;
@@ -46,7 +45,7 @@
 
         h1 {
             color: #fff!important; 
-            font-size: 56px;
+            font-size: 44px !important;
             line-height: 60px;
             font-weight: 700;
             padding: 0;
@@ -110,7 +109,7 @@
             text-align: center;
             h1 {
                 color: #fff!important; 
-                font-size: 56px;
+                font-size: 44px !important;
                 line-height: 60px;
                 font-weight: 700;
                 padding: 0;
@@ -119,6 +118,9 @@
                 display: inline-block!important;
                 font-weight: 700!important;
                 margin-bottom: 15px !important;
+                @media only screen and (max-width: @header-mobile-width) {
+                    font-size: 32px !important;
+                }
             }
             > div {
                 p {
@@ -128,7 +130,11 @@
                     &:nth-last-child(1) {
                         margin-bottom: 1em;
                     }
-               }   }
+                    @media only screen and (max-width: @header-mobile-width) {
+                        font-size: 17px;
+                    }
+                }   
+            }
         }
 
         
@@ -180,7 +186,7 @@
         text-align: left;
         padding: 0 calc((100% - @header-desktop-width) / 2);
         width: 100%;
-        background-color: #777;
+        background-color: @site-background;
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -214,10 +220,8 @@
                     }
                     > div {
                         > p {
-                            font-size: 16px;
                             color: #fff;
                             @media only screen and (max-width: @header-mobile-width) {
-                                font-size: 16px;
                                 line-height: 1.5em;
                             }
                         }

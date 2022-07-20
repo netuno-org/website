@@ -48,7 +48,7 @@ function Item({ section, type, image, image_title, image_alt, title, content, li
     );
   } else if (type === 'cases-listing') {
     layout = (
-      <a href={link}>
+      <a href={link} target="_blank">
       <li className="listing__item">
         <div>
           <div className='listing__image'>
