@@ -127,11 +127,6 @@ function BaseHeader() {
             defaultSelectedKeys={[activeMenu]}
             selectedKeys={[activeMenu]}>
             {menu}
-            <li style={{order: 2}}>
-              <span>
-                <a href='https://forum.netuno.org'><Dictionary entry="forum" oneLine/></a>
-              </span>
-            </li>
             <li style={{order: 3}}>
               <span>
                 <a href='https://doc.netuno.org'><Dictionary entry="documentation" oneLine/></a>

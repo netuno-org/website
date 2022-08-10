@@ -60,6 +60,21 @@ function Item({ section, type, image, image_title, image_alt, title, content, li
       </li>
       </a>
     );
+  } else if (type === 'support-listing') {
+    layout = (
+      <div className='support'>
+        <div data-sal="slide-up" data-sal-duration="1200" data-sal-delay="50" data-sal-easing="ease-out-bounce" className="support-text">
+          <h1 className="text-xxs fw-700">{title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: content }}></div>
+        </div>
+        <div className="support-image">
+          <div className='styles-img'>
+            <img
+              src={`/images/${section}/${image}`} alt={image_alt} />
+          </div>
+        </div>
+      </div>
+    );
   } else if (type === 'funcionality-netuno') {
     layout = (
       <div className="grid-container">

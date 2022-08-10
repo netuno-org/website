@@ -52,6 +52,15 @@ function Listing({section, type, image, image_title, image_alt, title, content, 
         </ul>   
     </div> 
     );
+  } else if (type === 'support-listing') {
+    listLayout = (
+      <div>
+        <div dangerouslySetInnerHTML={{__html: content}}></div>
+        <ul className={`listing__${type}`}>
+          { children }
+        </ul>   
+    </div> 
+    );
   }
   return (
     <section className="listing">

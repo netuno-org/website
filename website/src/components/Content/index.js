@@ -3,6 +3,7 @@ import { Row, Col, Button } from 'antd';
 import { RightOutlined } from '@ant-design/icons';
 import logo from '../../assets/images/netunologolight.svg';
 import Cluar from '../../common/Cluar';
+import Dictionary from '../../components/Dictionary';
 import Actions from '../Actions';
 
 import './index.less';
@@ -132,6 +133,34 @@ function Content({ section, type, title, content, image, image_title, image_alt,
                 <h1>{title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: content }}></div>
                 <Actions {... { section, type, actions }} />
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </div>
+    );
+  } else if (type === 'support-discord') {
+    layout = (
+      <div className="content__support-discord">
+        <Row align='middle'>
+          <Col span={12}>
+            <div className='container-img'>
+              <div className='content-image'>
+                <div className="image">
+                  <img src={`/images/${section}/${image}`} alt={image_alt} title={image_title} style={imageStyle} />
+                </div>
+              </div>
+            </div>
+          </Col>
+          <Col span={12}>
+            <div className="container-text">
+              <div className="text">
+                <h1>{title}</h1>
+                <div dangerouslySetInnerHTML={{ __html: content }}></div>
+                <div>
+                  <a className='discord' href='https://discord.com/channels/898684423116038154/910649961891381267'><Dictionary entry="support-discord" oneLine/></a> 
+                  <a className='forum' href='https://forum.netuno.org/'><Dictionary entry="support-forum" oneLine/></a>
+                </div>
               </div>
             </div>
           </Col>

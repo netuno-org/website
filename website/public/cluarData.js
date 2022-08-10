@@ -1,6 +1,7 @@
 window.cluarData = {
     "dictionary": {
         "PT": {
+            "support-discord": "Discord",
             "contact-form-message": "<p>Mensagem<\/p>",
             "documentation": "Documenta\u00E7\u00E3o",
             "start-now": "<p>COMECE J\u00C1<\/p>",
@@ -13,9 +14,11 @@ window.cluarData = {
             "contact-form-validate-message-email": "<p>${label} n\u00E3o \u00E9 um e-mail v\u00E1lido.<br><\/p>",
             "join-us": "<p>JUNTE-SE A N\u00D3S<\/p>",
             "contact-form-email": "<p>E-mail<\/p>",
-            "contact-form-subject": "<p>T\u00EDtulo<\/p>"
+            "contact-form-subject": "<p>T\u00EDtulo<\/p>",
+            "support-forum": "F\u00F3rum"
         },
         "EN": {
+            "support-discord": "Discord",
             "contact-form-message": "<p>Message<\/p>",
             "documentation": "Documentation",
             "start-now": "<p>START NOW<\/p>",
@@ -28,7 +31,8 @@ window.cluarData = {
             "contact-form-validate-message-email": "<p>${label} is not a valid e-mail.<br><\/p>",
             "join-us": "<p>JOIN US<\/p>",
             "contact-form-email": "<p>E-mail<\/p>",
-            "contact-form-subject": "<p>Subject<\/p>"
+            "contact-form-subject": "<p>Subject<\/p>",
+            "support-forum": "Forum"
         }
     },
     "pages": {
@@ -55,7 +59,7 @@ window.cluarData = {
                             "x": "",
                             "y": ""
                         },
-                        "title": "Crie rapidamente aplica\u00E7\u00F5es adaptadas \u00E0 sua l\u00F3gica de neg\u00F3cio",
+                        "title": "Crie rapidamente aplica\u00E7\u00F5es adaptadas \u00E0 sua l\u00F3gica de neg\u00F3cio.",
                         "type": "highlight-galaxies",
                         "actions": [],
                         "content": "<p>Plataforma de desenvolvimento Open Source.<\/p>"
@@ -68,7 +72,7 @@ window.cluarData = {
                         "image_alt": "",
                         "section": "content",
                         "image_title": "",
-                        "title": "Acelere seus processos com a automatiza\u00E7\u00E3o do Netuno",
+                        "title": "Acelere seus processos com a automatiza\u00E7\u00E3o do Netuno.",
                         "type": "image-top",
                         "actions": [{
                             "sorter": -1,
@@ -87,10 +91,10 @@ window.cluarData = {
                         "image_alt": "",
                         "section": "content",
                         "image_title": "",
-                        "title": "Entre em \u00F3rbita",
+                        "title": "Entre em \u00F3rbita.",
                         "type": "text",
                         "actions": [],
-                        "content": "<p>Saiba o que de novo acontece no Netuno<\/p><p>Desfrute da melhor experi\u00EAncia de desenvolvimento de aplica\u00E7\u00F5es Net<\/p><p>O all-in-one para criar facilmente aplica\u00E7\u00F5es customiz\u00E1veis, agora ficou melhor.<br><\/p>"
+                        "content": "<p>Saiba o que acontece no Netuno.<\/p><p>Desfrute da melhor experi\u00EAncia de desenvolvimento de aplica\u00E7\u00F5es Net<\/p><p>O all-in-one para criar facilmente aplica\u00E7\u00F5es customiz\u00E1veis, agora ficou melhor.<br><\/p>"
                     },
                     {
                         "image": "discord_1_-lWwj2hHD.png",
@@ -100,7 +104,7 @@ window.cluarData = {
                         "image_alt": "",
                         "section": "content",
                         "image_title": "",
-                        "title": "Acesse nosso servidor do Discord",
+                        "title": "Acesse nosso servidor do Discord.",
                         "type": "call-discord",
                         "actions": [{
                             "sorter": -1,
@@ -118,7 +122,7 @@ window.cluarData = {
                         "image_alt": "",
                         "section": "listing",
                         "image_title": "",
-                        "title": "Como funciona o Netuno",
+                        "title": "Como funciona o Netuno.",
                         "type": "operation-netuno",
                         "items": [
                             {
@@ -376,7 +380,7 @@ window.cluarData = {
                             "x": "",
                             "y": ""
                         },
-                        "title": "R\u00E1pido desenvolvimento de aplica\u00E7\u00F5es web",
+                        "title": "R\u00E1pido desenvolvimento de aplica\u00E7\u00F5es web.",
                         "type": "default-sub-banner",
                         "actions": [],
                         "content": "<p><span>Sem uma \u00FAnica linha de c\u00F3digo \u00E9 poss\u00EDvel criar todo um sistema \r\ncomplexo para a recolha de dados, que pode extender e customizar \u00E0 \r\nmedida de qualquer necessidade e com f\u00E1cil integra\u00E7\u00E3o com qualquer \r\ninfraestrutura e aplica\u00E7\u00F5es.<\/span><\/p>"
@@ -494,6 +498,83 @@ window.cluarData = {
                         "type": "customize-netuno",
                         "actions": [],
                         "content": "<span>Utilizando as tecnologias mais recentes para o frontend e as tecnologias mais robustas para o backend. <br>\r\n Com ambiente de desenvolvimento elegante, fi\u00E1vel e que consome pouco \r\nhardware, o resultado s\u00E3o aplica\u00E7\u00F5es que n\u00E3o falham e que permitem ser \r\ndesenvolvidas em realtime.<\/span>"
+                    }
+                ]
+            },
+            {
+                "parent": "",
+                "uid": "10afbbbb-d8d1-4809-89db-ba6431024463",
+                "keywords": "",
+                "sorter": 30,
+                "menu_title": "",
+                "link": "/suporte",
+                "description": "",
+                "menu": true,
+                "title": "Suporte",
+                "structure": [
+                    {
+                        "image": "banner-bQXtCyVM.jpg",
+                        "uid": "8c568f09-a380-40bf-91d5-f5e198801135",
+                        "sorter": 0,
+                        "image_alt": "",
+                        "section": "banner",
+                        "image_title": "",
+                        "position": {
+                            "x": "",
+                            "y": ""
+                        },
+                        "title": "A plataforma Netuno \u00E9 open source e desenvolvido de forma descentralizada e colaborativa.",
+                        "type": "default-sub-banner",
+                        "actions": [],
+                        "content": "<p><span>Voc\u00EA paga apenas pelo suporte caso precise resolver algo urgente<\/span><\/p>"
+                    },
+                    {
+                        "image": "Community-Support-LaIS6Kt5_1_-dETyl2YR.png",
+                        "uid": "a63e358b-6d59-4b2c-9a30-3e2698af5137",
+                        "image_max_width": "0",
+                        "sorter": 10,
+                        "image_alt": "",
+                        "section": "content",
+                        "image_title": "",
+                        "title": "Suporte da Comunidade",
+                        "type": "support-discord",
+                        "actions": [],
+                        "content": "<p>A ajuda da comunidade est\u00E1 dispon\u00EDveis no Discord e no Forum<\/p>"
+                    },
+                    {
+                        "image": "",
+                        "uid": "6f56748f-2567-471c-aac6-5b881464417f",
+                        "sorter": 30,
+                        "image_alt": "",
+                        "section": "listing",
+                        "image_title": "",
+                        "title": "",
+                        "type": "support-listing",
+                        "items": [
+                            {
+                                "image": "Support-Consultancy_1_-9GXoIqtJ.png",
+                                "uid": "8e81c599-c2ac-43bd-b14f-3eea91c6bede",
+                                "sorter": 0,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "Consultoria e Suporte",
+                                "content": "<p>Obtenha a ajuda imediata de profissionais experientes com a plataforma Netuno.<\/p>\r\n<p>Para quem procura implementar projetos com a mais alta excel\u00EAncia utilizando o melhor do\r\nopen source.<\/p>\r\n<p>Com a garantia de alta performance, seguran\u00E7a e as melhores boas pr\u00E1ticas.<\/p>\r\n<p>Tem o apoio de professinais experientes:<\/p>\r\n<p>A partir de <b>25\u20AC/h<\/b><\/p>"
+                            },
+                            {
+                                "image": "20943979_1_-removebg-preview_2_-YIUvkKbW.png",
+                                "uid": "d235a5ba-8b77-413d-846f-398729792aae",
+                                "sorter": 10,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "Forma\u00E7\u00E3o",
+                                "content": "<p>Contrate sess\u00F5es de ensino para a sua equipa, com pr\u00E1tica focada na sua necessidade.\r\n<\/p><p>A sua equipa t\u00E9nica ficar\u00E1 apta para obter o melhor proveito da plataforma Netuno integrada\r\ncom outras tecnologias open source.\r\n<\/p><p>Principais vantagens:<\/p>\r\n<ul>\r\n <li> Maior agilidade de implementa\u00E7\u00E3o de solu\u00E7\u00F5es web.<\/li>\r\n <li> Utilizar tecnologias open source integradas com low code e automa\u00E7\u00F5es.<\/li>\r\n <li> Menos custos de implementa\u00E7\u00E3o com redu\u00E7\u00E3o entre 50% a 80%.<\/li>\r\n <li> R\u00E1pida cria\u00E7\u00E3o de modelo de dados e interfaces de backoffice com ganhos entre 70% a\r\n 90%.<\/li>\r\n<\/ul>\r\n<p>A partir de <b>35\u20AC/h<\/b>.<\/p>"
+                            }
+                        ],
+                        "content": ""
                     }
                 ]
             }
@@ -705,7 +786,7 @@ window.cluarData = {
                             "x": "",
                             "y": ""
                         },
-                        "title": "Rapid web application development",
+                        "title": "Rapid web application development.",
                         "type": "default-sub-banner",
                         "actions": [],
                         "content": "<p>Without a single line of code it is possible to create an entire complex system for data collection, which you can extend and customize as needed and with easy integration with any infrastructure and applications.<\/p>"
@@ -848,7 +929,7 @@ window.cluarData = {
                             "x": "",
                             "y": ""
                         },
-                        "title": "Quickly create applications adapted to your business logic",
+                        "title": "Quickly create applications adapted to your business logic.",
                         "type": "highlight-galaxies",
                         "actions": [],
                         "content": "<p>Open Source development platform.<\/p>"
@@ -861,7 +942,7 @@ window.cluarData = {
                         "image_alt": "",
                         "section": "content",
                         "image_title": "",
-                        "title": "Accelerate your processes with Netuno automation",
+                        "title": "Accelerate your processes with Netuno automation.",
                         "type": "image-top",
                         "actions": [{
                             "sorter": -1,
@@ -880,7 +961,7 @@ window.cluarData = {
                         "image_alt": "",
                         "section": "content",
                         "image_title": "",
-                        "title": "Stay in orbit",
+                        "title": "Stay in orbit.",
                         "type": "text",
                         "actions": [],
                         "content": "<p>Find out what's new at Netuno<\/p>\r\n<p>Enjoy the best Net application development experience<\/p>\r\n<p>The all-in-one for easily creating customizable applications just got better<\/p>"
@@ -893,7 +974,7 @@ window.cluarData = {
                         "image_alt": "",
                         "section": "content",
                         "image_title": "",
-                        "title": "Visit our Discord server",
+                        "title": "Visit our Discord server.",
                         "type": "call-discord",
                         "actions": [{
                             "sorter": -1,
@@ -911,7 +992,7 @@ window.cluarData = {
                         "image_alt": "",
                         "section": "listing",
                         "image_title": "",
-                        "title": "How Netuno works",
+                        "title": "How Netuno works.",
                         "type": "operation-netuno",
                         "items": [
                             {
@@ -957,6 +1038,83 @@ window.cluarData = {
                                 "image_title": "",
                                 "title": "Integrate with the world",
                                 "content": "<p>Out-of-the-box integrations and compatibility with multiple databases. If it already exists, don't do it, use it!<\/p>"
+                            }
+                        ],
+                        "content": ""
+                    }
+                ]
+            },
+            {
+                "parent": "",
+                "uid": "b9c37f53-39ce-4a22-8fea-b00c5ddb3aa3",
+                "keywords": "",
+                "sorter": 30,
+                "menu_title": "",
+                "link": "/support",
+                "description": "",
+                "menu": true,
+                "title": "Support",
+                "structure": [
+                    {
+                        "image": "banner-gj9Vkx5z.jpg",
+                        "uid": "2d767af9-10c7-482f-8f03-42a68adc7a19",
+                        "sorter": 0,
+                        "image_alt": "",
+                        "section": "banner",
+                        "image_title": "",
+                        "position": {
+                            "x": "",
+                            "y": ""
+                        },
+                        "title": "The Netuno platform is open source and developed in a decentralized and collaborative way.",
+                        "type": "default-sub-banner",
+                        "actions": [],
+                        "content": "<p>You only pay for support if you need to solve something urgent<\/p>"
+                    },
+                    {
+                        "image": "Community-Support-LaIS6Kt5_1_-Zokt4kkF.png",
+                        "uid": "be8cbe8e-7559-40d9-8ab7-30a973a19cb0",
+                        "image_max_width": "0",
+                        "sorter": 10,
+                        "image_alt": "",
+                        "section": "content",
+                        "image_title": "",
+                        "title": "Community Support",
+                        "type": "support-discord",
+                        "actions": [],
+                        "content": "<p>Community help is available on Discord and the Forum<\/p>"
+                    },
+                    {
+                        "image": "",
+                        "uid": "02df4ba4-2d22-4878-88a6-9b51d3fbf4fc",
+                        "sorter": 30,
+                        "image_alt": "",
+                        "section": "listing",
+                        "image_title": "",
+                        "title": "",
+                        "type": "support-listing",
+                        "items": [
+                            {
+                                "image": "Support-Consultancy_1_-aErKoYAt.png",
+                                "uid": "96137f9b-a6b5-4b4e-a228-9c4c8a438deb",
+                                "sorter": 0,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "Consulting and Support",
+                                "content": "<p>Get immediate help from experienced professionals with the Netuno platform.<\/p>\r\n<p>For those looking to implement projects with the highest excellence using the best of\r\nopen source.<\/p>\r\n<p>With the guarantee of high performance, security and best practices.<\/p>\r\n<p>It has the support of experienced professionals:<\/p>\r\n<p>From <b>25\u20AC/h<\/b><\/p>"
+                            },
+                            {
+                                "image": "20943979_1_-removebg-preview_2_-34shFVEt.png",
+                                "uid": "56454738-a3ac-4943-a401-5c6b6dc3584a",
+                                "sorter": 0,
+                                "image_alt": "",
+                                "link": "",
+                                "section": "listing_item",
+                                "image_title": "",
+                                "title": "Training",
+                                "content": "<p>Hire teaching sessions for your team, with practice focused on your needs.\r\n<\/p><p>Your technical team will be able to get the best out of the integrated Netuno platform\r\nwith other open source technologies.\r\n<\/p><p>Main advantages:<\/p>\r\n<ul>\r\n <li> Greater agility in implementing web solutions.<\/li>\r\n <li> Use open source technologies integrated with low code and automations.<\/li>\r\n <li> Less implementation costs with a reduction between 50% and 80%.<\/li>\r\n <li> Quick creation of data model and backoffice interfaces with gains between 70% to\r\n 90%.<\/li>\r\n<\/ul>\r\n<p>From <b>35\u20AC/h<\/b>.<\/p>"
                             }
                         ],
                         "content": ""

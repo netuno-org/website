@@ -273,6 +273,161 @@
         }
     }
 
+    &__support-listing{
+        width: unset;
+        position: relative;
+        margin: 0 auto;
+        box-sizing: border-box;
+        width: 100%;
+        padding-bottom: 78px;
+    
+        @media (min-width: 900px) and (max-width: 1199.98px) { 
+            .support {
+                .support-text {
+                    max-width: 350px;
+                }
+            }
+        }
+       
+        .support {
+            display: -webkit-flex;
+            display: -moz-box;
+            display: flex;
+            -webkit-justify-content: space-between;
+            -moz-box-pack: space-between;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px !important;
+            padding-top: 78px;
+    
+            &:nth-child(even ) {
+                flex-direction: row-reverse;
+            }
+    
+            @media (min-width: 900px) and (max-width: 1200px) {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 40px 20px;
+             }
+    
+            @media only screen and (max-width: 900px) {
+                
+                display: flex;
+                flex-direction: column !important;
+                margin: 0 auto !important; 
+                align-items: center;
+                justify-content: center !important;
+                
+                .support-text {
+                    text-align: center;
+    
+                    p {
+                        margin: 0;
+                    }
+                }
+    
+                .support-image {
+                    margin: 0 !important;
+                    display: flex;
+                    justify-content: center;
+                    img {
+                        max-width: 300px !important;
+                        width: 100%;
+                    }
+                }
+            }
+    
+           
+        }
+    
+        .support-text {
+            order: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left !important;
+            max-width: 550px;
+            margin-left: 40px;
+    
+            .text-xxs {
+                color: #fff;
+            }
+    
+            h1 {
+                font-size: 44px;
+                font-weight: 58px;
+                color: #fff;
+                font-weight: 700;
+                margin: 0;
+            }
+            
+            b {
+                font-size: 20px;
+                color: #fff;
+            }
+    
+            p {
+                font-size: 20px !important;
+                color: #c1c1c1;
+                font-weight: 400;
+                margin: 0;
+            }
+            
+            ul {
+                list-style: none;
+            }
+
+            li {
+                font-size: 20px !important;
+                color: #c1c1c1;
+                font-weight: 400;
+                margin: 0;
+            }
+            li::before 
+            {
+                content: "•"; 
+                color: #c1c1c1; 
+                width: 1em !important;
+            }
+        }
+        
+        .support-image {
+            order: 1;
+            display: block;
+            height: auto;
+            width: 450px;
+            max-width: 100%;
+    
+            > div {
+                display: -webkit-flex;
+                display: -moz-box;
+                display: flex;
+                -webkit-align-self: start;
+                align-self: start;
+    
+                img {
+                    max-width: 100% !important;
+                    display: block;
+                    object-fit: cover;
+                    width: auto;
+                    height: auto;
+                }
+            }
+        }
+
+        .support:nth-child(2) {
+            margin-top: 50px;
+            .support-text {
+                margin-left: 0;
+                margin-right: 40px;
+                @media only screen and (max-width: 900px) {
+                    margin-left: 40px;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
     &__listing-sociais {
 
         li {
