@@ -41,11 +41,20 @@ function BaseHeader() {
     }
     if (language.code !== Cluar.currentLanguage().code) {
       menuLanguages.push(
-        <Menu.Item key={language.code} onClick={() => {
-          Cluar.changeLanguage(language.locale);
-          window.localStorage.setItem('locale', Cluar.currentLanguage().locale);
-          window.location.href = `/${language.locale}/`;
-        }}>{language.description}</Menu.Item>
+        // <Menu.Item key={language.code} onClick={() => {
+        //   Cluar.changeLanguage(language.locale);
+        //   window.localStorage.setItem('locale', Cluar.currentLanguage().locale);
+        //   window.location.href = `/${language.locale}/`;
+        // }}>{language.description}</Menu.Item>
+        {
+          key: language.code,
+          onClick: () => {
+            Cluar.changeLanguage(language.locale);
+            window.localStorage.setItem('locale', Cluar.currentLanguage().locale);
+            window.location.href = `/${language.locale}/`;
+          },
+          label: language.description
+        }
       );
     }
 
@@ -54,15 +63,28 @@ function BaseHeader() {
         const key = `${page.link}`;
         if (Cluar.pages()[language.code].find((p) => p.menu && p.parent === page.link)) {
           subMenuKeys.push(key);
+          // return (
+          //   <SubMenu key={key} popupClassName={`menu-level-${level + 1}`} title={
+          //     <Link to={`/${Cluar.currentLanguage().locale}${page.link}`} onClick={() => handleMenuClick(key)}>
+          //       {page.title}
+          //     </Link>
+          //   }>
+
+          //     { Cluar.pages()[language.code].filter((p) => p.menu && p.parent === page.link).map((p) => buildMenu(p, level + 1))}
+          //   </SubMenu>
+          // );
+
           return (
-            <SubMenu key={key} popupClassName={`menu-level-${level + 1}`} title={
-              <Link to={`/${Cluar.currentLanguage().locale}${page.link}`} onClick={() => handleMenuClick(key)}>
+            {
+              key,
+              label: <Link to={`/${Cluar.currentLanguage().locale}${page.link}`} onClick={() => handleMenuClick(key)}>
                 {page.title}
-              </Link>
-            }>
-              { Cluar.pages()[language.code].filter((p) => p.menu && p.parent === page.link).map((p) => buildMenu(p, level + 1))}
-            </SubMenu>
-          );
+              </Link>,
+              popupClassName: `menu-level-${level + 1}`
+
+            }
+
+          )
         } else {
           /**
            * Sample of submenu items customization, only on level 1:
@@ -78,13 +100,22 @@ function BaseHeader() {
             );
           }
           **/
+          // return (
+          //   <Menu.Item key={key}>
+          // <Link to={`/${Cluar.currentLanguage().locale}${page.link}`} onClick={() => handleMenuClick(key)}>
+          //   {page.title}
+          // </Link>
+          //   </Menu.Item>
+          // );
           return (
-            <Menu.Item key={key}>
-              <Link to={`/${Cluar.currentLanguage().locale}${page.link}`} onClick={() => handleMenuClick(key)}>
-                {page.title}
-              </Link>
-            </Menu.Item>
-          );
+            {
+              key,
+              label:
+                <Link to={`/${Cluar.currentLanguage().locale}${page.link}`} onClick={() => handleMenuClick(key)}>
+                  {page.title}
+                </Link>
+            }
+          )
         }
       }
       return null;
@@ -107,7 +138,7 @@ function BaseHeader() {
       </Route>
     );
   }
-  
+
   return (
     <Header className={classNames({ 'header-burger-open': burgerMenu })}>
       <div className="ant-layout-header__wrapper">
@@ -125,14 +156,25 @@ function BaseHeader() {
             theme="light"
             mode="horizontal"
             defaultSelectedKeys={[activeMenu]}
-            selectedKeys={[activeMenu]}>
-            {menu}
-            <li style={{order: 3}}>
-              <span>
-                <a href='https://doc.netuno.org'><Dictionary entry="documentation" oneLine/></a>
-              </span>
-            </li>
-          </Menu>
+            selectedKeys={[activeMenu]}
+            items={[...menu,
+              {
+                key: 'forum',
+                label:  
+                  <span style={{ order: 1 }}>
+                    <a href='https://forum.netuno.org'><Dictionary entry="forum" oneLine /></a>
+                  </span>
+                
+              }, 
+              {
+                key: 'documentation',
+                label: 
+                  <span style={{ order: 2 }}>
+                    <a href='https://doc.netuno.org'><Dictionary entry="documentation" oneLine /></a>
+                  </span>
+          
+              },
+            ]} />
         </div>
         <div className={
           classNames({
@@ -146,19 +188,25 @@ function BaseHeader() {
             mode="inline"
             defaultSelectedKeys={[activeMenu]}
             selectedKeys={[activeMenu]}
-            openKeys={subMenuKeys}>
-            {menu}
-            <li style={{order: 2}}>
-              <span>
-                <a href='https://forum.netuno.org'><Dictionary entry="forum" oneLine/></a>
-              </span>
-            </li>
-            <li style={{order: 3}}>
-              <span>
-                <a href='https://doc.netuno.org'><Dictionary entry="documentation" oneLine/></a>
-              </span>
-            </li>
-          </Menu>
+            openKeys={subMenuKeys}
+            items={[...menu,
+              {
+                key: 'forum',
+                label:  
+                  <span style={{ order: 1 }}>
+                    <a href='https://forum.netuno.org'><Dictionary entry="forum" oneLine /></a>
+                  </span>               
+              }, 
+              {
+                key: 'documentation',
+                label: 
+                  <span style={{ order: 2 }}>
+                    <a href='https://doc.netuno.org'><Dictionary entry="documentation" oneLine /></a>
+                  </span>
+          
+              },
+              ]} 
+          />
         </div>
         <div className="menu-burger-button">
           <Burger isOpen={burgerMenu} onClick={() => { setBurgerMenu(!burgerMenu); }} />
@@ -168,11 +216,9 @@ function BaseHeader() {
           className="menu-languages"
           mode={'horizontal'}
           defaultSelectedKeys={[activeMenu]}
-          selectedKeys={[activeMenu]}>
-          <SubMenu key="langs" icon={<GlobalOutlined />} title={Cluar.currentLanguage().code}>
-            {menuLanguages}
-          </SubMenu>
-        </Menu>
+          selectedKeys={[activeMenu]}
+          items={[{ key: "langs", icon: <GlobalOutlined />, label: Cluar.currentLanguage().code, children: menuLanguages }]}
+        />
       </div>
     </Header>
   );
