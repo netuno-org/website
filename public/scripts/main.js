@@ -75116,7 +75116,7 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react-dom'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react-dom/client'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var _netuno_service_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @netuno/service-client */ "./node_modules/@netuno/service-client/index.js");
 /* harmony import */ var _netuno_service_client__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_netuno_service_client__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _containers_DashboardContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./containers/DashboardContainer */ "./src/containers/DashboardContainer/index.js");
@@ -75128,7 +75128,8 @@ _netuno_service_client__WEBPACK_IMPORTED_MODULE_1___default().config({
   prefix: netuno.config.urlServices
 });
 var dashboardDiv = document.getElementById("app-dashboard");
-var dashboardContainer = dashboardDiv ? Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react-dom'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())( /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(_containers_DashboardContainer__WEBPACK_IMPORTED_MODULE_2__["default"], null), dashboardDiv) : false;
+var dashboardContainer = dashboardDiv ? Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react-dom/client'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(dashboardDiv) : false;
+dashboardContainer.render( /*#__PURE__*/Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(_containers_DashboardContainer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
 netuno.addNavigationLoad(function () {
   $('[netuno-navigation]').find('a').on('netuno:click', function (e) {
     var link = $(e.target);
