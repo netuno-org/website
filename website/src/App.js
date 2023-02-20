@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout } from 'antd';
 import {
   BrowserRouter,
@@ -44,6 +44,11 @@ function App() {
       </Route>
     );
   }
+
+  const [acceptedCookies, setAcceptedCookies] = useState(sessionStorage.getItem('cookies-accepted'));
+
+  useEffect(() => {
+  }, [acceptedCookies]);
 
   return (
     <BrowserRouter>

@@ -32,6 +32,8 @@ function Builder({ page }) {
         components.push(<ContactForm key={uid} {...item} />);
       } else if (item.type === 'contact-map') {
         components.push(<ContactMap key={uid} {...item} />);
+      } else if (item.type === 'contact-fix') {
+        components.push(<ContactMap key={uid} {...item} />);
       }
     }
   }
