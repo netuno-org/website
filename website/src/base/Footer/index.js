@@ -16,6 +16,7 @@ import {
   FaFacebook,
   FaLinkedin,
   FaDiscord,
+  FaWhatsapp,
 } from "react-icons/fa"
 
 
@@ -64,31 +65,15 @@ function BaseFooter() {
             </div>
           </div>
         </Col>
-
         <Col xs={{ span: 24 }} lg={{ span: 8, offset: 8 }}>
-          <Row>
-            <Col>
-              <p className="netuno-copyright">
-                Copyright © &nbsp;
-                <a
-                  href="https://www.sitana.pt"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Sitana
-                </a>
-                &nbsp; {new Date().getFullYear()}
-              </p>
-            </Col>
-          </Row>
           <Row>
             <Col>
               <Col>
                 <p>
-                  <FaEnvelope style={{ fontSize: 20, marginRight: 10 }} />
+                  <FaWhatsapp style={{ fontSize: 20, marginRight: 10 }} />
                   <span>
-                    <a netuno-mail="admin" href="mailto:admin@netuno.org">
-                      admin@netuno.org
+                    <a netuno-mail="admin" href="https://wa.me/+351912524751">
+                      WhatsApp
                     </a>
                   </span>
                 </p>
@@ -104,6 +89,33 @@ function BaseFooter() {
                     support@netuno.org
                   </a>
                 </span>
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <p>
+                <FaEnvelope style={{ fontSize: 20, marginRight: 10 }} />
+                <span>
+                  <a netuno-mail="support" href="mailto:support@netuno.org">
+                    support@netuno.org
+                  </a>
+                </span>
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <p className="netuno-copyright">
+                Copyright © &nbsp;
+                <a
+                  href="https://www.sitana.pt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Sitana
+                </a>
+                &nbsp; {new Date().getFullYear()}
               </p>
             </Col>
           </Row>
