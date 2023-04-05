@@ -201,10 +201,7 @@
             }
     
             img {
-                width: 350px !important; 
-                height: auto;
                 padding: 15px !important;
-                object-fit: cover;
             }
         }
 
@@ -213,14 +210,7 @@
             border: 1.5px solid #29292e;
             border-radius: 4px;
             flex-direction: row !important;
-            height: 525px;
-            width: 100%; 
-            
-            @media only screen and (max-width: @header-mobile-width) {
-             max-width: 350px !important; 
-             height: auto;
-            }
-           
+            width: 100%;
         }
 
         .technology {
@@ -249,10 +239,11 @@
         }
         a {
             text-decoration: none !important;
-        }
-
-        a:hover {
-            box-shadow: 0 -1px 45px rgba(172, 171, 171, 0.3);
+            display: block;
+            width: 100%;
+            &:hover {
+              box-shadow: 0 -1px 45px rgba(172, 171, 171, 0.3);
+            }
         }
 
         .listing__image {
@@ -268,8 +259,7 @@
             margin: 0 0 1.45rem;
             margin-right: 0px;
             margin-left: 0px;
-            object-fit: cover;
-            height: 300px;
+            height: auto;
         }
     }
 
