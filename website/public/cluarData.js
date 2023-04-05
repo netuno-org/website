@@ -1149,8 +1149,8 @@ window.cluarData = {
     },
     "config": {
         "mapbox": {"dark": false},
-        "name": "Website Name",
-        "services": {"api": "http://localhost:9000/services/"},
-        "url": "http://localhost:3000"
+        "name": "Netuno Platform",
+        "services": {"api": "https://www.netuno.org/services/"},
+        "url": "https://www.netuno.org"
     }
 };
