@@ -14,6 +14,7 @@ import BaseCookies from './base/Cookies';
 import BaseHeader from './base/Header';
 import BaseFooter from './base/Footer';
 import NotFound from './pages/NotFound';
+import ContactFix from './components/functionality/ContactFix';
 
 import './styles/App.less';
 
@@ -73,7 +74,8 @@ function App() {
               </Routes>
             </Content>
             <BaseFooter />
-            <BaseCookies />
+            {/* <BaseCookies /> */}
+            <ContactFix />
           </Layout>
         </div>
       </BrowserRouter>
