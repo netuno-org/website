@@ -92,7 +92,7 @@ function BaseFooter() {
               </p>
             </Col>
           </Row>
-          <Row>
+          {/* <Row>
             <Col>
               <p>
                 <FaEnvelope style={{ fontSize: 20, marginRight: 10 }} />
@@ -103,7 +103,7 @@ function BaseFooter() {
                 </span>
               </p>
             </Col>
-          </Row>
+          </Row> */}
           <Row>
             <Col>
               <p className="netuno-copyright">
