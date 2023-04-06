@@ -159,18 +159,26 @@ function BaseHeader() {
             selectedKeys={[activeMenu]}
             items={[...menu,
               {
+                key: 'Dev',
+                label: 
+                  <span style={{ order: 1 }}>
+                    <a href='https://dev.netuno.org' target="_blank"><Dictionary entry="Dev" oneLine /></a>
+                  </span>
+          
+              },
+              {
                 key: 'forum',
                 label:  
-                  <span style={{ order: 1 }}>
-                    <a href='https://forum.netuno.org'><Dictionary entry="forum" oneLine /></a>
+                  <span style={{ order: 2 }}>
+                    <a href='https://forum.netuno.org' target="_blank"><Dictionary entry="forum" oneLine /></a>
                   </span>
                 
               }, 
               {
                 key: 'documentation',
                 label: 
-                  <span style={{ order: 2 }}>
-                    <a href='https://doc.netuno.org'><Dictionary entry="documentation" oneLine /></a>
+                  <span style={{ order: 3 }}>
+                    <a href='https://doc.netuno.org' target="_blank"><Dictionary entry="documentation" oneLine /></a>
                   </span>
           
               },
@@ -194,7 +202,7 @@ function BaseHeader() {
                 key: 'forum',
                 label:  
                   <span style={{ order: 1 }}>
-                    <a href='https://forum.netuno.org'><Dictionary entry="forum" oneLine /></a>
+                    <a href='https://forum.netuno.org' ><Dictionary entry="forum" oneLine /></a>
                   </span>               
               }, 
               {
