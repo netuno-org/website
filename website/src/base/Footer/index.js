@@ -41,7 +41,7 @@ function BaseFooter() {
           </div>
           <div className='container-links'>
             <div className="social-links">
-              <a href="httdivs://github.com/netuno-org" className="share-icons">
+              <a href="https://github.com/netuno-org" className="share-icons">
                 <FaGithub />
               </a>
               <a href="https://www.youtube.com/channel/UCYY1Nz6T2NJtP29vba2fqkg" className="share-icons">
