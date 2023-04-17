@@ -66,7 +66,7 @@ and modifying to match your local environment configuration.
 
 In the Netuno root directory run
 
-`./netuno server app=netuno_website`
+`./netuno server app=website`
 
 to start the backend server and then in the `(netuno_website app directory)/website/` run
 
