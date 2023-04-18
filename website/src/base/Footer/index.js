@@ -41,25 +41,25 @@ function BaseFooter() {
           </div>
           <div className='container-links'>
             <div className="social-links">
-              <a href="https://github.com/netuno-org" className="share-icons">
+              <a href="https://github.com/netuno-org" className="share-icons" target="_blank"> 
                 <FaGithub />
               </a>
-              <a href="https://www.youtube.com/channel/UCYY1Nz6T2NJtP29vba2fqkg" className="share-icons">
+              <a href="https://www.youtube.com/channel/UCYY1Nz6T2NJtP29vba2fqkg" className="share-icons" target="_blank">
                 <FaYoutube />
               </a>
-              <a href="https://twitter.com/netuno_org" className="share-icons">
+              <a href="https://twitter.com/netuno_org" className="share-icons" target="_blank">
                 <FaTwitter />
               </a>
-              <a href="https://www.linkedin.com/company/netuno-org/" className="share-icons">
+              <a href="https://www.linkedin.com/company/netuno-org/" className="share-icons" target="_blank">
                 <FaLinkedin />
               </a>
-              <a href="https://discord.gg/4sfXG6YWFu" className="share-icons">
+              <a href="https://discord.gg/4sfXG6YWFu" className="share-icons" target="_blank">
                 <FaDiscord />
               </a>
-              <a href="https://www.facebook.com/netuno.org/" className="share-icons">
+              <a href="https://www.facebook.com/netuno.org/" className="share-icons" target="_blank">
                 <FaFacebook />
               </a>
-              <a href="https://www.instagram.com/netuno_org/" className="share-icons">
+              <a href="https://www.instagram.com/netuno_org/" className="share-icons" target="_blank">
                 <FaInstagram />
               </a>
             </div>
