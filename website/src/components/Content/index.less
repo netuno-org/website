@@ -885,6 +885,9 @@
             
             > div {
                 text-align: left !important;
+                @media only screen and (max-width: @header-mobile-width) {
+                    text-align: center !important;
+                }
             }
         
             h1 {
@@ -990,6 +993,11 @@
                     text-transform: uppercase;
                     text-align: center !important;
                     font-weight: 700;
+                    display: contents;
+                }
+                svg {
+                    width: 50px;
+                    color: white;
                 }
 
             }
@@ -997,11 +1005,6 @@
             .forum {
                 margin-left: 15px !important; 
                 text-align: center;
-                @media only screen and (max-width: 390px) {
-                    margin: 10px auto 0 !important;
-                    width: 114.5px !important;
-                }
-             
             }
             .actions__item {
                 max-width: 240px;

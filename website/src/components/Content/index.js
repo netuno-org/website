@@ -6,6 +6,9 @@ import Cluar from '../../common/Cluar';
 import Dictionary from '../../components/Dictionary';
 import Actions from '../Actions';
 
+import { FaDiscord } from "react-icons/fa"
+import { WechatOutlined } from '@ant-design/icons';
+
 import './index.less';
 
 function Content({ section, type, title, content, image, image_title, image_alt, image_max_width, actions }) {
@@ -158,8 +161,8 @@ function Content({ section, type, title, content, image, image_title, image_alt,
                 <h1>{title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: content }}></div>
                 <div>
-                  <a className='discord' href='https://discord.com/channels/898684423116038154/910649961891381267'><Dictionary entry="support-discord" oneLine/></a> 
-                  <a className='forum' href='https://forum.netuno.org/'><Dictionary entry="support-forum" oneLine/></a>
+                  <a className='discord' href='https://discord.com/channels/898684423116038154/910649961891381267'><FaDiscord /></a> 
+                  <a className='forum' href='https://forum.netuno.org/'><WechatOutlined /></a>
                 </div>
               </div>
             </div>
