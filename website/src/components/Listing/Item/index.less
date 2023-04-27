@@ -560,18 +560,18 @@
         .grid-text {
             text-align: left !important;
             order: 1;
+            display: flex;
+            align-items: center;
 
             b {
                 font-size: 32px;
                 line-height: 36px;
                 margin-bottom: 24px;
-                text-transform: uppercase;
                 font-weight: 700;
                 color: #e1e1e6;
             }
 
             > div {
-                margin-bottom: 15px;
 
                 p {
                     line-height: 32px;
@@ -580,6 +580,7 @@
                     color: #e1e1e6;
                     padding: 0 !important;
                     margin-top: 5px;
+                    margin-bottom: 0 !important;
                     @media only screen and (max-width: @header-mobile-width) {
                         font-size: 17px;
                     }
@@ -589,7 +590,6 @@
 
         .grid-image {
             max-width: 100%;
-            margin-top: -50px;
             order: -1;
             
             img {
@@ -597,12 +597,12 @@
                 filter: drop-shadow(-4px 13px 32px #000);
                 max-width: 100%;
                 display: block;
-                width: 550px !important;
+                width: 650px !important;
                 object-fit: cover;
             }
         }
 
-        .grid-container:nth-child(8){
+        .grid-container:nth-child(7){
             .grid-image {
                 display: flex;
                 justify-content: center;
