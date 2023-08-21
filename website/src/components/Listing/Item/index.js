@@ -76,14 +76,14 @@ function Item({ section, type, image, image_title, image_alt, title, content, li
     );
   } else if (type === 'tab-list') {
     layout = (
-      <Row className='listing_tab-list' gutter={[10, 14]} align="center" justify="space-between">
-        <Col span={12} className="listing_tab-list-image">
+      <Row className='listing_tab-list' gutter={[10, 14]} align="center">
+        <Col xxl={12} xl={12} lg={12} md={10} sm={24} xs={24} className="listing_tab-list-image">
           <img src={`/images/${section}/${image}`} alt={image_alt} />
         </Col>
-        <Col span={10} data-sal="slide-up" data-sal-duration="1200" data-sal-delay="50" data-sal-easing="ease-out-bounce" className="listing_tab-list-text">
+        <Col xxl={10} xl={10} lg={10} md={10} sm={24} xs={24} data-sal="slide-up" data-sal-duration="1200" data-sal-delay="50" data-sal-easing="ease-out-bounce" className="listing_tab-list-text">
           <h1 className="text-xxs fw-700">{title}</h1>
           <div dangerouslySetInnerHTML={{ __html: content }}></div>
-          {link && <a href={link} target="_blank">Explore Agora</a>}
+          {link && <a className='btn-explorer' href={link} target="_blank">Explore Agora</a>}
         </Col>
       </Row>
     );

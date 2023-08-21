@@ -4,25 +4,18 @@
     z-index: 3;
     width: 100%;
     position: relative;
-    padding: 24px calc((100% - @header-desktop-width) / 2) !important;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2),
         0 1px 1px 0 rgba(0, 0, 0, .14),
         0 2px 1px -1px rgba(0, 0, 0, .12);
     background: #121214 !important;
     color: @footer-color !important;
-    width: 100%;
+
     .ant-row {
       display: flex;
       justify-content: end;
       @media only screen and (max-width: 1000px) {
         justify-content: center;
       }
-    }
-
-    &__wrapper{
-      width: 90%;
-      max-width: @site-max-width;
-      margin: auto;
     }
 
     .open-source {

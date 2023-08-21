@@ -6,6 +6,10 @@
         padding-bottom: 120px;
         padding-top: 80px;
 
+        &:last-child {
+            padding-bottom: 0;
+        }
+
         &:nth-child(even) {
            flex-direction: row-reverse;
         }
@@ -30,28 +34,29 @@
                 font-size: 1rem;
                 color: rgb(156 163 175);
             }
+        }
 
-            button {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                max-width: 240px;
-                font-size: 16px;
-                outline: 0;
-                line-height: 19px;
-                padding: 16px;
-                border-style: solid;
-                border-radius: 5px;
-                transition: all .1s ease-in;
-                border-color: #29292e;
-                background: #5865f2;
-                font-weight: 700;
+        .btn-explorer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 240px;
+            font-size: 16px;
+            outline: 0;
+            line-height: 19px;
+            padding: 16px;
+            border-radius: 5px;
+            transition: all .1s ease-in;
+            background: #5865f2;
+            font-weight: 700;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+
+            &:hover {
+                opacity: 0.8;
+                text-decoration: none;
                 color: #fff;
-                cursor: pointer;
-
-                &:hover {
-                    opacity: 0.8;
-                }
             }
         }
     }
