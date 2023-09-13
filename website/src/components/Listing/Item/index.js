@@ -17,20 +17,19 @@ import { DiOpensource } from "react-icons/di"
 
 
 import './index.less';
+import Actions from '../../Actions';
 
-function Item({ section, type, image, image_title, image_alt, title, content, link }) {
+function Item({ section, type, image, image_title, image_alt, title, content, link, button, index }) {
   let layout = null;
   if (type === 'operation-netuno') {
     layout = (
-      <Col className={`listing__item__${type}`} >
-        <div>
-          <span>{title}</span>
-          <div dangerouslySetInnerHTML={{ __html: content }}></div>
-          <div className="listing__image">
-            <img src={`/images/${section}/${image}`} alt={image_alt} title={image_title} />
-          </div>
+      <li className={`listing__item__${type}`}>
+        <span>{title}</span>
+        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <div className="listing__image">
+          <img src={`/images/${section}/${image}`} alt={image_alt} title={image_title} />
         </div>
-      </Col>
+      </li>
     );
   } else if (type === 'news-at-sitana') {
     layout = (
@@ -49,15 +48,15 @@ function Item({ section, type, image, image_title, image_alt, title, content, li
   } else if (type === 'cases-listing') {
     layout = (
       <a href={link} target="_blank">
-      <li className="listing__item">
-        <div>
-          <div className='listing__image'>
-            <img src={`/images/${section}/${image}`} alt={image_alt} title={image_title} />
+        <li className="listing__item">
+          <div>
+            <div className='listing__image'>
+              <img src={`/images/${section}/${image}`} alt={image_alt} title={image_title} />
+            </div>
+            <h1>{title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: content }}></div>
           </div>
-          <h1>{title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: content }}></div>
-        </div>
-      </li>
+        </li>
       </a>
     );
   } else if (type === 'support-listing') {
@@ -75,16 +74,32 @@ function Item({ section, type, image, image_title, image_alt, title, content, li
         </div>
       </div>
     );
-  } else if (type === 'funcionality-netuno') {
+  } else if (type === 'tab-list') {
     layout = (
-      <div className="grid-container">
-        <div className="grid-text">
+      <Row className='listing_tab-list' gutter={[10, 14]} align="center">
+        <Col xxl={12} xl={12} lg={12} md={10} sm={24} xs={24} className="listing_tab-list-image">
+          <img src={`/images/${section}/${image}`} alt={image_alt} />
+        </Col>
+        <Col xxl={10} xl={10} lg={10} md={10} sm={24} xs={24} data-sal="slide-up" data-sal-duration="1200" data-sal-delay="50" data-sal-easing="ease-out-bounce" className="listing_tab-list-text">
+          <h1 className="text-xxs fw-700">{title}</h1>
           <div dangerouslySetInnerHTML={{ __html: content }}></div>
-        </div>
-        <div className='grid-image'>
+          {link && <a className='btn-explorer' href={link} target="_blank">Explore Agora</a>}
+        </Col>
+      </Row>
+    );
+  }
+  else if (type === 'funcionality-netuno') {
+    layout = (
+      <Row className="grid-container" justify={'space-between'} gutter={[10, 14]} wrap={true}>
+        <Col xxl={10} xl={10} lg={10} md={10} sm={24} xs={24} className="grid-container-text">
+          <h1>{title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: content }}></div>
+          {index == 2 && <a>Saiba Mais</a>}
+        </Col>
+        <Col xxl={12} xl={12} lg={12} md={12} sm={24} xs={24} className='grid-container-image'>
           <img src={`/images/${section}/${image}`} alt={image_alt} title={image_title} />
-        </div>
-      </div>
+        </Col>
+      </Row >
     );
   } else if (type === 'listing-sociais') {
     layout = (

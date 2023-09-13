@@ -2,45 +2,84 @@
 
 .listing {
 
-    &__operation-netuno {
-        //display: flex;
-        //flex-direction: row !important;
+    &_tab-list {
+        padding-bottom: 120px;
+        padding-top: 80px;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        &:nth-child(even) {
+           flex-direction: row-reverse;
+        }
+
+        &-image {
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+
+        &-text {
+            h1 {
+                font-size: @font-heading;
+                font-weight: 700;
+                color: #fff;
+
+            }
+            
+            p {
+                font-size: 1rem;
+                color: rgb(156 163 175);
+            }
+        }
+
+        .btn-explorer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 240px;
+            font-size: 16px;
+            outline: 0;
+            line-height: 19px;
+            padding: 16px;
+            border-radius: 5px;
+            transition: all .1s ease-in;
+            background: #5865f2;
+            font-weight: 700;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+
+            &:hover {
+                opacity: 0.8;
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
+
+    &_operation-netuno {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         position: relative;
-        margin: 0 auto;
-        grid-gap: 4rem;
+        grid-gap: 32px;
         z-index: 0;
-        padding-top: 50px !important;
+        width: 100%;
+
+        .listing__item__operation-netuno {
+            background: #121214;
+            margin-top: 64px;
+            padding: 32px;
+        }
+        
         @media only screen and (max-width: @header-mobile-width) {
             display: flex !important;
             flex-wrap: wrap;
             align-items: center;
             padding: 0 20px;
-            
-        }
-      
-        > div {
-            background: #121214 !important;
-            border-radius: 5px;
-            border: 1.5px solid #29292e;
-            flex-direction: row !important;
-            height: auto;
-
-            
-            /*&::before {
-                content: counter(heading);
-                counter-increment: heading;
-                color: #fff;
-                opacity: 0.4;
-                font-size: 60px;
-            }
-            */
-
-        }
-
-        > div > div {
-            padding: 32px 52px 32px 24px;
             
         }
 
@@ -61,22 +100,19 @@
 
         span {
             color: @font-color-primary;
+            font-size: 24px;
             width: 356px;
-            font-size: 26px;
             line-height: 40px;
             font-weight: 700;
             text-align: left !important;
-            
         }
 
         p {
             line-height: 1.5rem;
             color: @font-gray;
+            font-size: @font-subparagraph;
             font-weight: 400;
             padding-top: 15px;
-            @media only screen and (max-width: @header-mobile-width) {
-                font-size: 17px;
-            }
         }
     }
 
@@ -515,113 +551,39 @@
     
     &__funcionality-netuno {
         width: 100%;
-        max-width: 1260px;
-        display: flex;
-        justify-content: space-between;
-        -moz-box-align: center;
-        align-items: center;
-        margin-left: auto;
-        margin-right: auto;
-        flex-direction: column !important;
-        margin: 0 25px;
-        padding: 50px 25px 0 !important;
-        row-gap: 40px !important;
         
         .grid-container:first-of-type {
             padding-top: 8rem !important;
         }
 
-        @media only screen and (max-width: @header-mobile-width) {
-            flex-direction: column !important;
-            text-align: center !important;
-
-            .grid-container {
-                display: flex !important;
-                flex-direction: column !important;
-                padding-bottom: 4rem !important;
-                .grid-imagem {
-                    order: 1 !important;
-                }
-
-                .grid-text {
-                    order: -1 !important;
-                    margin-bottom: 25px !important;
-                    padding-bottom: 25px !important;
-                }
-            }
-        }
-
         .grid-container {
-           display: grid;
-           grid-template-columns: repeat(2, 1fr);
-           grid-gap: 0 100px !important;
-           padding-bottom: 8rem !important;
-        }
-        .grid-text {
-            text-align: left !important;
-            order: 1;
             display: flex;
-            align-items: center;
-
-            b {
-                font-size: 32px;
-                line-height: 36px;
-                margin-bottom: 24px;
-                font-weight: 700;
-                color: #e1e1e6;
+            padding-bottom: 160px;
+            &:nth-child(odd) {
+                flex-direction: row-reverse;
             }
+            &-text {    
 
-            > div {
+                h1 {
+                    font-size: @font-heading;
+                    color: #fff;
+                    font-weight: 700;
+                }
 
                 p {
-                    line-height: 32px;
-                    font-weight: 400;
-                    text-align: left;
                     color: #e1e1e6;
-                    padding: 0 !important;
-                    margin-top: 5px;
-                    margin-bottom: 0 !important;
-                    @media only screen and (max-width: @header-mobile-width) {
-                        font-size: 17px;
-                    }
+
                 }
+                
             }
-        }
 
-        .grid-image {
-            max-width: 100%;
-            order: -1;
-            
-            img {
-                height: auto;
-                filter: drop-shadow(-4px 13px 32px #000);
-                max-width: 100%;
-                display: block;
-                width: 650px !important;
-                object-fit: cover;
-            }
-        }
+            &-image {
+                width: 100%;
 
-        .grid-container:nth-child(7){
-            .grid-image {
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 img {
-                    height: 300px;
-                    width: 300px !important;
+                    object-fit: cover;
+                    width: 100%;
                 }
-            }
-        }
-        .grid-container:nth-child(odd) {
-
-            .grid-text {
-                text-align: left !important;
-                order: -1;
-            }
-
-            .grid-image {
-                order: 1;
             }
         }
        

@@ -37,10 +37,10 @@ function Content({ section, type, title, content, image, image_title, image_alt,
   } else if (type === 'privacy-policy') {
     layout = (
       <div className="content__text">
-      <div className="privacy-policy">
-        <h1>{title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: content }}></div>
-        {/*
+        <div className="privacy-policy">
+          <h1>{title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: content }}></div>
+          {/*
         <div className='ring__container'>
           <div className='ring'></div>
           <div className='ring'></div>
@@ -48,10 +48,10 @@ function Content({ section, type, title, content, image, image_title, image_alt,
         </div>
       </div>
         */}
+        </div>
       </div>
-    </div>
-  );
-  
+    );
+
   } else if (type === 'image-right') {
     layout = (
       <div className="content__image-right">
@@ -120,23 +120,17 @@ function Content({ section, type, title, content, image, image_title, image_alt,
   } else if (type === 'call-discord') {
     layout = (
       <div className="content__call-discord">
-        <Row align='middle'>
+        <Row align='middle' align="center" justify="space-between">
           <Col span={12}>
-            <div className='container-img'>
-              <div className='content-image'>
-                <div className="image">
-                  <img src={`/images/${section}/${image}`} alt={image_alt} title={image_title} style={imageStyle} />
-                </div>
-              </div>
+            <div className="container-text">
+              <h1>{title}</h1>
+              <div dangerouslySetInnerHTML={{ __html: content }}></div>
+              <Button>Junte-se a nós</Button>
             </div>
           </Col>
           <Col span={12}>
-            <div className="container-text">
-              <div className="text">
-                <h1>{title}</h1>
-                <div dangerouslySetInnerHTML={{ __html: content }}></div>
-                <Actions {... { section, type, actions }} />
-              </div>
+            <div className="content__call-discord-image">
+              <img src={`/images/${section}/${image}`} alt={image_alt} title={image_title} />
             </div>
           </Col>
         </Row>
@@ -161,7 +155,7 @@ function Content({ section, type, title, content, image, image_title, image_alt,
                 <h1>{title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: content }}></div>
                 <div>
-                  <a className='discord' href='https://discord.com/channels/898684423116038154/910649961891381267'><FaDiscord /></a> 
+                  <a className='discord' href='https://discord.com/channels/898684423116038154/910649961891381267'><FaDiscord /></a>
                   <a className='forum' href='https://forum.netuno.org/'><WechatOutlined /></a>
                 </div>
               </div>
@@ -194,7 +188,7 @@ function Content({ section, type, title, content, image, image_title, image_alt,
   return (
     <section className="content">
       {layout}
-      
+
     </section>
   );
 }
