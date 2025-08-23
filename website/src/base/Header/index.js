@@ -166,14 +166,14 @@ function BaseHeader() {
                   </span>
           
               },
-              {
+              /*{
                 key: 'forum',
                 label:  
                   <span style={{ order: 2 }}>
                     <a href='https://forum.netuno.org' target="_blank"><Dictionary entry="forum" oneLine /></a>
                   </span>
                 
-              }, 
+              },*/
               {
                 key: 'documentation',
                 label: 
@@ -198,13 +198,13 @@ function BaseHeader() {
             selectedKeys={[activeMenu]}
             openKeys={subMenuKeys}
             items={[...menu,
-              {
+              /*{
                 key: 'forum',
                 label:  
                   <span style={{ order: 1 }}>
                     <a href='https://forum.netuno.org' ><Dictionary entry="forum" oneLine /></a>
                   </span>               
-              }, 
+              },*/
               {
                 key: 'documentation',
                 label: 
