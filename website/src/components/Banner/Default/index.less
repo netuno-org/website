@@ -1,0 +1,136 @@
+@import "../../../styles/variables.less";
+
+.banner {
+    width: 100%;
+    position: relative;
+
+    &__highlight-galaxies {
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    &__wrapper {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__content-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__content {
+        width: 100%;
+        color: #fff;
+        margin-bottom: 15rem;
+        text-align: center;
+
+        @media (min-width: 360px) and (max-width: 580px) {
+            margin-bottom: auto;
+        }
+
+        h1 {
+            font-weight: 700;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+
+            @media (max-width: 768px) {
+                br {
+                    display: none;
+                }
+            }
+        }
+
+        div {
+            p {
+                margin-bottom: 1rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__darken-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner {
+        &__highlight-galaxies {
+            background-attachment: scroll !important;
+        }
+
+        &__content {
+            h1 {
+                font-size: 1.5rem !important;
+            }
+
+            div {
+                font-size: 0.9rem !important;
+            }
+        }
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .banner {
+        &__content {
+            h1 {
+                font-size: 40px !important;
+            }
+
+            div {
+                font-size: 20px !important;
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .banner {
+        &__content {
+            h1 {
+                font-size: 2.5rem !important;
+            }
+        }
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    .banner {
+        &__content {
+            h1 {
+                font-size: 2.8rem !important;
+            }
+        }
+    }
+}
+
+@media (min-width: 1201px) {
+    .banner {
+        &__content {
+            h1 {
+                font-size: 42px !important;
+                margin-top: 7rem;
+                text-align: center;
+            }
+
+            div {
+                font-size: 1.3rem !important;
+            }
+        }
+    }
+}

@@ -1,23 +1,18 @@
 @import "../../../styles/variables.less";
 
 .actions__item {
-    max-width: 240px;
-    height: 64px;
-    font-size: 16px;
-    line-height: 19px;
-    padding: 20px;
-    margin: 0 auto !important;
-
-        @media only screen and (max-width: @header-mobile-width) {
-            margin: 0 auto !important;
-        }
-
-    border: 1.5px;
-    border-style: solid;
-    border-radius: 5px;
+    width: 280px;
+    padding: 15px;
+    margin: 0 0 20px 0;
+    @media only screen and (max-width: @header-mobile-width) {
+        margin: 0;
+    }
+    border: @actions-item-border-width solid @actions-item-border-color;
+    border-radius: @actions-item-border-radius;
     transition: all .1s ease-in;
-    border-color: #29292e;
-    background: #121214;
+    background-color: @actions-item-background;
+    color: @actions-item-text-color;
+    font-weight: 600;
     &:hover {
         cursor: pointer;
         background-color: @actions-item-background-hover;
@@ -29,10 +24,8 @@
 
     h4 {
         color: @actions-item-text-color;
-        font-size: 22px;
-        text-transform: uppercase;
-        text-align: center !important;
-        font-weight: 700;
+        font-size: 1.2em;
+        margin-bottom: 0.2em;
     }
     p {
         font-size: 1.0em;

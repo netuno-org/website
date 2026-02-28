@@ -1,0 +1,17 @@
+{
+    "type":"object",
+    "properties":{
+        "name":{
+            "type":"string"
+        },
+        "email":{
+            "type":"string"
+        },
+        "active":{
+            "type":"boolean"
+        },
+        "username":{
+            "type":"string"
+        }
+    }
+}

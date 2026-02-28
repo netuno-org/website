@@ -1,18 +1,18 @@
 
 import _service from '@netuno/service-client';
 import ReactGA from 'react-ga';
-import CluarCustomData from './CluarCustomData';
+import CluarCustom from './CluarCustom';
 
 let data = null;
 let currentLanguage = null;
-let customData = null;
+let custom = null;
 let gaEnabled = false;
 
 export default class Cluar {
   static init() {
-    data = window.cluarData;
+    data = window.cluar;
     currentLanguage = Cluar.defaultLanguage();
-    customData = new CluarCustomData(data);
+    custom = new CluarCustom(data);
     _service.config({
       prefix: data.config.services.api
     });
@@ -22,8 +22,13 @@ export default class Cluar {
     }
   }
 
-  static customData() {
-    return customData;
+  static authProviders() {
+    const { config } = window.cluar;
+    return config?.auth.providers;
+  }
+
+  static custom() {
+    return custom;
   }
 
   static config() {
@@ -44,6 +49,7 @@ export default class Cluar {
 
   static changeLanguage(codeOrLocale) {
     currentLanguage = data.languages.find((e) => e.code === codeOrLocale || e.locale === codeOrLocale);
+    window.localStorage.setItem('locale', currentLanguage.locale);
   }
 
   static languages() {
@@ -51,7 +57,12 @@ export default class Cluar {
   }
 
   static pages() {
+    console.log("data: ", data)
     return data.pages;
+  }
+
+  static actions() {
+    return data.actions;
   }
 
   static configuration(parameter) {
@@ -83,7 +94,15 @@ export default class Cluar {
   static plainDictionary(entry) {
     let value = Cluar.dictionary(entry);
     if (value) {
-      return (value).replace(/<\/?((p)|(br))[^>]*>/g, "")
+      return (value).replace(/<\/?((p)|(br))[^>]*>/g, "");
+    }
+    return entry;
+  }
+
+  static plainTitle(entry) {
+    let value = Cluar.dictionary(entry);
+    if (value) {
+      return (value).replace(/<\/?p[^>]*>/g, "");
     }
     return entry;
   }
@@ -91,7 +110,7 @@ export default class Cluar {
   static dictionaryNoParagraph(entry) {
     let value = Cluar.dictionary(entry);
     if (value) {
-      return (value).replace(/<\/?p[^>]*>/g, "")
+      return (value).replace(/<\/?p[^>]*>/g, "");
     }
     return entry;
   }

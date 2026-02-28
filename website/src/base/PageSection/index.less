@@ -1,0 +1,49 @@
+@import "../../styles/variables.less";
+
+.page-section {
+  position: relative;
+  outline: 0px solid white;
+
+  &:hover {
+    outline: 1px solid @primary-color;
+    transition: outline 0.6s linear;
+
+    .page-section__buttons-group {
+      opacity: 1;
+      transition: opacity 0.2s linear;
+    }
+
+    .page-section__new {
+      opacity: 1;
+      transition: height 0.2s linear;
+    }
+  }
+
+  &__buttons-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+  }
+
+  &__new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+    opacity: 0;
+    padding: 4px 0;
+    transition: opacity 0.2s linear;
+    gap: 8px;
+
+    &--visible {
+      opacity: 1;
+    }
+  }
+}

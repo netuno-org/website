@@ -1,0 +1,10 @@
+{
+    "en": {
+      "label": "Call Discord",
+      "description": "For when no content type is chosen."
+    },
+    "pt": {
+      "label": "Chamar Discord",
+      "description": "Para quando nenhum tipo de conteúdo for escolhido."
+    }
+  }

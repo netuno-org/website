@@ -1,58 +1,29 @@
-/*************
- * Dark Mode *
- *///////////*/
-//@import '~antd/lib/style/themes/dark.less';
-
-@import 'antd/dist/reset.css';
-
-@import '~@animated-burgers/burger-slip/dist/styles.css';
-@import '~sal.js/dist/sal.css';
 
 @import "./variables.less";
 
 html,
 body {
     background-color: @site-background;
-    box-sizing: border-box;
-    scrollbar-color: #121214 #131315;
-}
-
-* {
-    font-family: 'Roboto', sans-serif;
-    padding: 0;
-    margin: 0;
-}
-
-img, svg {
-    vertical-align: middle;
-}
-
-hr {
-    bottom: 0;
-    height: 1px;
-    width: 100%;
-    border: none;
-    position: absolute;
-    background: linear-gradient(270deg,#323238,rgba(50,50,56,.25));
 }
 
 .ant-layout {
-    padding-top: @header-size;
-    background-color: @page-background;
-    min-height: 100vh;
-    overflow: hidden;
+  background-color: @page-background;
+  min-height: 100vh;
+  padding-top: @header-size;
 
-    @media only screen and (max-width: @header-mobile-width) {
-        padding-top: @header-size-mobile;
-    }
+  @media only screen and (max-width: @header-mobile-width) {
+    padding-top: calc(@header-size-mobile + 40px);
+  }
+  
+  &--logged {
+    padding-top: calc(@header-size + 40px);
+  }
 }
 
 .ant-layout-content {
     background-color: @page-background !important;
     z-index: 2;
-    .content:nth-child(1) {
-        padding-top: 50px !important;
-    }
+
     a {
         color: @primary-link-color;
         text-decoration: underline;
@@ -66,13 +37,32 @@ hr {
     }
 }
 
-.container {
-    max-width: 1344px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+.ant-modal-root {
+    div[role="dialog"] {
+      padding: 0 !important;
+    }
+  
+.ant-modal-content {
+    padding: 0;
+
+    .ant-modal-title {
+      padding: 12px 24px;
+      border-bottom: 1px solid #C9C9C9;
+    }
+
+    .ant-modal-body {
+      padding: 12px 24px;
+      overflow: auto;
+    }
+
+    .ant-modal-footer {
+      padding: 12px 24px;
+      border-top: 1px solid #C9C9C9;
+    }
+  }
+
 }
 
-  
+.ant-table-filter-dropdown {
+  padding: 0.5em !important;
+}

@@ -1,31 +1,32 @@
-@import "../../styles/variables.less";
-
 .cookies {
     position: absolute;
     height: 100px;
     background-color: #777777;
-    &--popup {
+    &__popup {
         position: fixed;
         z-index: 10000;
         width: 100%;
         height: auto;
         bottom: 0;
-        background-color: #010119!important;
+        background-color: #fff;
         box-shadow: 0 -1px 10px 0 rgba(172, 171, 171, 0.3);
         &__content {
-            width: 90%;
-            margin: 0 auto;
             color: rgba(0, 0, 0, 0.85);
-            padding: 20px calc((100% - 1200px) / 2);
-            display: flex !important;
+            padding: 20px 50px;
+            @media only screen and (max-width: 800px) {
+                padding: 20px 20px;
+            }
+            display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
-
+            p {
+                margin-bottom: 0;
+            }
+            @media only screen and (max-width: 768px) {
                 display: block;
                 p {
                     margin-bottom: 1em;
-                    color: @header-menu-color;
                 }
+            }
         }
     }
 }

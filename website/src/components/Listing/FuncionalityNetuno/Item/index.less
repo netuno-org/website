@@ -1,0 +1,34 @@
+@import "../../../../styles/variables.less";
+
+.grid-container {
+    display: flex;
+    margin-bottom: 40px;
+
+    &:nth-child(odd) {
+        flex-direction: row-reverse;
+    }
+
+    &-text {
+
+        h1 {
+            font-size: @font-heading;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        p {
+            color: #e1e1e6;
+
+        }
+
+    }
+
+    &-image {
+        width: 100%;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+}
