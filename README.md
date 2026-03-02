@@ -14,62 +14,75 @@ Quickly build applications adapted to your business logic.
 ./netuno app github=netuno-org/website
 ```
 
-### Running
+## Website with Bun :art:
 
-Start the Netuno Server:
+Inside the website folder:
 
 ```
-./netuno server app=netuno_website
+cd website
 ```
 
-> May take while because is the first time and NPM Install will run to `ui` and `website` folder inside the application root folder.
+Execute the Bun install command:
 
-:warning: If you got this error:
- 
 ```
- npm ERR! code ERESOLVE
- npm ERR! ERESOLVE unable to resolve dependency tree
+bun install
 ```
-Then execute the command below inside the `website` folder:
 
-`npm install --force`
+It needs to execute untrusted scripts of the ESBUILD, then execute:
 
-:white_check_mark: Is not required, but is recommended to rename the app folder `(Netuno Root directory)/apps/cluar/` to your desired name, and do not forget the `name` parameter in the configurations:
+```
+bun pm trust --all
+```
 
-`config/_development.json`
+If needed, to restart the website installation, remove this folder and these files:
 
-`config/_production.json`
+```
+rm -rf node_modules
+bun install
+bun pm trust --all
+```
 
-> Remember to restart the Netuno Server with your new app name.
+Now you can start the website with the classic command:
 
-## From Scratch
+```bun run dev```
 
-### Clone and Setup
+> By default, the website runs with Bun.
 
-Clone this project to the directory (Neptune Root directory)/apps/netuno_website/.
-
-Then install the NPM dependencies by running 
-
-`npm install --force` 
-
-in the `netuno_website/website/` directory.
-
-### Configuration
-
-You'll need to copy the sample configuration file by running 
-
-`cp config/sample.json config/_development.json` (be sure the `name` parameter)
-
-and modifying to match your local environment configuration.
-
-### Running
+## Running :rocket:
 
 In the Netuno root directory run
 
 `./netuno server app=website`
 
-to start the backend server and then in the `(netuno_website app directory)/website/` run
+and it should start both the back-end and the front-end server.
 
-`npm run start`
+> The first run may take a while due to the installation of frontend dependencies.
 
-to start the frontend server.
+By default, the Netuno backoffice will be available in:
+  - [http://localhost:9000/](http://localhost:9000/)
+
+The OpenAPI will be in:
+  - [http://localhost:9000/services/_openapi](http://localhost:9000/services/_openapi)
+
+To start the website:
+
+```
+cd website
+bun run dev
+```
+
+By default, the website is available in:
+  - [http://localhost:3000/](http://localhost:3000/)
+
+You can auto-start the website with the Netuno server, enabling the command in the `config/_development.json`:
+
+```
+   "commands": [
+      ...
+      {
+         "path": "website",
+         ...
+         "enabled": true
+      }
+   ]
+```
