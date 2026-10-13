@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import { Form, Select } from "antd";
 import ImageSectionEditor from "../ImageSectionEditor";
 import _service from "@netuno/service-client";
@@ -8,15 +7,18 @@ import Cluar from "../../../common/Cluar"
 const ContentEditor = ({ sectionData, form }) => {
   const [typeOptions, setTypeOptions] = useState([]);
   const [config, setConfig] = useState([]);
-
   const [showActions, setShowActions] = useState(false);
   const [selectedType, setSelectedType] = useState(null);
 
-  const actionsData = Cluar.actions() || [];
+  const currentLangCode = Cluar.currentLanguage()?.code;
+  const allActions = Cluar.actions() || [];
+  const actionsData = allActions.filter(
+    (action) => action.language_code === currentLangCode
+  );
 
   useEffect(() => {
     _service({
-      url: "/components/content/list",
+      url: "/reserved-area/component/content/list",
       method: "POST",
       data: {
         language: Cluar.currentLanguage().locale
@@ -32,14 +34,14 @@ const ContentEditor = ({ sectionData, form }) => {
         setShowActions(typeConfig?.action || false);
       },
       fail: (error) => {
-        console.log(error);
+        console.error(error);
       },
     });
   }, []);
 
   return (
     <div className="content-editor">
-      <Form.Item label="Tipo" name="type">
+      <Form.Item label={Cluar.plainDictionary("content-editor-field-type")} name="type">
         <Select
           options={typeOptions.map((item) => ({
             label: item.info.label,
@@ -47,7 +49,6 @@ const ContentEditor = ({ sectionData, form }) => {
           }))}
           onChange={(value) => {
             setSelectedType(value);
-            
             const typeConfig = config.find(c => c.name === value);
             setShowActions(typeConfig?.action || false);
           }}
@@ -56,13 +57,13 @@ const ContentEditor = ({ sectionData, form }) => {
       <ImageSectionEditor sectionData={sectionData} form={form} />
 
       {showActions && (
-        <Form.Item label="Actions" name="action_uids">
+        <Form.Item label={Cluar.plainDictionary("content-editor-field-actions")} name="action_uids">
           <Select
             options={actionsData.map((action) => ({
               label: action.title,
               value: action.uid,
             }))}
-            placeholder="Adicionar"
+            placeholder={Cluar.plainDictionary("content-editor-placeholder-add")}
             mode="multiple"
             allowClear
           />

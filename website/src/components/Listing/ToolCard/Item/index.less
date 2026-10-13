@@ -1,0 +1,41 @@
+@import "../../../../styles/global.less";
+@import "../../../../styles/variables.less";
+
+.tool-card {
+  .surface-panel();
+  height: 100%;
+  overflow: hidden;
+  border-radius: @radius-2xl;
+
+  &__image {
+    height: 9rem;
+    width: 100%;
+    border-bottom: 1px solid color-mix(in oklab, @color-border 60%, transparent);
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &__body {
+    padding: 1.5rem;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  &__text {
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: @color-muted-foreground;
+  }
+
+  &__stack {
+    margin-top: 1rem;
+    font-family: @font-mono;
+    font-size: 0.75rem;
+    color: color-mix(in oklab, @color-muted-foreground 70%, transparent);
+  }
+}

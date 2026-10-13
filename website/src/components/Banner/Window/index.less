@@ -1,0 +1,32 @@
+@import "../../../styles/variables.less";
+
+.window {
+  overflow: hidden;
+  border-radius: @radius-xl;
+  border: 1px solid color-mix(in oklab, @color-border 70%, transparent);
+  background: @color-card;
+  box-shadow: @shadow-panel;
+  
+  &__bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-bottom: 1px solid color-mix(in oklab, @color-border 60%, transparent);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: @color-border;
+  }
+
+  &__title {
+    margin-left: 6px;
+    font-family: @font-mono;
+    font-size: 13px;
+    color: @color-muted-foreground;
+  }
+}

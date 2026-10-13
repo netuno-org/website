@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children, useEffect } from 'react';
 import { ConfigProvider, Layout, theme } from 'antd';
 import {
   BrowserRouter,
@@ -8,8 +8,10 @@ import {
   useLocation,
 } from "react-router";
 
-import { Provider } from 'react-redux';
+import { Provider, useDispatch, useSelector } from 'react-redux';
 import { Store } from './redux/store';
+import _service from '@netuno/service-client';
+import { loggedUserInfoAction } from './redux/actions';
 
 //import Analytics from './common/Analytics';
 import Cluar from "./common/Cluar";
@@ -27,6 +29,7 @@ import Dictionary from "./pages/Manage/Dictionary";
 import Recovery from "./pages/Recovery";
 import Organization from "./pages/Manage/Organization";
 import Template from "./pages/Template";
+import { setTheme } from './redux/actions/theme';
 
 import "@animated-burgers/burger-slip/dist/styles.css?inline";
 import "sal.js/dist/sal.css?inline";
@@ -38,6 +41,49 @@ import "./styles/App.less";
 import Actions from './pages/Manage/Actions';
 
 const { Content } = Layout;
+
+const ThemedConfigProvider = ({ children }) => {
+  const dispatch = useDispatch();
+  const themeMode = useSelector((state) => state.theme?.mode || 'light');
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved && saved !== themeMode) {
+      dispatch(setTheme(saved));
+    }
+  }, [dispatch, themeMode]);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", themeMode);
+  }, [themeMode]);
+
+  const antdAlgorithm = themeMode === "dark"
+    ? theme.darkAlgorithm
+    : theme.defaultAlgorithm;
+
+  return (
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: Cluar.configuration("primary-color") || "#FF6E1A",
+          fontSize: Cluar.configuration("text-font-base") !== "text-font-base" ? Number(Cluar.configuration("text-font-base")) : 16,
+          borderRadius: 7,
+          colorBgLayout: themeMode === 'light' ? Cluar.configuration("background-color-light") || '#fff' : Cluar.configuration("background-color-dark") || '#000',
+          colorBgFlex: themeMode === "light" ? Cluar.configuration("background-color-light") || '#fff' : Cluar.configuration("background-color-dark") || '#000',
+        },
+        components: {
+          Layout: {
+            headerBg: themeMode === "light" ? "#fff" : "#141414",
+            footerBg: themeMode === "light" ? "#E6E6E6" : "#141414",
+          }
+        },
+        algorithm: antdAlgorithm,
+      }}
+    >
+      {children}
+    </ConfigProvider>
+  )
+}
 
 function App() {
   let urlLang = null;
@@ -64,11 +110,12 @@ function App() {
       }
 
       let comPage = <Template page={page} />;
+      const pageLink = page.link.startsWith('/') ? page.link : `/${page.link}`;
 
       subroutes.push(
         <Route
-          key={`/${language.locale}${page.link}`}
-          path={`/${language.locale}${page.link}`}
+          key={`/${language.locale}${pageLink}`}
+          path={`/${language.locale}${pageLink}`}
           exact
           element={comPage}
         />
@@ -79,12 +126,30 @@ function App() {
         {subroutes}
       </Route>
     );
-    console.log("Cluar.pages()", Cluar.pages());
   }
 
   const AppContent = () => {
     const location = useLocation();
     const isReservedArea = location.pathname.startsWith("/reserved-area");
+    const dispatch = useDispatch();
+    const loggedUserInfoReload = useSelector(
+      (state) => state.loggedUserInfoState?.loggedUserInfoReload
+    );
+
+    useEffect(() => {
+      _service({
+        method: 'GET',
+        url: 'reserved-area/people',
+        success: (response) => {
+          if (response.json.result) {
+            dispatch(loggedUserInfoAction(response.json.data));
+          }
+        },
+        fail: (e) => {
+          console.error('Dados do Utilizador', e);
+        },
+      });
+    }, [loggedUserInfoReload]);
 
     return (
       <div className="page">
@@ -92,7 +157,7 @@ function App() {
           className={
             _auth.isLogged() && !isReservedArea
               ? "ant-layout--logged"
-              : "reset-ant-layout7"
+              : "reset-ant-layout"
           }
         >
           <Content>
@@ -118,31 +183,23 @@ function App() {
                 <Route path="organization" element={<Organization />} />
               </Route>
               {routes}
-              <Route element={<NotFound />} />
+              <Route path='*' element={<NotFound />} />
             </Routes>
           </Content>
+          <BaseCookies />
         </Layout>
       </div>
     );
   };
 
   return (
-    <ConfigProvider
-      theme={{
-        algorithm: theme.darkAlgorithm,
-        token: {
-          colorPrimary: "#5865F2",
-          fontSize: 20,
-          borderRadius: 20,
-        },
-      }}
-    >
-      <Provider store={Store}>
+    <Provider store={Store}>
+      <ThemedConfigProvider>
         <BrowserRouter>
           <AppContent />
         </BrowserRouter>
-      </Provider>
-    </ConfigProvider>
+      </ThemedConfigProvider>
+    </Provider>
   );
 }
 

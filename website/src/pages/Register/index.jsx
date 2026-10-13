@@ -11,6 +11,8 @@ import {
 
 import Cluar from '../../common/Cluar';
 
+import "altcha/i18n";
+
 import './index.less';
 
 const { Title } = Typography;
@@ -20,6 +22,8 @@ export default function Register(props) {
     const servicePrefix = _service.config().prefix;
     const [ready, setReady] = useState(false);
     const [submitting, setSubmitting] = useState(false);
+    const [altchaPayload, setAltchaPayload] = useState(null);
+    const altcha = useRef(null);
     const registerForm = useRef(null);
     const { provider } = useParams(null);
     const columnConfig = {
@@ -48,6 +52,19 @@ export default function Register(props) {
             window.scrollTo(0, 0);
         }
         window.scrollTo(0, 0);
+        if (Cluar.authAltcha() && altcha && altcha.current) {
+            function altchaVerified(ev) {
+                if (ev.detail.state === "verified") {
+                    setAltchaPayload(ev.detail.payload);
+                }
+            }
+            altcha.current.addEventListener("statechange", altchaVerified, false);
+            return () => {
+                if (altcha.current != null) {
+                    altcha.current.removeEventListener("statechange", altchaVerified, false);
+                }
+            }
+        }
     }, []);
 
     function onFinish(values) {
@@ -55,12 +72,13 @@ export default function Register(props) {
         const { username, password, email, name } = values;
         _service({
             method: 'POST',
-            url: 'people',
+            url: 'reserved-area/people',
             data: {
                 name,
                 username,
                 password,
-                email
+                email,
+                ...(Cluar.authAltcha() && { altcha: altchaPayload })
             },
             success: (response) => {
                 if (response.json.result) {
@@ -97,7 +115,7 @@ export default function Register(props) {
     }
 
     function onFinishFailed(errorInfo) {
-        console.log('Failed:', errorInfo);
+        console.error('Failed:', errorInfo);
     }
 
     if (_auth.isLogged()) {
@@ -143,7 +161,7 @@ export default function Register(props) {
                                     label={Cluar.plainDictionary('register-form-name')}
                                     name="name"
                                     rules={[
-                                        { required: true, message: Cluar.plainDictionary('register-form-validate-message-required')},
+                                        { required: true, message: Cluar.plainDictionary('register-form-validate-message-required') },
                                         { type: 'string', message: Cluar.plainDictionary('register-form-name-valid-message'), pattern: "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$" }
                                     ]}
                                 >
@@ -153,7 +171,7 @@ export default function Register(props) {
                                     label={Cluar.plainDictionary('register-form-username')}
                                     name="username"
                                     rules={[
-                                        { required: true, message: Cluar.plainDictionary('register-form-validate-message-required')},
+                                        { required: true, message: Cluar.plainDictionary('register-form-validate-message-required') },
                                         { type: 'string', message: Cluar.plainDictionary('register-form-username-valid-message'), pattern: "^[a-z]+[a-z0-9]{1,24}$" }
                                     ]}
                                 >
@@ -164,7 +182,7 @@ export default function Register(props) {
                                     name="email"
                                     rules={[
                                         { type: 'email', message: Cluar.plainDictionary('register-form-mail-valid-message') },
-                                        { required: true, message: Cluar.plainDictionary('register-form-validate-message-required')}
+                                        { required: true, message: Cluar.plainDictionary('register-form-validate-message-required') }
                                     ]}
                                 >
                                     <Input disabled={submitting} maxLength={250} />
@@ -173,7 +191,7 @@ export default function Register(props) {
                                     label={Cluar.plainDictionary('register-form-password')}
                                     name="password"
                                     rules={[
-                                        { required: true, message: Cluar.plainDictionary('register-form-validate-message-required')},
+                                        { required: true, message: Cluar.plainDictionary('register-form-validate-message-required') },
                                         { type: 'string', message: Cluar.plainDictionary('register-form-password-valid-message'), min: 8, max: 25 },
                                     ]}
                                 >
@@ -197,6 +215,18 @@ export default function Register(props) {
                                 >
                                     <Input.Password disabled={submitting} maxLength={25} />
                                 </Form.Item>
+                                {Cluar.authAltcha() && (
+                                    <Form.Item className="login-page__altcha">
+                                        <altcha-widget
+                                            ref={altcha}
+                                            language="pt"
+                                            challenge={_service.url("/_altcha")}
+                                            delay={1}
+                                            hidelogo={true}
+                                            hidefooter={true}
+                                        ></altcha-widget>
+                                    </Form.Item>
+                                )}
                                 <Form.Item>
                                     <Button type="primary" htmlType="submit" loading={submitting} className='btn-register'>
                                         {Cluar.plainDictionary('register-form-register')}

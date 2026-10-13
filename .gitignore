@@ -5,7 +5,9 @@ node_modules/
 .idea/
 .metadata/
 .vscode
+
 package-lock.json
+bun.lock
 
 /trash/*
 
@@ -17,5 +19,10 @@ package-lock.json
 config/_development.json
 config/_production.json
 
-#public/scripts/main.*
+dbs/
 
+public/scripts/main.*
+
+storage/database/
+
+jsconfig.json

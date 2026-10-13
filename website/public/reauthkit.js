@@ -1,9 +1,13 @@
 window.reauthkit = { config: {
     "api": {},
-    "auth": {"providers": {
-        "discord": false,
-        "facebook": false,
-        "github": false,
-        "google": false
-    }}
+    "auth": {
+        "altcha": false,
+        "providers": {
+            "discord": false,
+            "facebook": false,
+            "github": false,
+            "google": false,
+            "microsoft": false
+        }
+    }
 } };

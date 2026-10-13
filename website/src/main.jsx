@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import App from './App';
+import App from './App.jsx';
 import * as serviceWorker from './common/serviceWorker';
 
 import Cluar from './common/Cluar';
 
-import './styles/index.less';
+import './styles/global.less';
 
 const CluarDataScript = document.createElement("script");
 CluarDataScript.src = `/cluar/data.js?time=${new Date().getTime()}`;

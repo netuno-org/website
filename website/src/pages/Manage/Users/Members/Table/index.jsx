@@ -40,7 +40,7 @@ const MembersTable = forwardRef(({ userData }, ref) => {
 
     const onLoadGroups = () => {
         _service({
-            url: "user/group/list",
+            url: "reserved-area/user/group/list",
             method: "GET",
             data: {},
             success: (response) => {
@@ -48,7 +48,7 @@ const MembersTable = forwardRef(({ userData }, ref) => {
                 setGroups(groups);
             },
             fail: (error) => {
-                console.log(error);
+                console.error(error);
             }
         })
     }
@@ -59,7 +59,7 @@ const MembersTable = forwardRef(({ userData }, ref) => {
             isLoading: true
         });
         _service({
-            url: "organization/member/active",
+            url: "reserved-area/organization/member/active",
             method: "PUT",
             data: {
                 uid,
@@ -90,7 +90,7 @@ const MembersTable = forwardRef(({ userData }, ref) => {
                     key: uid,
                     isLoading: false
                 });
-                console.log(error);
+                console.error(error);
                 notification.error({
                     message: active ? Cluar.plainDictionary('members-table-desactive-failed-message') : Cluar.plainDictionary('members-table-active-failed-message')
                 });
@@ -127,7 +127,7 @@ const MembersTable = forwardRef(({ userData }, ref) => {
     const onLoadMembers = () => {
         setLoading(true);
         _service({
-            url: "organization/member/list",
+            url: "reserved-area/organization/member/list",
             method: "POST",
             data: {
                 pagination,

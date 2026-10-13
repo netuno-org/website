@@ -1,0 +1,68 @@
+@import "../../../styles/variables.less";
+
+.hero-slider {
+  margin: 1rem auto 3rem;
+  max-width: 56rem;
+
+  @media (max-width: 1200px) {
+    padding: 0 30px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 30px;
+  }
+  @media (max-width: 480px) {
+    padding: 0 20px;
+  }
+
+  .keen-slider {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__caption {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: @font-mono;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: @color-muted-foreground;
+  }
+
+  &__track {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__windows {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @media (min-width: @screen-sm) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__dots {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  &__dot {
+    height: 6px;
+    width: 6px;
+    border-radius: 999px;
+    border: none;
+    background: oklch(0.82 0.14 205);
+    transition: width 0.3s, background-color 0.3s;
+
+    &--active {
+      width: 24px;
+      background: oklch(0.82 0.14 205);
+    }
+  }
+}

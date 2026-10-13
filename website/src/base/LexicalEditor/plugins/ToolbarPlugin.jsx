@@ -58,8 +58,10 @@ export default function ToolbarPlugin({ onToggleHtmlMode, isHtmlMode }) {
   const [fontFamilyDropdownVisible, setFontFamilyDropdownVisible] = useState(false);
   const [currentFontFamily, setCurrentFontFamily] = useState(FONT_FAMILY_OPTIONS[0][0]);
   const [currentFontSize, setCurrentFontSize] = useState("16");
-  const [currentFontColor, setCurrentFontColor] = useState('#000000');
-  const [currentBgColor, setCurrentBgColor] = useState('#ffffff');
+
+  const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+  const [currentFontColor, setCurrentFontColor] = useState(isDarkMode ? '#ffffff' : "#000000");
+  const [currentBgColor, setCurrentBgColor] = useState('');
   const [isLink, setIsLink] = useState(false);
   const [currentTextAlign, setCurrentTextAlign] = useState("left");
 
@@ -84,7 +86,6 @@ export default function ToolbarPlugin({ onToggleHtmlMode, isHtmlMode }) {
 
   const updateToolbar = useCallback(() => {
     const selection = $getSelection();
-    console.log("selection: ", selection);
 
     if (!$isRangeSelection(selection)) {
       setIsSelected(false);
@@ -110,8 +111,9 @@ export default function ToolbarPlugin({ onToggleHtmlMode, isHtmlMode }) {
 
     // Font Color
     const fontColor = getStyleValue('color');
-    setCurrentFontColor(fontColor || "#000000");
-
+    if (fontColor) {
+      setCurrentFontColor(fontColor);
+    }
     // Background Color
     const bgColor = getStyleValue('background-color');
     if (bgColor) setCurrentBgColor(bgColor);
@@ -128,8 +130,6 @@ export default function ToolbarPlugin({ onToggleHtmlMode, isHtmlMode }) {
       }
 
       const elementType = element.getType();
-      console.log("element", element);
-      console.log("elementType", elementType);
       switch (elementType) {
         case 'heading': {
           const tag = element.getTag();
@@ -256,7 +256,6 @@ export default function ToolbarPlugin({ onToggleHtmlMode, isHtmlMode }) {
   }, [editor]);
 
   const formatHeading = useCallback((tag) => {
-    //console.log("formatHeading", tag);
 
     editor.update(() => {
       const selection = $getSelection();
@@ -269,7 +268,6 @@ export default function ToolbarPlugin({ onToggleHtmlMode, isHtmlMode }) {
   }, [editor]);
 
   const formatList = useCallback((type) => {
-    //console.log("formatList", type);
 
     editor.update(() => {
       const selection = $getSelection();
@@ -284,7 +282,6 @@ export default function ToolbarPlugin({ onToggleHtmlMode, isHtmlMode }) {
   }, [editor]);
 
   const applyFontFamily = useCallback((fontFamily) => {
-    //console.log("applyFontFamily", fontFamily);
 
     editor.update(() => {
       const selection = $getSelection();
@@ -303,14 +300,11 @@ export default function ToolbarPlugin({ onToggleHtmlMode, isHtmlMode }) {
   }, [editor]);
 
   const applyFontSize = useCallback((fontSize) => {
-    console.log("applyFontSize", fontSize);
     editor.update(() => {
       const selection = $getSelection();
       if ($isRangeSelection(selection)) {
         const fontSizeWithUnit = fontSize.toString().includes('px') ? fontSize : `${fontSize}px`;
         $patchStyleText(selection, { "font-size": fontSizeWithUnit });
-
-        //console.log('Applied font size:', fontSizeWithUnit);
       }
     });
     setCurrentFontSize(fontSize);
@@ -409,25 +403,20 @@ export default function ToolbarPlugin({ onToggleHtmlMode, isHtmlMode }) {
   }, [applyFontSize]);
 
 
-  const handleInsertMenuClick = ({ key }) => {
-    switch (key) {
-      case '1':
-        setIsImageModalOpen(true);
-        break;
-      case '2':
-        setIsColumnsModalOpen(true);
-        break;
-      default:
-        break;
-    }
-  };
-
-  const insertMenu = (
-    <Menu onClick={handleInsertMenuClick}>
-      <Menu.Item key="1" icon={<FileImageOutlined />}>Imagem</Menu.Item>
-      <Menu.Item key="2" icon={<AppstoreOutlined />}>Colunas</Menu.Item>
-    </Menu>
-  );
+  const insertMenuItems = [
+    {
+      key: '1',
+      icon: <FileImageOutlined />,
+      label: 'Imagem',
+      onClick: () => setIsImageModalOpen(true),
+    },
+    {
+      key: '2',
+      icon: <AppstoreOutlined />,
+      label: 'Colunas',
+      onClick: () => setIsColumnsModalOpen(true),
+    },
+  ];
 
   return (
     <div className="toolbar" ref={toolbarRef}>
@@ -716,7 +705,7 @@ export default function ToolbarPlugin({ onToggleHtmlMode, isHtmlMode }) {
       {isSelected &&
         createPortal(<FloatingEditor editor={editor} />, document.body)}
       <div className="divider" />
-      <Dropdown overlay={insertMenu} trigger={['click']}>
+      <Dropdown menu={{ items: insertMenuItems }} trigger={['click']}>
         <button type="link" style={{
           padding: 0,
           display: 'flex',

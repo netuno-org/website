@@ -1,270 +1,144 @@
 @import "../../styles/variables.less";
 
 .ant-layout-footer {
-    background: #121214 !important;
-    color: #fff;
-    position: relative;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2),
-        0 1px 1px 0 rgba(0, 0, 0, .14),
-        0 2px 1px -1px rgba(0, 0, 0, .12);
+  border-top: 1px solid color-mix(in oklab, @color-border 60%, transparent);
+  background: @color-deep;
 
-    .container {
-        padding: 0 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+  /* @media (max-width: @header-desktop-width) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
 
-    .ant-row {
-        display: flex;
-        justify-content: end;
-    }
+  @media (max-width: @header-mobile-width) {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    text-align: center;
+  }*/
 
-    .logo {
-        margin-bottom: 20px;
+  &__wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 2rem;
+  }
 
-        .open-source {
-            display: flex;
-            align-items: center;
-            color: #1677ff !important;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: 600;
-            width: fit-content;
-
-            &:hover {
-                color: #68a2ff !important;
-            }
-
-            svg {
-                margin-right: 12px;
-                transition: all 0.3s ease;
-            }
-        }
-    }
-
-    .container-links {
-        margin-top: 20px;
-
-        .social-links {
-            max-width: 400px;
-
-            a.share-icons {
-                justify-content: center;
-                width: 50px;
-                height: 50px;
-                color: #eeeeee !important;
-                text-decoration: none;
-                transition: all 0.3s ease;
-
-                &:hover {
-                    color: #5865f2 !important;
-                }
-
-                svg {
-                    height: 40px;
-                    padding: 5px;
-                    width: auto;
-                }
-            }
-        }
-    }
-
-    .ant-col {
-        &:last-child {
-            text-align: right;
-
-            
-        }
-
-        p {
-            align-items: center;
-            margin-bottom: 15px;
-            color: #fff;
-            font-size: 20px;
-
-            svg {
-                margin-right: 12px;
-            }
-
-            a {
-                color: #1677ff !important;
-                text-decoration: none;
-                transition: all 0.3s ease;
-
-                &:hover {
-                    color: #68a2ff !important;
-                    text-decoration: none;
-                }
-            }
-        }
-
-        .netuno-copyright {
-            font-size: 20px;
-
-            a {
-                color: #1677ff !important;
-
-                &:hover {
-                    color: #68a2ff !important;
-                }
-            }
-        }
-    }
-
-    .container-links {
-
-        .social-links {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            max-width: 300px;
-        }
-    }
-
-    .ant-col-lg-8 {
-        margin-top: 30px;
-    }
-}
-
-.container-links .social-links {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-
-    a.share-icons {
-        width: 44px;
-        height: 44px;
-
-        svg {
-            width: 20px;
-            height: 20px;
-        }
-    }
-}
-
-.ant-col p {
-    font-size: 14px;
+  .logo {
+    display: flex;
     flex-direction: column;
-    gap: 5px;
+    align-items: center;
 
-    svg {
-        margin-right: 0;
+    @media (min-width: @screen-md) {
+      align-items: flex-start;
     }
-}
-@media (max-width: 991px) {
-    .ant-layout-footer {
-        padding: 30px 0;
 
-        .container {
-            padding: 0 15px;
-        }
-
-        .ant-row {
-            justify-content: center;
-            text-align: center;
-            gap: 30px;
-        }
-
-        .ant-col {
-            min-width: 100%;
-            text-align: center !important;
-
-            &:last-child {
-                text-align: center !important;
-            }
-        }
-
-        .logo {
-            .open-source {
-                font-size: 20px;
-                justify-content: center;
-                margin: 0 auto;
-
-                svg {
-                    margin-right: 8px;
-                }
-            }
-        }
-
-        .container-links {
-            .social-links {
-                grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
-                max-width: 100%;
-                gap: 8px;
-
-                a.share-icons {
-                    width: 40px;
-                    height: 40px;
-
-                    svg {
-                        height: 30px;
-                    }
-                }
-            }
-        }
-
-        .ant-col p {
-            font-size: 16px;
-            justify-content: center;
-            flex-direction: row;
-            flex-wrap: wrap;
-
-            svg {
-                margin-right: 8px;
-            }
-        }
-
-        .netuno-copyright {
-            font-size: 16px !important;
-        }
+    img {
+      height: 2.5rem;
+      width: auto;
     }
-}
+  }
 
-@media (max-width: 480px) {
-    .ant-layout-footer {
-        padding: 20px 0;
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: 0.975rem;
+    color: @color-muted-foreground;
+    margin-top: 1rem;
+    text-align: center;
 
-        .container {
-            padding: 0 10px;
-        }
-
-        .logo {
-            .open-source {
-                font-size: 18px;
-                
-                svg {
-                    width: 24px;
-                    height: 24px;
-                }
-            }
-        }
-
-        .container-links {
-            .social-links {
-                grid-template-columns: repeat(3, 1fr);
-                
-                a.share-icons {
-                    width: 35px;
-                    height: 35px;
-
-                    svg {
-                        height: 25px;
-                        padding: 3px;
-                    }
-                }
-            }
-        }
-
-        .ant-col p {
-            font-size: 14px;
-            flex-direction: column;
-            gap: 8px;
-
-            svg {
-                margin-right: 0;
-            }
-        }
-
-        .netuno-copyright {
-            font-size: 14px !important;
-        }
+    @media (min-width: @screen-md) {
+      justify-content: flex-start;
+      text-align: left;
     }
+  }
+
+  &__badge {
+    border-radius: 999px;
+    border: 1px solid color-mix(in oklab, @color-cyan 40%, transparent);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: @color-cyan;
+  }
+
+  &__link {
+    color: oklch(0.72 0.03 250) !important;
+
+    &:hover {
+      color: @color-foreground !important;
+    }
+
+    &--mail {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+  }
+
+  &__mail-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .footer__social-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    @media (min-width: @screen-md) {
+      justify-content: flex-end;
+      margin-top: 0;
+    }
+  }
+
+  .share-icons {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid oklch(0.32 0.05 262 / 60%);
+    padding: 0.625rem;
+    color: oklch(0.72 0.03 250);
+    transition: border-color 0.2s, color 0.2s;
+
+    @media (max-width: @header-mobile-width) {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    &:hover {
+      border-color: color-mix(in oklab, @color-cyan 50%, transparent);
+      color: @color-cyan;
+    }
+  }
+
+  .footer__bottom {
+    position: relative;
+    padding: 1.25rem 0;
+    text-align: center;
+    font-size: 0.875rem;
+    color: @color-muted-foreground;
+    margin-top: 5rem;
+
+    @media (max-width: @header-mobile-width) {
+      margin-top: 3rem;
+      padding: 1rem 0.5rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      //width: 100vw;
+      transform: translateX(-50%);
+      border-top: 1px solid color-mix(in oklab, @color-border 80%, transparent);
+    }
+  }
 }

@@ -2,6 +2,7 @@
 
 .login-container {
   padding: 0rem 2rem 0rem 2rem;
+
   form {
     .ant-btn {
       width: 100%;
@@ -25,9 +26,20 @@
       p {
         font-size: 14px !important;
         padding: 0 10px;
-        background-color: #FFFFFF;
         display: inline-block;
       }
+
+      html[data-theme="light"] & p {
+        background-color: @layout-body-background;
+      }
+
+      html[data-theme="dark"] & p {
+        background-color: #141414;
+      }
     }
+  }
+
+  &__altcha {
+    margin-top: 6px;
   }
 }

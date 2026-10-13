@@ -1,0 +1,25 @@
+@import "../../../styles/global.less";
+@import "../../../styles/variables.less";
+
+.marquee {
+    position: relative;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+
+    &__track {
+        display: flex;
+        width: max-content;
+        align-items: center;
+        gap: 3rem;
+        animation: marquee var(--marquee-speed, 40s) linear infinite;
+
+        .marquee:hover & {
+            animation-play-state: paused;
+        }
+    }
+
+    &__item {
+        flex-shrink: 0;
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Navigate, Link } from "react-router";
 import { Layout, Typography, Form, Input, Button, Checkbox, notification, Row, Col } from 'antd';
 import _auth from '@netuno/auth-client';
@@ -14,27 +14,33 @@ import {
   FaFacebook, FaGoogle, FaDiscord, FaGithub
 } from "react-icons/fa";
 
+import "altcha/i18n";
+
 import './index.less';
 
 const { Title } = Typography;
 const { Content, Sider } = Layout;
 
-function Login({loggedUserInfoAction}) {
+function Login({ loggedUserInfoAction }) {
   const servicePrefix = _service.config().prefix;
   const [submitting, setSubmitting] = useState(false);
   const [visible, setVisible] = useState(false);
-  const columnConfig={
+  const [altchaPayload, setAltchaPayload] = useState(null);
+  const altcha = useRef(null);
+
+
+  const columnConfig = {
     xs: {
-        span: 24
+      span: 24
     },
     sm: {
-        span: 24
+      span: 24
     },
     md: {
-        span: 16
+      span: 16
     },
     lg: {
-        span: 16
+      span: 16
     },
     xl: {
       span: 12
@@ -42,7 +48,7 @@ function Login({loggedUserInfoAction}) {
     xxl: {
       span: 10
     }
-}
+  }
 
 
   useEffect(() => {
@@ -50,10 +56,22 @@ function Login({loggedUserInfoAction}) {
       window.scrollTo(0, 0);
     }
     window.scrollTo(0, 0);
+    if (Cluar.authAltcha() && altcha && altcha.current) {
+      function altchaVerified(ev) {
+        if (ev.detail.state === "verified") {
+          setAltchaPayload(ev.detail.payload);
+        }
+      }
+      altcha.current.addEventListener("statechange", altchaVerified, false);
+      return () => {
+        if (altcha.current != null) {
+          altcha.current.removeEventListener("statechange", altchaVerified, false);
+        }
+      }
+    }
   }, []);
 
   function onFinish(values) {
-    console.log(values)
     setSubmitting(true);
     const { username, password, remember } = values;
     if (remember) {
@@ -66,10 +84,12 @@ function Login({loggedUserInfoAction}) {
       password,
       data: (data) => {
         // data.myparameter = 'myvalue';
+        if (Cluar.authAltcha()) {
+          data.altcha = altchaPayload;
+        }
         return data;
       },
       success: (data) => {
-        console.log(data)
         loggedUserInfoAction(data.json.extra);
         setSubmitting(false);
       },
@@ -79,21 +99,21 @@ function Login({loggedUserInfoAction}) {
           if (data.json.blocked) {
             notification["error"]({
               message: Cluar.plainDictionary('login-form-user-blocked-message'),
-              description:Cluar.plainDictionary('login-form-user-blocked-description'),
+              description: Cluar.plainDictionary('login-form-user-blocked-description'),
             });
             return;
           }
         }
         notification["error"]({
           message: Cluar.plainDictionary('login-form-wrong-credentials-message'),
-          description:Cluar.plainDictionary('login-form-wrong-credentials-description'),
+          description: Cluar.plainDictionary('login-form-wrong-credentials-description'),
         });
       }
     });
   }
 
   function onFinishFailed(errorInfo) {
-    console.log('Failed:', errorInfo);
+    console.error('Failed:', errorInfo);
   }
 
   let initialValues = { remember: true };
@@ -102,7 +122,7 @@ function Login({loggedUserInfoAction}) {
   }
 
   if (_auth.isLogged()) {
-    return <Navigate to="/reserved-area/users" />;
+    return <Navigate to="/reserved-area/pages" />;
   } else {
     return (
       <Layout>
@@ -142,7 +162,7 @@ function Login({loggedUserInfoAction}) {
                     label={Cluar.plainDictionary('login-form-username')}
                     name="username"
                     rules={[
-                      { required: true, message:Cluar.plainDictionary('login-form-validate-message-required')},
+                      { required: true, message: Cluar.plainDictionary('login-form-validate-message-required') },
                       { type: 'string', message: Cluar.plainDictionary('login-form-invalid-username-message'), pattern: "^[a-z]+[a-z0-9]{1,24}$" }
                     ]}
                   >
@@ -152,7 +172,7 @@ function Login({loggedUserInfoAction}) {
                   <Form.Item
                     label={Cluar.plainDictionary('login-form-password')}
                     name="password"
-                    rules={[{ required: true, message:Cluar.plainDictionary('login-form-validate-message-required')}]}
+                    rules={[{ required: true, message: Cluar.plainDictionary('login-form-validate-message-required') }]}
                   >
                     <Input.Password />
                   </Form.Item>
@@ -160,6 +180,19 @@ function Login({loggedUserInfoAction}) {
                   <Form.Item name="remember" valuePropName="checked">
                     <Checkbox>{Cluar.plainDictionary('login-form-remember')}</Checkbox>
                   </Form.Item>
+
+                  {Cluar.authAltcha() && (
+                    <Form.Item className="login-page__altcha">
+                      <altcha-widget
+                        ref={altcha}
+                        language="pt"
+                        challenge={_service.url("/_altcha")}
+                        delay={1}
+                        hidelogo={true}
+                        hidefooter={true}
+                      ></altcha-widget>
+                    </Form.Item>
+                  )}
 
                   <Form.Item>
                     <Button loading={submitting} type="primary" className="login-btn" htmlType="submit">
@@ -190,7 +223,7 @@ function Login({loggedUserInfoAction}) {
 }
 
 const mapStateToProps = store => {
-  return { };
+  return {};
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({

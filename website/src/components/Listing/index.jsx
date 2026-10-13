@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Cluar from "../../common/Cluar";
-import Default from './Default';
-import FuncionalityNetuno from './FuncionalityNetuno';
-import HomeHowWorks from './HomeHowWorks';
-import Cases from './Cases';
-import Support from "./Support";
+
 import "./index.less";
+import Default from './Default';
+import Reveal from './Reveal/index';
+import StatCard from './StatCard';
+import MadeWith from './MadeWith';
+import Marquee from './Marquee';
+import PillarsCard from './PillarsCard';
+import ToolCard from './ToolCard';
+import Polyglot from './Polyglot';
+import TechMarquee from './TechMarquee';
 
 function Listing(props) {
   const [renderedActions, setRenderedActions] = useState(props.actions);
@@ -15,7 +20,7 @@ function Listing(props) {
   const actions = (props.action_uids || [])
     .map(uid => actionsData.find(item => item.uid === uid))
     .filter(Boolean);
-  console.log("listing props", props)
+
   useEffect(() => {
     if (!isFirstRender) {
       setRenderedActions(actions);
@@ -33,30 +38,58 @@ function Listing(props) {
         actions={renderedActions}
       />
     );
-  } else if (props.type === "FuncionalityNetuno") {
+  } else if (props.type === "Reveal") {
     listLayout = (
-      <FuncionalityNetuno
+      <Reveal
         {...props}
         actions={renderedActions}
       />
     );
-  } else if (props.type === "HomeHowWorks") {
+  } else if (props.type === "StatCard") {
     listLayout = (
-      <HomeHowWorks
+      <StatCard
         {...props}
         actions={renderedActions}
       />
     );
-  } else if (props.type === "Cases") {
+  } else if (props.type === "MadeWith") {
     listLayout = (
-      <Cases
+      <MadeWith
         {...props}
         actions={renderedActions}
       />
     );
-  } else if (props.type === "Support") {
+  } else if (props.type === "Marquee") {
     listLayout = (
-      <Support
+      <Marquee
+        {...props}
+        actions={renderedActions}
+      />
+    );
+  } else if (props.type === "PillarsCard") {
+    listLayout = (
+      <PillarsCard
+        {...props}
+        actions={renderedActions}
+      />
+    );
+  } else if (props.type === "ToolCard") {
+    listLayout = (
+      <ToolCard
+        {...props}
+        actions={renderedActions}
+      />
+    );
+  } else if (props.type === "Polyglot") {
+    listLayout = (
+      <Polyglot
+        {...props}
+        actions={renderedActions}
+      />
+    );
+  } else if (props.type === "TechMarquee") {
+    listLayout = (
+      <TechMarquee
         {...props}
         actions={renderedActions}
       />

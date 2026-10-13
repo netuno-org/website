@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-import { Row, Col, Switch, Divider, Button } from "antd";
+import { Row, Col, Switch, Divider, Button, Flex, theme } from "antd";
 import { HistoryOutlined } from "@ant-design/icons";
 import Cluar from "../../common/Cluar"
 import PageConfiguration from "../PageConfiguration";
 import PageVersions from "../PageVersions";
 
 import "./index.less";
+import ClonePage from "../ClonePage";
 
 const AdminBar = ({
   onChangeEditMode,
@@ -18,6 +19,7 @@ const AdminBar = ({
   const [isPageConfigOpen, setIsPageConfigOpen] = useState(false);
   const [isPageVersionsOpen, setIsPageVersionsOpen] = useState(false);
   const [isNewPage, setIsNewPage] = useState(false);
+  const [isClonePage, setIsClonePage] = useState(false);
 
   const openPageConfig = (isNew = false) => {
     setIsNewPage(isNew);
@@ -25,11 +27,13 @@ const AdminBar = ({
   };
 
   const navigateToReservedArea = () => {
-    window.location.href = "/reserved-area/";
+    window.location.href = "/reserved-area/pages";
   };
 
+  const { token } = theme.useToken();
+
   return (
-    <div className="admin-bar">
+    <Flex className="admin-bar" style={{ background: token.colorBgFlex }}>
       <Row className="admin-bar__row" justify="space-between">
         <Col>
           <Row align="middle" gutter={12}>
@@ -53,6 +57,14 @@ const AdminBar = ({
             <Col>
               <Button type="text" onClick={() => openPageConfig(false)}>
                 {Cluar.plainDictionary("page-drawer-config-title")}
+              </Button>
+            </Col>
+            <Col>
+              <Divider type="vertical" />
+            </Col>
+            <Col>
+              <Button type="text" onClick={() => setIsClonePage(true)}>
+                {Cluar.plainDictionary("admin-bar-clone-page")}
               </Button>
             </Col>
             <Col>
@@ -94,7 +106,12 @@ const AdminBar = ({
         onClose={() => setIsPageVersionsOpen(false)}
         pageData={pageData}
       />
-    </div>
+      <ClonePage
+        open={isClonePage}
+        onClose={() => setIsClonePage(false)}
+        pageData={pageData}
+      />
+    </Flex>
   );
 };
 

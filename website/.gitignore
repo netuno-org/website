@@ -26,7 +26,7 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
-bun.lockb
+bun.lock
 
 *~*
 *#*
@@ -40,6 +40,10 @@ src/config/config.json
 
 /public/cluarData.js
 
+/public/root.css
+
+/public/reauthkit.js
+
 /public/sitemap.xml
 
 /public/images/banner/
@@ -47,3 +51,7 @@ src/config/config.json
 /public/images/functionality/
 /public/images/listing/
 /public/images/listing_item/
+
+src/pages/Template/*
+!src/pages/Template/Default/
+!src/pages/Template/Default/index.jsx

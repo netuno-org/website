@@ -1,0 +1,139 @@
+@import "../../../styles/global.less";
+
+.home {
+    &__section {
+        margin: 0 auto;
+        max-width: 72rem;
+        padding: 1rem 1.25rem;
+        width: 100%;
+
+        &--last {
+            padding-top: 0;
+            padding-bottom: 5rem;
+
+        }
+    }
+}
+
+.orbit-cta {
+    width: 100%;
+
+    .surface-panel();
+    position: relative;
+    overflow: hidden;
+    border-radius: @radius-3xl;
+    border: 1px solid color-mix(in oklab, @color-cyan 25%, transparent);
+    background: @color-deep;
+    padding: 1.75rem;
+    text-align: center;
+
+    @media (min-width: @screen-md) {
+        padding: 2.5rem;
+    }
+
+    &__glow {
+        pointer-events: none;
+        position: absolute;
+        top: -9rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 18rem;
+        height: 18rem;
+        border-radius: 999px;
+        background: color-mix(in oklab, @color-cyan 20%, transparent);
+        filter: blur(64px);
+        animation: orbit-pulse 6s ease-in-out infinite;
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    &__icon {
+        margin: 0 auto;
+        width: 2rem;
+        height: 2rem;
+        color: @color-cyan;
+    }
+
+    &__title {
+        margin-top: 1rem;
+        font-size: 1.875rem;
+        font-weight: 600;
+        font-family: "Jost", ui-sans-serif, system-ui, sans-serif;
+
+        @media (min-width: @screen-sm) {
+            font-size: 2.25rem;
+        }
+    }
+
+    &__text {
+        margin: 0.75rem auto 0;
+        max-width: 32rem;
+        color: @color-muted-foreground;
+        font-size: 1.1rem;
+        font-family: "Jost", ui-sans-serif, system-ui, sans-serif;
+    }
+
+    &__button {
+        margin-top: 1.75rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    &__button-2 {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 999px;
+        padding: 1.3rem 1.5rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        background: oklch(0.72 0.15 226);
+        border: none;
+
+        &:hover {
+            background: oklch(0.72 0.15 226) !important;
+            border-color: transparent !important;
+            transform: scale(1.03);
+        }
+
+        &:active {
+            box-shadow: 0 2px 8px rgba(65, 105, 225, 0.4);
+        }
+
+
+        span {
+            letter-spacing: 0.3px;
+            color: oklch(0.15 0.05 268);
+            font-family: "Jost", ui-sans-serif, system-ui, sans-serif;
+        }
+    }
+
+    &__button-3 {
+        border-radius: 999px;
+        padding: 1.3rem 1.5rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        background: color-mix(in oklab, oklch(0.210.045 265) 60%, transparent);
+        border: none;
+        border: 1px solid oklch(0.32 0.05 262 / 60%);
+        color: oklch(0.97 0.01 240);
+
+        &:hover {
+            background: color-mix(in oklab, oklch(0.210.045 265) 60%, transparent) !important;
+            border-color: transparent !important;
+            transform: scale(1.01);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+            border: 1px solid oklch(0.32 0.05 262 / 60%);
+        }
+
+        span {
+            color: oklch(0.97 0.01 240);
+            font-family: "Jost", ui-sans-serif, system-ui, sans-serif;
+        }
+    }
+}

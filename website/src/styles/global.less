@@ -1,0 +1,138 @@
+@import "./variables.less";
+
+// ---------------------------------------------------------------------------
+// Reset e base
+// ---------------------------------------------------------------------------
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-color: @color-border;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: @color-background;
+  color: @color-foreground;
+  font-family: @font-sans;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: @font-display;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+// ---------------------------------------------------------------------------
+// Keyframes partilhados entre componentes
+// ---------------------------------------------------------------------------
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes orbit-pulse {
+
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Mixins utilitários — usar com `.mixin-name();` dentro de qualquer index.less
+// ---------------------------------------------------------------------------
+.text-gradient() {
+  background-image: @gradient-brand;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.surface-panel() {
+  background-image: @gradient-surface;
+  border: 1px solid @color-border;
+  box-shadow: @shadow-panel;
+}
+
+.glow-ring() {
+  box-shadow: @shadow-orbit;
+}
+
+.reveal-hidden() {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.reveal-shown() {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}

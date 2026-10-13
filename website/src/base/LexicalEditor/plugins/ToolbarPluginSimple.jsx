@@ -56,9 +56,12 @@ export default function ToolbarPluginSimple({ onToggleHtmlMode, isHtmlMode }) {
   const [fontFamilyDropdownVisible, setFontFamilyDropdownVisible] = useState(false);
   const [currentFontFamily, setCurrentFontFamily] = useState(FONT_FAMILY_OPTIONS[0][0]);
   const [currentFontSize, setCurrentFontSize] = useState("40");
-  const [currentFontColor, setCurrentFontColor] = useState('#000000');
-  const [currentBgColor, setCurrentBgColor] = useState('#ffffff');
+
+  const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+  const [currentFontColor, setCurrentFontColor] = useState(isDarkMode ? '#ffffff' : "#000000");
+  const [currentBgColor, setCurrentBgColor] = useState('');
   const [isLink, setIsLink] = useState(false);
+  const [currentTextAlign, setCurrentTextAlign] = useState("left");
 
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [isColumnsModalOpen, setIsColumnsModalOpen] = useState(false);
@@ -81,7 +84,6 @@ export default function ToolbarPluginSimple({ onToggleHtmlMode, isHtmlMode }) {
 
   const updateToolbar = useCallback(() => {
     const selection = $getSelection();
-    console.log("selection: ", selection);
 
     if (!$isRangeSelection(selection)) {
       setIsSelected(false);
@@ -107,11 +109,24 @@ export default function ToolbarPluginSimple({ onToggleHtmlMode, isHtmlMode }) {
 
     // Font Color
     const fontColor = getStyleValue('color');
-    setCurrentFontColor(fontColor || "#000000");
-
+    if (fontColor) {
+      setCurrentFontColor(fontColor);
+    }
     // Background Color
     const bgColor = getStyleValue('background-color');
     if (bgColor) setCurrentBgColor(bgColor);
+
+    const anchorNode = selection.anchor.getNode();
+    const element = anchorNode.getParent();
+
+    if (element) {
+      const textAlign = element.getStyle('text-align');
+      if (textAlign) {
+        setCurrentTextAlign(textAlign);
+      } else {
+        setCurrentTextAlign("left");
+      }
+    }
 
     // Verifica se o nó ou seu pai é link
     const node = getSelectedNode(selection);
@@ -198,7 +213,6 @@ export default function ToolbarPluginSimple({ onToggleHtmlMode, isHtmlMode }) {
   }, [formatLabels]);
 
   const applyFontFamily = useCallback((fontFamily) => {
-    //console.log("applyFontFamily", fontFamily);
 
     editor.update(() => {
       const selection = $getSelection();
@@ -217,14 +231,12 @@ export default function ToolbarPluginSimple({ onToggleHtmlMode, isHtmlMode }) {
   }, [editor]);
 
   const applyFontSize = useCallback((fontSize) => {
-    console.log("applyFontSize", fontSize);
     editor.update(() => {
       const selection = $getSelection();
       if ($isRangeSelection(selection)) {
         const fontSizeWithUnit = fontSize.toString().includes('px') ? fontSize : `${fontSize}px`;
         $patchStyleText(selection, { "font-size": fontSizeWithUnit });
 
-        //console.log('Applied font size:', fontSizeWithUnit);
       }
     });
     setCurrentFontSize(fontSize);
@@ -521,7 +533,42 @@ export default function ToolbarPluginSimple({ onToggleHtmlMode, isHtmlMode }) {
         createPortal(<FloatingEditor editor={editor} />, document.body)}
       <div className="divider" />
 
-      <button
+      <div className="alignment-buttons-container" style={{ display: 'flex', alignItems: 'center', gap: '4px', flexWrap: 'nowrap' }}>
+        <button
+          onClick={() => {
+            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left');
+          }}
+          className="toolbar-item spaced"
+          aria-label="Left Align"
+          type="button"
+        >
+          <AlignLeftOutlined />
+        </button>
+
+        <button
+          onClick={() => {
+            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center');
+          }}
+          className="toolbar-item spaced"
+          aria-label="Center Align"
+          type="button"
+        >
+          <AlignCenterOutlined />
+        </button>
+
+        <button
+          onClick={() => {
+            editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right');
+          }}
+          className="toolbar-item spaced"
+          aria-label="Right Align"
+          type="button"
+        >
+          <AlignRightOutlined />
+        </button>
+      </div>
+
+      {/* <button
         onClick={onToggleHtmlMode}
         className={`toolbar-item ${isHtmlMode ? "active" : ""}`}
         title="Modo HTML"
@@ -537,7 +584,7 @@ export default function ToolbarPluginSimple({ onToggleHtmlMode, isHtmlMode }) {
         }}
       >
         HTML
-      </button>
+      </button> */}
 
       <InsertImageModal
         visible={isImageModalOpen}

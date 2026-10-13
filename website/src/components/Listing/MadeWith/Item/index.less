@@ -1,0 +1,22 @@
+@import "../../../../styles/global.less";
+@import "../../../../styles/variables.less";
+
+.made-with {
+    &__label {
+        text-align: center;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: @color-muted-foreground;
+    }
+
+    &__marquee {
+        margin-top: 1.5rem;
+    }
+
+    &__item {
+        font-family: @font-display;
+        font-size: 1.125rem;
+        color: color-mix(in oklab, @color-muted-foreground 70%, transparent);
+    }
+}

@@ -1,0 +1,117 @@
+@import "../../../styles/global.less";
+@import "../../../styles/variables.less";
+
+.orbit-visual-grid {
+    margin: 0 auto;
+    display: grid;
+    max-width: 1200px;
+    align-items: center;
+    gap: 2.5rem;
+    padding-top: 8rem !important;
+    padding-bottom: 8rem !important;
+
+    @media screen and (min-width: 1153px) and (max-width: 1200px) {
+        padding: 0 50px
+    }
+
+    @media screen and (min-width: 1025px) and (max-width: 1152px) {
+        padding: 0 50px
+    }
+
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+        padding: 0 50px
+    }
+
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+        padding: 0 30px
+    }
+
+    @media screen and (max-width: 480px) {
+        padding: 0 20px;
+    }
+
+    @media (min-width: @screen-lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__box-title {
+        font-family: @font-display;
+        font-weight: 300;
+        font-size: 2rem;
+        color: #fff;
+
+        @media (min-width: @screen-sm) {
+            font-size: 2.25rem;
+        }
+    }
+
+    &__capabilities {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    &__capability-title {
+        font-family: @font-mono;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: @color-cyan;
+    }
+
+    &__capability-items {
+        margin-top: 0.625rem;
+        font-size: 0.975rem;
+        line-height: 1.6;
+        color: @color-muted-foreground;
+    }
+}
+
+.orbit-visual {
+    position: relative;
+    display: flex;
+    aspect-ratio: 1;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: @radius-2xl;
+    border: 1px solid color-mix(in oklab, @color-cyan 15%, transparent);
+    background:
+        linear-gradient(135deg, color-mix(in oklab, @color-cyan 20%, transparent), transparent 60%),
+        @color-deep;
+
+    &__ring {
+        position: absolute;
+        width: 78%;
+        height: 78%;
+        border-radius: 999px;
+        border: 1px dashed color-mix(in oklab, @color-cyan 20%, transparent);
+        animation: orbit-spin 34s linear infinite;
+    }
+
+    &__dot {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        transform: translate(-50%, -50%);
+        border-radius: 999px;
+        background: @color-cyan;
+        box-shadow: 0 0 20px @color-cyan;
+    }
+
+    &__planet {
+        width: 9rem;
+        height: 9rem;
+        border-radius: 999px;
+        background: radial-gradient(circle at 34% 30%, #67c9f2, #1b6fc4 62%, #0f3e77);
+        box-shadow: 0 0 70px -10px rgba(79, 224, 234, 0.6);
+    }
+}

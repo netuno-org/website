@@ -1,10 +1,7 @@
 import React from "react";
-import { Row, Col } from "antd";
-
 import Actions from "../../Actions";
 import Cluar from "../../../common/Cluar";
-import config from "./config.json"
-
+import config from "./config.json";
 import "./index.less";
 
 function Secondary({
@@ -15,49 +12,52 @@ function Secondary({
   image_alt,
   title,
   content,
+  html_content,
+  edit_mode,
   position,
-  actions,
+  actions
 }) {
-  let backgroundPositionX = position.x !== "" ? position.x : "50%";
-  let backgroundPositionY = position.y !== "" ? position.y : "50%";
+  const backgroundPositionX = position.x !== "" ? position.x : "50%";
+  const backgroundPositionY = position.y !== "" ? position.y : "50%";
+  const imageSrc =
+    image?.indexOf("base64") === -1
+      ? `/cluar/images/page_${section}/${image}`
+      : image;
+
+  const resolvedContent = edit_mode === 'html'
+    ? (html_content || content)
+    : content;
 
   return (
-    <section className="secondary">
+    <section className="banner">
       <div
-        className={`banner__secondary`}
+        className="banner__secondary"
         style={{
-          backgroundImage:
-            image?.indexOf("base64") === -1
-              ? `url(/cluar/images/page_${section}/${image})`
-              : `url(${image})`,
-          backgroundPositionX: backgroundPositionX,
-          backgroundPositionY: backgroundPositionY,
+          backgroundImage: `url(${imageSrc})`,
+          backgroundPositionX,
+          backgroundPositionY,
         }}
       >
-        <Row className="banner__wrapper" justify="center">
-          <Col lg={18} sm={24}>
-            <div>
-              <h1
-                data-sal="slide-down"
-                data-sal-duration="2000"
-                data-sal-easing="ease-out-cubic"
-                dangerouslySetInnerHTML={{ __html: Cluar.plainTitle(title) }}
-              />
-              <div
-                data-sal="fade"
-                data-sal-duration="2000"
-                data-sal-easing="ease-out-cubic"
-                dangerouslySetInnerHTML={{ __html: content }}
-              ></div>
-            </div>
-          </Col>
+        <div className="banner__wrapper">
+          <h1
+            data-sal="slide-down"
+            data-sal-duration="2000"
+            data-sal-easing="ease-out-cubic"
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
+          <div
+            data-sal="fade"
+            data-sal-duration="2000"
+            data-sal-easing="ease-out-cubic"
+            dangerouslySetInnerHTML={{ __html: resolvedContent }}
+          />
           {config.action && (
-            <Col lg={6} sm={24}>
+            <div className="banner__actions">
               <Actions {...{ section, type, actions }} />
-            </Col>
+            </div>
           )}
-        </Row>
-        <div className="banner__darken-bg"></div>
+        </div>
+        <div className="banner__darken-bg" />
       </div>
     </section>
   );

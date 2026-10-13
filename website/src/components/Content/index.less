@@ -2,28 +2,31 @@
 
 .content {
     width: 100%;
-    max-width: calc(@site-max-width + 120px);
-    margin: 50px auto;
-    padding: 0 78px;
+    box-sizing: border-box;
+    background: oklch(0.16 0.045 268);
+    //padding-left: 50px;
+    //padding-right: 50px;
+    max-width: 1200px;
+    margin: auto;
 
-    @media (max-width: @header-mobile-width) {
-        padding: 20px;
+    @media (max-width: @header-desktop-width) {
+      //  padding-left: 60px;
+       // padding-right: 60px;
     }
 
-    @media (max-width: 1024px) {
-        padding: 20px !important;
+    @media only screen and (max-width: @header-mobile-width) {
+        flex-wrap: wrap;
     }
 
-    @media (max-width: 1023px) {
-        padding: 30px !important;
-    }
+    &__wrapper {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
 
-    @media (max-width: 768px) {
-        padding: 20px !important;
-    }
-
-    @media (max-width: 375px) {
-        padding: 20px !important;
+        @media only screen and (max-width: @header-mobile-width) {
+            flex-wrap: wrap;
+        }
     }
 
     >div {
@@ -33,7 +36,7 @@
     >ul.actions {
         width: 300px;
 
-        @media only screen and (max-width: 800px) {
+        @media only screen and (max-width: @header-mobile-width) {
             width: 100%;
         }
     }
@@ -50,17 +53,10 @@
     }
 
     .text {
-        text-align: center;
-
         >h1 {
-            color: #fff;
-            font-size: 44px;
-            font-weight: 700;
-            line-height: 60px;
-            margin: 0;
-            margin-bottom: 0px;
-            padding: 0;
-            margin-bottom: 15px
+            font-size: 2em;
+            font-weight: normal;
+            letter-spacing: .01em;
         }
 
         >div {
@@ -71,6 +67,16 @@
             }
         }
     }
+
+    &__text {}
+
+    &__image-left {}
+
+    &__image-right {}
+
+    &__image-top {}
+
+    &__image-bottom {}
 
     &__text-service {
         >h1 {

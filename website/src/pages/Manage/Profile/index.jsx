@@ -38,7 +38,7 @@ function Profile({ loggedUserInfo, loggedUserInfoReloadAction }) {
         });
       }
       if (loggedUserInfo.avatar) {
-        setAvatarImageURL(`${_service.config().prefix}people/avatar?uid=${loggedUserInfo.uid}`);
+        setAvatarImageURL(`${_service.config().prefix}reserved-area/people/avatar?uid=${loggedUserInfo.uid}`);
       }
     }
   }, [location, loggedUserInfo]);
@@ -48,7 +48,7 @@ function Profile({ loggedUserInfo, loggedUserInfoReloadAction }) {
     const { name, username, password, email } = values;
     _service({
       method: 'PUT',
-      url: 'people',
+      url: 'reserved-area/people',
       data: {
         name,
         username,
@@ -99,13 +99,13 @@ function Profile({ loggedUserInfo, loggedUserInfoReloadAction }) {
   };
 
   function onFinishFailed(errorInfo) {
-    console.log('Failed:', errorInfo);
+    console.error('Failed: ', errorInfo);
   }
 
   return (
     <div>
       <div className="content-title">
-        <Button className="go-back-btn" type="link" onClick={() => navigate(-1)}><ArrowLeftOutlined /> {Cluar.plainDictionary('profile-page-previus')}</Button>
+        <Button className="go-back-btn" type="link" onClick={() => navigate(-1)}><ArrowLeftOutlined /> {Cluar.plainDictionary('profile-page-previous')}</Button>
       </div>
       <div className="content-title">
         <Title level={2}>{Cluar.plainDictionary('profile-page-title')}</Title>

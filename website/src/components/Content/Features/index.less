@@ -1,0 +1,276 @@
+@import "../../../styles/global.less";
+@import "../../../styles/variables.less";
+
+.features {
+    max-width: 1200px;
+
+    &__hero {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__hero-inner {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 8rem;
+
+        @media screen and (max-width: 1200px) {
+            padding: 8rem 3rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            padding: 8rem 1.8rem;
+        }
+
+        @media screen and (max-width: 480px) {
+            padding: 8rem 1.2rem;
+        }
+    }
+
+    &__eyebrow {
+        display: block;
+        font-family: @font-mono;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        color: @color-cyan;
+    }
+
+    &__title {
+        margin-top: 1rem;
+        max-width: 48rem;
+        font-family: @font-display;
+        font-weight: 300;
+        color: #fff;
+        font-size: 3rem;
+        line-height: 1.05;
+    }
+
+    &__title-accent {
+        .text-gradient();
+        font-weight: 400;
+    }
+
+    &__steps-section {
+        margin: auto;
+        border-bottom: 1px solid color-mix(in oklab, @color-border 40%, transparent);
+    }
+
+    &__steps-grid {
+        margin: 0 auto;
+        display: grid;
+        max-width: 1200px;
+        gap: 2.5rem;
+
+        @media screen and (min-width: 1153px) and (max-width: 1200px) {
+            padding: 0 50px
+        }
+
+        @media screen and (min-width: 1025px) and (max-width: 1152px) {
+            padding: 0 50px
+        }
+
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            padding: 0 50px
+        }
+
+        @media screen and (min-width: 481px) and (max-width: 768px) {
+            padding: 0 30px
+        }
+
+        @media screen and (max-width: 480px) {
+            padding: 0 20px;
+        }
+
+        @media (min-width: @screen-sm) {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        @media (min-width: @screen-lg) {
+            // minmax(0, 1fr) impede que o conteúdo altere a largura das colunas
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: start;
+        }
+    }
+
+    &__sticky-mockup {
+        display: none;
+        min-width: 0;
+
+        @media (min-width: @screen-lg) {
+            display: block;
+            position: sticky;
+            top: 7rem;
+        }
+    }
+
+    &__mockup-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.875rem;
+        padding: 1.5rem;
+        min-height: 380px;
+    }
+
+    &__mockup-kicker {
+        font-family: @font-mono;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: @color-cyan;
+    }
+
+    &__mockup-image {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        height: auto;
+        border-radius: 0.5rem;
+        object-fit: cover;
+        object-position: top center;
+    }
+
+    &__mockup-caption {
+        font-size: 0.975rem;
+        line-height: 1.6;
+        color: color-mix(in oklab, @color-muted-foreground 90%, transparent);
+    }
+
+    &__mockup-hint {
+        margin-top: 0.875rem;
+        font-family: @font-mono;
+        font-size: 0.85rem;
+        color: color-mix(in oklab, @color-muted-foreground 60%, transparent);
+    }
+
+    &__section {
+        margin: 0 auto;
+        max-width: 72rem;
+        padding: 3rem 1.25rem;
+    }
+
+    &__box-grid {
+        margin: 0 auto;
+        display: grid;
+        max-width: 72rem;
+        align-items: center;
+        gap: 2.5rem;
+        padding: 4rem 1.25rem;
+
+        @media (min-width: @screen-sm) {
+            padding: 5rem 1.25rem;
+        }
+
+        @media (min-width: @screen-lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+// -----------------------------------------------------------------------
+// Cada passo numerado da lista à esquerda
+// -----------------------------------------------------------------------
+.step {
+    cursor: pointer;
+    border-top: 1px solid color-mix(in oklab, @color-border 40%, transparent);
+    padding: 2.25rem 0;
+
+    &__closing-border {
+        border-top: 1px solid color-mix(in oklab, @color-border 40%, transparent);
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    &__num {
+        display: flex;
+        flex-shrink: 0;
+        width: 26px;
+        height: 26px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        border: 1px solid @color-border;
+        font-family: @font-mono;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: @color-muted-foreground;
+        transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+
+        &--active {
+            border-color: @color-cyan;
+            background: @color-cyan;
+            color: @color-background;
+        }
+    }
+
+    &__title {
+        font-family: @font-display;
+        font-weight: 400;
+        font-size: 1.25rem;
+        color: @color-muted-foreground;
+        transition: color 0.3s;
+
+        @media (min-width: @screen-sm) {
+            font-size: 1.5rem;
+        }
+
+        &--active {
+            color: @color-foreground;
+        }
+    }
+
+    &__body {
+        margin: 0.875rem 0 0 38px;
+        max-width: 28rem;
+        font-size: 0.975rem;
+        line-height: 1.6;
+        color: @color-muted-foreground;
+    }
+
+    &__mockup {
+        margin: 1.25rem 0 0 38px;
+
+        @media (min-width: @screen-lg) {
+            display: none;
+        }
+    }
+
+    &__mockup-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.625rem;
+        padding: 1rem;
+    }
+
+    &__mockup-kicker {
+        font-family: @font-mono;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: @color-cyan;
+    }
+
+    &__mockup-image {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        height: auto;
+        border-radius: 0.5rem;
+        object-fit: cover;
+        object-position: top center;
+    }
+
+    &__mockup-caption {
+        font-size: 0.9125rem;
+        line-height: 1.6;
+        color: color-mix(in oklab, @color-muted-foreground 90%, transparent);
+    }
+}

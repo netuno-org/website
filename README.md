@@ -1,18 +1,51 @@
-# NETUNO WEBSITE
+![logocluar](https://raw.githubusercontent.com/netuno-org/cluar/main/docs/logo.svg)
 
-Quickly build applications adapted to your business logic.
+# CLUAR CMS 
 
-## Requirement
+A ready to use solution for content management and multilingual websites using [Netuno](https://www.netuno.org/), [ReactJS](https://reactjs.org/) and [Ant Design](https://ant.design/).
 
-#### Netuno Platform
+## Documentation :books:
 
-[Follow the steps here](https://doc.netuno.org/docs/en/installation/)
+The full CLUAR documentation — installation, configuration, pages, components, actions, settings, dictionaries, templates and permissions — is available in the [Netuno Academy](https://doc.netuno.org/docs/academy/cluar/overview).
 
-## Automatic Application Install
+## Installation :cd:
+
+Install these requirements:
+1. [Netuno](https://doc.netuno.org/docs/get-started/installation)
+2. [Bun](https://bun.sh/docs/installation)
+
+Then clone this project inside of:
+
+- :open_file_folder: `[Netuno Root directory]/apps`
+
+Using the clone command:
 
 ```
-./netuno app github=netuno-org/website
+git clone https://github.com/netuno-org/cluar.git
 ```
+
+## Configuration :wrench:
+
+> The following process is oriented to Linux development environments.
+
+1. Rename the app name by renaming the folder name as you want, only using lowercase letters, numbers, and underscores.
+
+2. Copy the app sample configuration file by running (in the app root directory):
+  - `cp config/sample.json config/_development.json` (for a development environment)
+  - `cp config/sample.json config/_production.json` (for a production environment)
+  - Change the `name` property in the JSON root to your chosen app name.
+  - Make all the adjustments according to your environment.
+
+3. You'll need to configure a PostgreSQL database type connection for this app to work properly, [learn how to do it here](https://doc.netuno.org/docs/academy/server/database/psql/).
+
+4. Edit your configuration file created in the first step and
+find the `"db": { "default": ... }`, then locate and replace the database settings with the password.
+
+5. Change the authentication JWT secret, finding the `"auth": { "jwt": { "secret": ... } }`, ensure that this secret must have a 32-character length.
+
+6. If needed, enable [Altcha](https://altcha.org/) (a privacy-friendly alternative to reCAPTCHA) by setting `"auth": { "altcha": { "enabled": true } }`, and `"settings": { "cluar": { "website": { "auth": { "altcha": { "enabled": true } } } } }` for the widget to show up on the website.
+
+7. Inside of the `"settings": { "cluar": ... }` adjust the Website URL, the Services API URL, and others as you need.
 
 ## Website with Bun :art:
 
@@ -48,11 +81,43 @@ Now you can start the website with the classic command:
 
 > By default, the website runs with Bun.
 
+## Troubleshooting :hammer_and_wrench:
+
+### GLIBC version error when running `bun run dev`
+
+If you get an error like this when starting the website:
+
+```
+Error: Cannot find module @rollup/rollup-linux-x64-gnu. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+...
+[cause]: Error: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.32' not found (required by .../node_modules/@rollup/rollup-linux-x64-gnu/rollup.linux-x64-gnu.node)
+code: 'ERR_DLOPEN_FAILED'
+```
+
+This is **not** actually the npm optional dependencies bug mentioned in the message. It's a **GLIBC version mismatch**: Rollup's native binary was built requiring `GLIBC_2.32` or newer, while older Linux distributions (e.g. Ubuntu 20.04, which ships with glibc 2.31) don't have it available.
+
+To fix it, force Rollup to use its WASM build instead of the native one, by adding an `overrides` field at the root of the website's `package.json`:
+
+```json
+"overrides": {
+  "rollup": "npm:@rollup/wasm-node"
+}
+```
+
+Then reinstall the dependencies:
+
+```
+rm -rf node_modules bun.lock bun.lockb
+bun install
+bun pm trust --all
+bun run dev
+```
+
 ## Running :rocket:
 
 In the Netuno root directory run
 
-`./netuno server app=website`
+`./netuno server app=cluar`
 
 and it should start both the back-end and the front-end server.
 

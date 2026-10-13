@@ -1,0 +1,122 @@
+@import "../../../styles/variables.less";
+
+.hero-panel {
+    height: 168px;
+    padding: 1rem;
+    font-family: @font-mono;
+    font-size: 10.5px;
+
+    &--diagram {
+        position: relative;
+    }
+
+    &__lines {
+        position: absolute;
+        inset: 1rem;
+        width: calc(100% - 2rem);
+        height: calc(100% - 2rem);
+    }
+
+    &__box {
+        position: absolute;
+        border-radius: 0.5rem;
+        border: 1px solid color-mix(in oklab, @color-cyan 25%, transparent);
+        background: @color-card;
+        padding: 0.5rem 0.75rem;
+        font-size: 10px;
+        color: @color-foreground;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    &__image {
+        height: 168px;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    &--list {
+        display: grid;
+        gap: 0.5rem;
+    }
+
+    &__list-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 10px;
+        color: @color-muted-foreground;
+    }
+
+    &__list-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+    }
+
+    &__list-bar {
+        height: 1.5rem;
+        flex: 1;
+        border-radius: 0.375rem;
+        border: 1px solid color-mix(in oklab, @color-border 70%, transparent);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    &__badge {
+        border-radius: 999px;
+        padding: 0.125rem 0.5rem;
+        font-size: 9px;
+        background: rgba(255, 255, 255, 0.05);
+        color: @color-muted-foreground;
+
+        &--active {
+            background: color-mix(in oklab, @color-cyan 15%, transparent);
+            color: @color-cyan;
+        }
+    }
+
+    &--api {
+        display: grid;
+        gap: 0.625rem;
+    }
+
+    &__route {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        border-radius: 0.375rem;
+        border: 1px solid color-mix(in oklab, @color-border 60%, transparent);
+        background: rgba(255, 255, 255, 0.03);
+        padding: 0.5rem 0.625rem;
+    }
+
+    &__method {
+        font-weight: 600;
+
+        &--cyan {
+            color: @color-cyan;
+        }
+
+        &--green {
+            color: #34d399;
+        }
+
+        &--red {
+            color: #fb7185;
+        }
+    }
+
+    &__path {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: @color-muted-foreground;
+    }
+
+    &--code {
+        display: grid;
+        gap: 0.5rem;
+        line-height: 1.6;
+    }
+}

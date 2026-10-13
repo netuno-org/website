@@ -20,6 +20,7 @@ import {
 import _service from "@netuno/service-client";
 import Cluar from "../../../../common/Cluar";
 import "./index.less";
+import ActionParameterSelect from "./ActionParameterSelect";
 
 const getBase64 = (file) =>
   new Promise((resolve, reject) => {
@@ -40,27 +41,17 @@ const ActionsModal = forwardRef(({ onReloadTable, actionData }, ref) => {
   const editeMode = actionData ? true : false;
   const [formRef] = Form.useForm();
 
-  const [previewOpen, setPreviewOpen] = useState(false);
-  const [previewImage, setPreviewImage] = useState("");
   const [fileList, setFileList] = useState([]);
-
-  const handlePreview = async (file) => {
-    if (!file.url && !file.preview) {
-      file.preview = await getBase64(file.originFileObj);
-    }
-    setPreviewImage(file.url || file.preview);
-    setPreviewOpen(true);
-  };
 
   const handleChange = async ({ fileList }) => {
     if (fileList.length > 0) {
       let file = fileList[0];
-      if (!file.thumbUrl && file.originFileObj) {
+      if (!file.url && !file.thumbUrl && file.originFileObj) {
         file.thumbUrl = await getBase64(file.originFileObj);
       }
       setFileList([...fileList]);
       if (formRef) {
-        formRef.setFieldValue("image", file.thumbUrl);
+        formRef.setFieldValue("image", file.thumbUrl || file.url);
       }
     } else {
       setFileList([]);
@@ -84,7 +75,7 @@ const ActionsModal = forwardRef(({ onReloadTable, actionData }, ref) => {
           marginTop: 8,
         }}
       >
-        Upload
+        {Cluar.plainDictionary("action-form-upload")}
       </div>
     </button>
   );
@@ -96,7 +87,7 @@ const ActionsModal = forwardRef(({ onReloadTable, actionData }, ref) => {
   const onLoadLanguages = () => {
     setLoading({ ...loading, languages: true });
     _service({
-      url: "language/list",
+      url: "reserved-area/language/list",
       method: "POST",
       success: (response) => {
         setLoading({ ...loading, languages: false });
@@ -107,7 +98,7 @@ const ActionsModal = forwardRef(({ onReloadTable, actionData }, ref) => {
         setLoading({ ...loading, languages: false });
         console.error(error);
         notification.error({
-          message: "Falha ao carregar idiomas.",
+          message: Cluar.plainDictionary("action-modal-notification-load-languages-fail"),
         });
       },
     });
@@ -117,8 +108,12 @@ const ActionsModal = forwardRef(({ onReloadTable, actionData }, ref) => {
     const formData = new FormData();
     Object.keys(values).forEach((key) => {
       if (values[key] !== undefined && values[key] !== null) {
-        if (key === 'image' && fileList.length > 0) {
-          formData.append(key, fileList[0].originFileObj)
+        if (key === 'image') {
+          if (fileList.length > 0 && fileList[0].originFileObj) {
+            formData.append(key, fileList[0].originFileObj);
+          } else {
+            formData.append(key, "");
+          }
         } else if (key === 'language_code' && values.language_code?.value) {
           formData.append(key, values.language_code.value);
         } else if (typeof values[key] === "boolean") {
@@ -137,7 +132,7 @@ const ActionsModal = forwardRef(({ onReloadTable, actionData }, ref) => {
     setLoading({ ...loading, saving: true });
 
     _service({
-      url: "actions",
+      url: "reserved-area/action",
       method: editeMode ? "PUT" : "POST",
       data: formData,
       success: (response) => {
@@ -150,7 +145,7 @@ const ActionsModal = forwardRef(({ onReloadTable, actionData }, ref) => {
       },
       fail: (error) => {
         setLoading({ ...loading, saving: false });
-        console.log(error);
+        console.error(error);
 
         if (error?.json?.error_code) {
           notification.error({
@@ -177,10 +172,30 @@ const ActionsModal = forwardRef(({ onReloadTable, actionData }, ref) => {
       onLoadLanguages();
 
       if (editeMode) {
+        const imageUrl = actionData.image
+          ? `${_service.config().prefix}reserved-area/action/image?uid=${actionData.uid}`
+          : null;
+
         formRef.setFieldsValue({
           ...actionData,
           language_code: actionData.language_code,
+          image: imageUrl || ""
         });
+
+        if (imageUrl) {
+          setFileList([
+            {
+              uid: "-1",
+              name: actionData.image,
+              status: "done",
+              url: imageUrl,
+            },
+          ]);
+        } else {
+          setFileList([]);
+        }
+      } else {
+        setFileList([]);
       }
     }
   }, [isModalOpen]);
@@ -195,7 +210,7 @@ const ActionsModal = forwardRef(({ onReloadTable, actionData }, ref) => {
       open={isModalOpen}
       onCancel={() => setIsModalOpen(false)}
       onClose={() => setIsModalOpen(false)}
-      destroyOnClose
+      destroyOnHidden
       maskClosable={false}
       afterClose={() => formRef.resetFields()}
       centered
@@ -215,6 +230,20 @@ const ActionsModal = forwardRef(({ onReloadTable, actionData }, ref) => {
     >
       <Form layout="vertical" form={formRef} onFinish={onFinish}>
         <Row justify={"space-between"} align={"middle"} gutter={[10, 0]}>
+          <Col span={24}>
+            <Form.Item
+              name="parameter_uid"
+              label={Cluar.plainDictionary("action-form-parameter")}
+              rules={[
+                {
+                  required: true,
+                  message: Cluar.plainDictionary("action-form-validate-message-required"),
+                },
+              ]}
+            >
+              <ActionParameterSelect />
+            </Form.Item>
+          </Col>
           <Col span={24}>
             <Form.Item
               name="language_code"
@@ -258,6 +287,14 @@ const ActionsModal = forwardRef(({ onReloadTable, actionData }, ref) => {
             <Form.Item
               name="content"
               label={Cluar.plainDictionary("action-form-content")}
+              rules={[
+                {
+                  required: true,
+                  message: Cluar.plainDictionary(
+                    "action-form-validate-message-required"
+                  ),
+                },
+              ]}
             >
               <Input.TextArea rows={3} />
             </Form.Item>
@@ -315,26 +352,15 @@ const ActionsModal = forwardRef(({ onReloadTable, actionData }, ref) => {
                 listType="picture-card"
                 fileList={fileList}
                 action={""}
-                onPreview={handlePreview}
                 onChange={handleChange}
+                onRemove={() => {
+                  formRef.setFieldValue("image", "");
+                }}
                 beforeUpload={() => false}
                 style={{ width: '100%' }}
               >
                 {fileList.length >= 1 ? null : uploadButton}
               </Upload>
-              {previewImage && (
-                <Image
-                  wrapperStyle={{
-                    display: "none",
-                  }}
-                  preview={{
-                    visible: previewOpen,
-                    onVisibleChange: (visible) => setPreviewOpen(visible),
-                    afterOpenChange: (visible) => !visible && setPreviewImage(""),
-                  }}
-                  src={previewImage}
-                />
-              )}
             </Form.Item>
           </Col>
         </Row>

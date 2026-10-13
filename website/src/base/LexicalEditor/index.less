@@ -1,5 +1,5 @@
 .editor-container {
-    background: #fff;
+    background: transparent;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -67,9 +67,25 @@
     }
 }
 
+html[data-theme="dark"] .editor-container {
+    background-color: transparent;
+    border: 1px solid #FFFFFF1F;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
 .editor-inner {
-    background: #fff;
+    background: transparent;
     position: relative;
+}
+
+html[data-theme="dark"] .editor-inner {
+    background: transparent;
+}
+
+html[data-theme="dark"] .editor-input,
+html[data-theme="dark"] .editor-input__simple {
+    color: #ffffff;
+    caret-color: #ffffff;
 }
 
 .editor-input {
@@ -111,6 +127,10 @@
     user-select: none;
     display: inline-block;
     pointer-events: none;
+}
+
+html[data-theme="dark"] .toolbar {
+    border-bottom: 1px solid #FFFFFF1F;
 }
 
 .toolbar {
@@ -163,7 +183,7 @@
 .toolbar button {
     border: 0;
     display: flex;
-    background: #ffffff;
+    background: #ffffff !important;
     border-radius: 6px;
     padding: 8px 10px;
     cursor: pointer;
@@ -231,6 +251,11 @@
         min-height: 26px;
         font-size: 12px;
     }
+}
+
+html[data-theme="dark"] .toolbar button {
+    background: #000 !important;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .toolbar .divider {
@@ -306,6 +331,18 @@
     }
 }
 
+html[data-theme="dark"] .toolbar .font-size-container,
+html[data-theme="dark"] .toolbar .font-color-container,
+html[data-theme="dark"] .toolbar .bg-color-container {
+    background-color: #000;
+    border: 1px solid #3A3F44;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .toolbar .font-size-input {
+    border: 1px solid #3A3F44;
+}
+
 .toolbar .font-size-input {
     width: 50px;
     text-align: center;
@@ -325,6 +362,10 @@
         font-size: 11px;
         padding: 2px;
     }
+}
+
+html[data-theme="dark"] .toolbar .alignment-buttons-container {
+    border: 1px solid #3A3F44;
 }
 
 .toolbar .alignment-buttons-container {
@@ -348,6 +389,11 @@
     }
 }
 
+html[data-theme="dark"] .toolbar .alignment-buttons-container {
+    background: #000;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
 .toolbar {
     display: flex;
     margin-bottom: 1px;
@@ -357,6 +403,10 @@
     border-top-right-radius: 4px;
     vertical-align: middle;
     overflow-x: auto;
+}
+
+html[data-theme="dark"] .toolbar {
+    background: #000;
 }
 
 .toolbar button {
@@ -577,6 +627,12 @@
     text-decoration: underline;
 }
 
+html[data-theme="dark"] .editor-text-bold,
+html[data-theme="dark"] .editor-text-italic,
+html[data-theme="dark"] .editor-text-underline {
+    color: inherit !important;
+}
+
 .editor-list-ul,
 .editor-list-ol {
     margin-left: 15px;
@@ -590,4 +646,66 @@
     border-left-width: 4px;
     border-left-style: solid;
     padding-left: 16px;
+}
+
+/* ─── Monaco Editor — Modo HTML Puro ─── */
+.monaco-editor-container {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    /* Cabeçalho do editor */
+    .monaco-editor-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 12px;
+        background: #1e1e1e;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+
+        .monaco-editor-header__title {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            .monaco-editor-header__dot {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: #4caf50;
+            }
+        }
+
+        .monaco-editor-header__shortcut {
+            opacity: 0.6;
+            font-family: monospace;
+        }
+    }
+
+    /* Wrapper do Monaco */
+    .monaco-editor-wrapper {
+        background: #1e1e1e;
+    }
+}
+
+/* Dark mode do sistema — ajuste fino */
+@media (prefers-color-scheme: light) {
+    .monaco-editor-container {
+        border-color: rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+        .monaco-editor-header {
+            background: #f5f5f5;
+            border-bottom-color: rgba(0, 0, 0, 0.06);
+            color: rgba(0, 0, 0, 0.45);
+        }
+
+        .monaco-editor-wrapper {
+            background: #ffffff;
+        }
+    }
 }

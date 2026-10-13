@@ -37,13 +37,12 @@ const UserTable = forwardRef(({ }, ref) => {
     });
 
     const onActive = ({ uid, active }) => {
-        console.log({ uid, active })
         setLoadingActive({
             isLoading: true,
             key: uid
         });
         _service({
-            url: "user/active",
+            url: "reserved-area/user/active",
             method: "PUT",
             data: {
                 uid,
@@ -74,7 +73,7 @@ const UserTable = forwardRef(({ }, ref) => {
                     isLoading: false,
                     key: uid
                 });
-                console.log(error);
+                console.error(error);
                 notification.error({
                     message: active ? Cluar.plainDictionary('users-table-desactive-failed-message') : Cluar.plainDictionary('users-table-active-failed-message')
                 });
@@ -94,7 +93,7 @@ const UserTable = forwardRef(({ }, ref) => {
     const onLoadData = () => {
         setLoading(true);
         _service({
-            url: "user/list",
+            url: "reserved-area/user/list",
             method: "POST",
             data: {
                 filters,

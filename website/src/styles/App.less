@@ -1,68 +1,100 @@
-
 @import "./variables.less";
 
 html,
 body {
-    background-color: @site-background;
+    background-color: oklch(0.16 0.045 268);
 }
 
 .ant-layout {
-  background-color: @page-background;
-  min-height: 100vh;
-  padding-top: @header-size;
+    min-height: 100vh;
+    padding-top: @header-size;
 
-  @media only screen and (max-width: @header-mobile-width) {
-    padding-top: calc(@header-size-mobile + 40px);
-  }
-  
-  &--logged {
-    padding-top: calc(@header-size + 40px);
-  }
+    @media only screen and (max-width: @header-mobile-width) {
+        padding-top: calc(@header-size-mobile + 40px);
+    }
+
+    &--logged {
+        padding-top: calc(@header-size + 40px);
+    }
 }
 
 .ant-layout-content {
-    background-color: @page-background !important;
-    z-index: 2;
+    min-height: calc(100vh);
+    background-color: oklch(0.16 0.045 268);
+    z-index: 0;
+
+    >div.content-background {
+
+        &::before {
+            content: "";
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-size: contain;
+            background: linear-gradient(90deg, rgba(250, 251, 252, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        z-index: -2;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-image: radial-gradient(#ececed 12%, transparent 12%),
+        radial-gradient(#ececed 12%, transparent 12%);
+        background-color: #fafbfc;
+        background-position: 0 0,
+        15px 15px;
+        background-size: 30px 30px;
+        background-repeat: repeat;
+    }
 
     a {
         color: @primary-link-color;
-        text-decoration: underline;
+        text-decoration: none;
 
         &:hover,
         &:active,
         &:focus {
             color: @primary-link-hover-color;
-            text-decoration: underline;
+            text-decoration: none;
         }
     }
 }
 
 .ant-modal-root {
     div[role="dialog"] {
-      padding: 0 !important;
-    }
-  
-.ant-modal-content {
-    padding: 0;
-
-    .ant-modal-title {
-      padding: 12px 24px;
-      border-bottom: 1px solid #C9C9C9;
+        padding: 0 !important;
     }
 
-    .ant-modal-body {
-      padding: 12px 24px;
-      overflow: auto;
-    }
+    .ant-modal-content {
+        padding: 0;
 
-    .ant-modal-footer {
-      padding: 12px 24px;
-      border-top: 1px solid #C9C9C9;
+        .ant-modal-title {
+            padding: 12px 24px;
+            border-bottom: 1px solid #C9C9C9;
+        }
+
+        .ant-modal-body {
+            padding: 12px 24px;
+            overflow: auto;
+        }
+
+        .ant-modal-footer {
+            padding: 12px 24px;
+            border-top: 1px solid #C9C9C9;
+        }
     }
-  }
 
 }
 
 .ant-table-filter-dropdown {
-  padding: 0.5em !important;
+    padding: 0.5em !important;
+}
+
+html[data-theme="dark"] .heade-title.ant-typography-secondary {
+    color: rgba(255, 255, 255, 0.85) !important;
 }

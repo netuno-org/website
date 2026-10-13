@@ -1,0 +1,16 @@
+@import "../../../styles/variables.less";
+
+.tech-marquee__tag {
+    border-radius: 999px;
+    border: 1px solid @color-border;
+    background: color-mix(in oklab, @color-card 60%, transparent);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: @color-muted-foreground;
+    transition: color 0.2s, border-color 0.2s;
+
+    &:hover {
+        border-color: color-mix(in oklab, @color-cyan 50%, transparent);
+        color: @color-cyan;
+    }
+}

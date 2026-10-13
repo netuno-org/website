@@ -1,88 +1,152 @@
-![Logo](https://raw.githubusercontent.com/netuno-org/cluar/main/docs/logo.svg)
+![logocluar](https://raw.githubusercontent.com/netuno-org/cluar/main/docs/logo.svg)
 
-# CLUAR CMS
+# CLUAR CMS 
 
-Uma solução pronta para gestão de conteúdos e websites multilíngue utilizando [Netuno](https://www.netuno.org/), [ReactJS](https://reactjs.org/) e [Ant Design](https://ant.design/).
+Uma solução pronta a usar para gestão de conteúdos e websites multilíngues usando [Netuno](https://www.netuno.org/), [ReactJS](https://reactjs.org/) e [Ant Design](https://ant.design/).
 
-## Requisito
+## Documentação :books:
 
-### Plataforma Netuno
+A documentação completa do CLUAR — instalação, configuração, páginas, componentes, ações, configurações, dicionários, templates e permissões — está disponível na [Academia do Netuno](https://doc.netuno.org/pt/docs/academy/cluar/overview).
 
-[Siga os passos aqui](https://doc.netuno.org/docs/pt-PT/installation/)
+## Instalação :cd:
 
-## Documentação
+Instala estes requisitos:
+1. [Netuno](https://doc.netuno.org/pt/docs/get-started/installation)
+2. [Bun](https://bun.sh/docs/installation)
 
-[Documentação Geral do CLUAR CMS](docs/README-pt_PT.md)
+Depois clona este projeto dentro de:
 
-## Instalação Automática da Aplicação
+- :open_file_folder: `[diretório raiz do Netuno]/apps`
 
-```
-./netuno app github=netuno-org/cluar
-```
-
-### Execução
-
-Inicie o servidor Netuno:
+Usando o comando de clone:
 
 ```
-./netuno server app=cluar
+git clone https://github.com/netuno-org/cluar.git
 ```
 
-> Pode demorar porque é a primeira vez e a instalação do NPM será executada nas pastas `ui` e` website` dentro da pasta raiz do aplicativo.
+## Configuração :wrench:
 
-:warning: Se tiver o error:
- 
+> O processo abaixo é orientado para ambientes de desenvolvimento Linux.
+
+1. Renomeia a pasta do projeto (o nome da app) usando apenas letras minúsculas, números e underscore.
+
+2. Copia o ficheiro de configuração de amostra da app, executando (no diretório raiz da app):
+  - `cp config/sample.json config/_development.json` (para um ambiente de desenvolvimento)
+  - `cp config/sample.json config/_production.json` (para um ambiente de produção)
+  - Altera a propriedade `name` na raiz do JSON para o nome da app escolhido.
+  - Faz os restantes ajustes de acordo com o teu ambiente.
+
+3. Vais precisar de configurar uma ligação a uma base de dados do tipo PostgreSQL para esta app funcionar corretamente, [aprende a fazê-lo aqui](https://doc.netuno.org/pt/docs/academy/server/database/psql/).
+
+4. Edita o ficheiro de configuração criado no primeiro passo e localiza `"db": { "default": ... }`, depois substitui os dados de ligação pelos da tua base de dados.
+
+5. Muda o segredo de autenticação JWT, localizando `"auth": { "jwt": { "secret": ... } }` — garante que este segredo tem 32 caracteres.
+
+6. Se quiseres, ativa o [Altcha](https://altcha.org/) (uma alternativa ao reCAPTCHA que preserva a privacidade), definindo `"auth": { "altcha": { "enabled": true } }`, e `"settings": { "cluar": { "website": { "auth": { "altcha": { "enabled": true } } } } }` para o widget aparecer no website.
+
+7. Dentro de `"settings": { "cluar": ... }` ajusta o URL do Website, o URL da API de Serviços, e o resto conforme necessário.
+
+## Website com Bun :art:
+
+Dentro da pasta website:
+
 ```
- npm ERR! code ERESOLVE
- npm ERR! ERESOLVE unable to resolve dependency tree
+cd website
 ```
 
-Então execute o comando abaixo dentro da pasta `website`:
+Executa o comando de instalação do Bun:
 
-`npm install --force`
+```
+bun install
+```
 
-:white_check_mark: Não é obrigatório, mas é recomendado renomar a pasta da aplicação `(Netuno Root directory)/apps/cluar/` para o nome desejado, e não esqueça do parâmetro `name` nas configurações:
+É necessário permitir a execução de scripts não confiáveis do ESBUILD, então executa:
 
-`config/_development.json`
+```
+bun pm trust --all
+```
 
-`config/_production.json`
+Se precisares de reiniciar a instalação do website, remove esta pasta e estes ficheiros:
 
-> Lembre-se de iniciar o servidor Netuno com seu novo nome de aplicativo.
+```
+rm -rf node_modules
+bun install
+bun pm trust --all
+```
 
-## Processo Manual
+Agora podes iniciar o website com o comando clássico:
 
-### Clone e Instalação
+```bun run dev```
 
-Crie uma nova app com o Netuno denominada `cluar` executando (no diretório raíz do Netuno) 
+> Por padrão, o website corre com Bun.
 
-`./netuno app name=cluar`
+## Resolução de problemas :hammer_and_wrench:
 
-e selecionando as configurações desejadas (tipo de base de dados, nome da base de dados e idioma da aplicação).
+### Erro de versão do GLIBC ao correr `bun run dev`
 
-Depois clone este projeto para o diretório `(Netuno Root directory)/apps/cluar/`.
+Se aparecer um erro como este ao iniciar o website:
 
-Depois instale as dependências NPM excutando
+```
+Error: Cannot find module @rollup/rollup-linux-x64-gnu. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+...
+[cause]: Error: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.32' not found (required by .../node_modules/@rollup/rollup-linux-x64-gnu/rollup.linux-x64-gnu.node)
+code: 'ERR_DLOPEN_FAILED'
+```
 
-`npm install --force` 
+Não se trata do bug de dependências opcionais do npm mencionado na mensagem, mas sim de uma **incompatibilidade de versão do GLIBC**: o binário nativo do Rollup foi compilado exigindo o `GLIBC_2.32` ou mais recente, e distribuições Linux mais antigas (por exemplo, Ubuntu 20.04, que traz o glibc 2.31) não o têm disponível.
 
-no diretório `cluar/website/`.
+Para resolver, força o Rollup a usar a versão WASM em vez da nativa, adicionando um campo `overrides` na raiz do `package.json` do website:
 
-### Configuração
+```json
+"overrides": {
+  "rollup": "npm:@rollup/wasm-node"
+}
+```
 
-Copie o ficheiro de exemplo de configuração executando o seguinte
+De seguida, reinstala as dependências:
 
-`cp config/sample.json config/_development.json` (certifique-se do parâmetro `name`)
+```
+rm -rf node_modules bun.lock bun.lockb
+bun install
+bun pm trust --all
+bun run dev
+```
 
-e modifique de acordo com a configuração do seu ambiente local.
+## Execução :rocket:
 
-### Execução
-
-No diretório raíz do Netuno execute
+No diretório raiz do Netuno, executa
 
 `./netuno server app=cluar`
 
-que irá iniciar o servidor de backend e depois execute no diretório `(cluar app directory)/website/` o seguinte
+e deve iniciar tanto o servidor back-end como o front-end.
 
-`npm run start`
+> A primeira execução pode demorar mais tempo, devido à instalação das dependências do front-end.
 
-para iniciar o servidor de frontend.
+Por padrão, o backoffice do Netuno fica disponível em:
+  - [http://localhost:9000/](http://localhost:9000/)
+
+O OpenAPI fica em:
+  - [http://localhost:9000/services/_openapi](http://localhost:9000/services/_openapi)
+
+Para iniciar o website:
+
+```
+cd website
+bun run dev
+```
+
+Por padrão, o website fica disponível em:
+  - [http://localhost:3000/](http://localhost:3000/)
+
+Podes fazer o website arrancar automaticamente junto com o servidor Netuno, ativando o comando em `config/_development.json`:
+
+```
+   "commands": [
+      ...
+      {
+         "path": "website",
+         ...
+         "enabled": true
+      }
+   ]
+```

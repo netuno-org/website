@@ -4,9 +4,8 @@ import { GlobalOutlined } from '@ant-design/icons';
 import Burger from '@animated-burgers/burger-slip';
 import '@animated-burgers/burger-slip/dist/styles.css';
 import classNames from 'classnames';
-import { Route, Link } from "react-router";
+import { Link } from "react-router";
 import Cluar from '../../common/Cluar';
-import Builder from '../../common/Builder';
 
 import _auth from "@netuno/auth-client";
 
@@ -15,7 +14,7 @@ import "./index.less";
 const { Header } = Layout;
 const { SubMenu } = Menu;
 
-function BaseHeader() {
+function BaseHeader({ canEdit }) {
   const [burgerMenu, setBurgerMenu] = useState(false);
   const [activeMenu, setActiveMenu] = useState("main");
 
@@ -30,7 +29,7 @@ function BaseHeader() {
   const menuLanguages = {
     label: Cluar.currentLanguage().code,
     key: "langs",
-    icon: <GlobalOutlined />,
+   // icon: <GlobalOutlined />,
     children: [],
   };
   const menu = [];
@@ -70,6 +69,7 @@ function BaseHeader() {
 
       return children.map((p) => {
         const key = p.link;
+        const label = p.menu_title || p.title;
 
         subMenuKeys.push(key);
 
@@ -79,18 +79,18 @@ function BaseHeader() {
             label: p.navigable ? (
               p.link.indexOf("//") >= 0 ? (
                 <a href={`${p.link}`} target="_blank">
-                  {p.title}
+                  {label}
                 </a>
               ) : (
                 <Link
                   to={`/${Cluar.currentLanguage().locale}${p.link}`}
                   onClick={() => handleMenuClick(key)}
                 >
-                  {p.title}
+                  {label}
                 </Link>
               )
             ) : (
-              <a>{p.title}</a>
+              <a>{label}</a>
             ),
             children: buildChildren(p),
           };
@@ -100,6 +100,7 @@ function BaseHeader() {
     const buildMenu = (page) => {
       if (page.menu && language.code === Cluar.currentLanguage().code) {
         const key = `${page.link}`;
+        const label = page.menu_title || page.title;
 
         subMenuKeys.push(key);
 
@@ -108,18 +109,18 @@ function BaseHeader() {
             label: page.navigable ? (
               page.link.indexOf("//") >= 0 ? (
                 <a href={`${page.link}`} target="_blank">
-                  {page.title}
+                  {label}
                 </a>
               ) : (
                 <Link
                   to={`/${Cluar.currentLanguage().locale}${page.link}`}
                   onClick={() => handleMenuClick(key)}
                 >
-                  {page.title}
+                  {label}
                 </Link>
               )
             ) : (
-              <a>{page.title}</a>
+              <a>{label}</a>
             ),
             key,
             children: buildChildren(page),
@@ -145,7 +146,7 @@ function BaseHeader() {
     <Header
       className={`${classNames({
         "header-burger-open": burgerMenu,
-      })} ${_auth.isLogged() && "ant-layout-header--logged"}`}
+      })} ${canEdit && "ant-layout-header--logged"}`}
     >
       <div className="ant-layout-header__wrapper">
         <div className="logo">
@@ -153,7 +154,7 @@ function BaseHeader() {
             to={`/${Cluar.currentLanguage().locale}/`}
             onClick={() => handleMenuClick("/")}
           >
-            <img alt="logo" src="/images/logo-dark.svg" />
+            <img alt="logo" src={Cluar.configuration("logo") !== "logo" ? `${Cluar.configuration("logo")}` : "/images/netuno-logo.svg"} />
           </Link>
         </div>
         <div
@@ -183,6 +184,7 @@ function BaseHeader() {
             selectedKeys={[activeMenu]}
             openKeys={subMenuKeys}
             items={menu}
+            
           />
         </div>
         <div className='burger-language'>
@@ -193,6 +195,7 @@ function BaseHeader() {
             defaultSelectedKeys={[activeMenu]}
             selectedKeys={[activeMenu]}
             items={[menuLanguages]}
+            disabledOverflow
           />
           <div className="menu-burger-button">
             <Burger
@@ -203,6 +206,17 @@ function BaseHeader() {
             />
           </div>
         </div>
+        <div className="header-button">
+          <a
+            href="https://doc.netuno.org/docs/get-started/installation"
+            target="_blank"
+            rel="noreferrer"
+            className="site-nav__cta"
+          >
+            Começar
+          </a>
+        </div>
+
       </div>
     </Header>
   );

@@ -1,0 +1,73 @@
+@import "../../../../styles/global.less";
+@import "../../../../styles/variables.less";
+
+.home {
+    &__section {
+        margin: 0 auto;
+        max-width: 72rem;
+        padding: 4rem 1.25rem;
+
+        &--tight {
+            padding-top: 0;
+            padding-bottom: 2rem;
+        }
+
+        &--wide {
+            padding: 5rem 1.25rem;
+        }
+
+        &--bottom-only {
+            padding-top: 0;
+            padding-bottom: 5rem;
+        }
+
+        &--last {
+            padding-top: 0;
+            padding-bottom: 6rem;
+        }
+    }
+
+    &__stat-card {
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: 1fr;
+
+        @media (min-width: @screen-sm) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: @screen-lg) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    &__count-card {
+        .surface-panel();
+        border-radius: @radius-2xl;
+        padding: 1.75rem;
+    }
+
+    &__count-value {
+        .text-gradient();
+        font-family: @font-display;
+        font-weight: 300;
+        font-size: 2.25rem;
+
+        @media (min-width: @screen-sm) {
+            font-size: 3rem;
+        }
+    }
+
+    &__count-label {
+        margin-top: 0.75rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: @color-foreground;
+    }
+
+    &__count-note {
+        margin-top: 0.25rem;
+        font-size: 0.9rem;
+        color: @color-muted-foreground;
+    }
+}

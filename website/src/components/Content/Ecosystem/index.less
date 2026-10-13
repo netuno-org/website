@@ -1,0 +1,81 @@
+@import "../../../styles/global.less";
+@import "../../../styles/variables.less";
+
+.ecosystem {
+    &__hero {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__hero-inner {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 8rem;
+
+        @media screen and (max-width: 1200px){
+            padding: 8rem 3rem;
+        }
+
+        @media screen and (max-width: 768px){
+            padding: 8rem 1.8rem;
+        }
+
+        @media screen and (max-width: 480px){
+            padding: 8rem 1.2rem;
+        }
+    }
+
+    &__eyebrow {
+        display: block;
+        margin: 0;
+        font-family: @font-mono;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        color: @color-cyan;
+    }
+
+    &__title {
+        margin: 1rem 0 0;
+        max-width: 48rem;
+        font-family: @font-display !important;
+        font-weight: 300 !important;
+        font-size: 1.75rem;
+        line-height: 1.15;
+        color: #fff !important;
+
+        @media (min-width: @screen-sm) {
+            font-size: 2.5rem;
+            line-height: 1.1;
+        }
+
+        @media (min-width: @screen-md) {
+            font-size: 3rem;
+        }
+
+        @media (min-width: @screen-lg) {
+            font-size: 3.75rem;
+            line-height: 1.05;
+        }
+    }
+
+    &__title-accent {
+        .text-gradient();
+        font-weight: 400;
+    }
+
+    &__subtitle {
+        margin: 1.25rem 0 0;
+        max-width: 36rem;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: @color-muted-foreground;
+
+        @media (min-width: @screen-md) {
+            font-size: 1.1rem;
+        }
+    }
+}

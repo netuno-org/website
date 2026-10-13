@@ -12,7 +12,19 @@
     box-shadow: 0 0 15px #00000026;
 
     .ant-menu {
-       li {}
+        li {}
+
+        // .ant-menu-item-selected {
+        //     color: #ffffff !important;
+
+        //     .anticon {
+        //         color: #ffffff !important;
+        //     }
+
+        //     a {
+        //         color: #ffffff !important;
+        //     }
+        // }
     }
 }
 
@@ -39,7 +51,10 @@
 
                 span {
                     font-size: 16px !important;
-                    color: #737380;
+                }
+
+                html[data-theme="dark"] & span {
+                    color: rgba(255, 255, 255, 0.85) !important;
                 }
             }
 
@@ -55,4 +70,14 @@
         margin-bottom: 10px;
         opacity: 0.5;
     }
+}
+
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 56px;
 }

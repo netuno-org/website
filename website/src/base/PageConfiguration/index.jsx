@@ -4,6 +4,7 @@ import {
   Drawer,
   Form,
   Input,
+  InputNumber,
   Button,
   Switch,
   notification,
@@ -49,6 +50,8 @@ const PageConfiguration = ({
   const [previewImage, setPreviewImage] = useState("");
   const [fileList, setFileList] = useState([]);
 
+  const menuEnabled = Form.useWatch("menu", form);
+
   const handlePreview = async (file) => {
     if (!file.url && !file.preview) {
       file.preview = await getBase64(file.originFileObj);
@@ -61,14 +64,14 @@ const PageConfiguration = ({
     if (fileList.length > 0) {
       let file = fileList[0];
 
-      if (!file.thumbUrl && file.originFileObj) {
+      if (!file.url && !file.thumbUrl && file.originFileObj) {
         file.thumbUrl = await getBase64(file.originFileObj);
       }
 
       setFileList([...fileList]);
 
       if (form) {
-        form.setFieldValue("social_image", file.thumbUrl);
+        form.setFieldValue("social_image", file.thumbUrl || file.url);
       }
     } else {
       setFileList([]);
@@ -92,7 +95,7 @@ const PageConfiguration = ({
           marginTop: 8,
         }}
       >
-        Upload
+        {Cluar.plainDictionary("page-form-upload")}
       </div>
     </button>
   );
@@ -101,7 +104,26 @@ const PageConfiguration = ({
     if (open) {
       form.resetFields();
       if (pageData) {
-        form.setFieldsValue(pageData);
+        const imageUrl = pageData.social_image ? `/cluar/images/page/${pageData.social_image}` : null;
+        form.setFieldsValue({
+          ...pageData,
+          social_image: imageUrl || ""
+        });
+
+        if (imageUrl) {
+          setFileList([
+            {
+              uid: "-1",
+              name: pageData.social_image,
+              status: "done",
+              url: imageUrl,
+            },
+          ]);
+        } else {
+          setFileList([]);
+        }
+      } else {
+        setFileList([]);
       }
 
       // Carrega as páginas do mesmo idioma para o Select
@@ -131,11 +153,21 @@ const PageConfiguration = ({
       const method = isNewPage ? "POST" : "PUT";
       const formData = new FormData();
       Object.keys(values).forEach((key) => {
-        if (values[key]) {
-          if (key === "social_image" && fileList.length > 0) {
-            formData.append(key, fileList[0].originFileObj);
+        const value = values[key];
+        const hasValue = value !== undefined && value !== null && value !== "";
+        if (hasValue) {
+          if (key === "social_image") {
+            if (fileList.length > 0 && fileList[0].originFileObj) {
+              formData.append(key, fileList[0].originFileObj);
+            } else {
+              formData.append(key, "");
+            }
+          } else if (key === "link") {
+            const cleanLink = (value || "").replace(/^\/+|\/+$/g, '');
+            const normalizedLink = cleanLink === "" ? "/" : `/${cleanLink}`;
+            formData.append(key, normalizedLink);
           } else {
-            formData.append(key, values[key]);
+            formData.append(key, value);
           }
         }
       });
@@ -152,15 +184,15 @@ const PageConfiguration = ({
       //   : { ...values, uid: pageData.uid };
 
       _service({
-        url: "page",
+        url: "reserved-area/page",
         method,
         data: formData,
         success: (response) => {
           setLoading(false);
           notification.success({
             message: isNewPage
-              ? "Página criada com sucesso"
-              : "Página atualizada com sucesso",
+              ? Cluar.plainDictionary("page-configuration-notification-create-success")
+              : Cluar.plainDictionary("page-configuration-notification-update-success"),
           });
 
           if (onClose) {
@@ -183,20 +215,14 @@ const PageConfiguration = ({
 
           const errorCode = error?.json?.error_code;
           if (errorCode) {
-            console.log("errorCode", errorCode);
-            console.log(
-              "Cluar.plainDictionary(errorCode)",
-              Cluar.plainDictionary(errorCode)
-            );
-
             notification.error({
               message: Cluar.plainDictionary(errorCode),
             });
           } else {
             notification.error({
               message: isNewPage
-                ? "Falha ao criar página"
-                : "Falha ao atualizar página",
+                ? Cluar.plainDictionary("page-configuration-notification-create-fail")
+                : Cluar.plainDictionary("page-configuration-notification-update-fail"),
             });
           }
         },
@@ -205,7 +231,7 @@ const PageConfiguration = ({
 
     if (hasStructChanges) {
       _service({
-        url: "/editor/page-version/save",
+        url: "/reserved-area/editor/page-version/save",
         method: "POST",
         data: {
           structures: structure.map((item, index) => ({
@@ -217,16 +243,14 @@ const PageConfiguration = ({
         success: (res) => {
           if (res.json.result) {
             notification.success({
-              message: "Nova ordem de estruturas salva com sucesso.",
+              message: Cluar.plainDictionary("page-configuration-notification-structure-order-success"),
             });
-            console.log("ddd", res.json);
             window.location = `?version=${res.json.data}`;
           }
         },
         fail: (error) => {
-          console.log("ror", error);
           notification.error({
-            message: "Falha ao salvar nova ordem de estruturas.",
+            message: Cluar.plainDictionary("page-configuration-notification-structure-order-fail"),
           });
         },
       });
@@ -256,13 +280,16 @@ const PageConfiguration = ({
 
   useEffect(() => {
     _service({
-      url: "/page/template/list",
+      url: "/reserved-area/page/template/list",
       method: "POST",
+      data: {
+        language: Cluar.currentLanguage().locale,
+      },
       success: (res) => {
         setTemplateOptions(res.json.templates);
       },
       fail: (error) => {
-        console.log(error);
+        console.error(error);
       },
     });
   }, []);
@@ -288,7 +315,7 @@ const PageConfiguration = ({
         open={open}
         onClose={onClose}
         width={520}
-        destroyOnClose
+        destroyOnHidden
         title={isNewPage ? Cluar.plainDictionary("page-drawer-new-title") : Cluar.plainDictionary("page-drawer-config-title")}
         extra={
           <Button type="primary" onClick={handleSave} loading={loading}>
@@ -303,7 +330,7 @@ const PageConfiguration = ({
             rules={[
               {
                 required: true,
-                message: "Por favor, insira o título da página",
+                message: Cluar.plainDictionary("page-configuration-validation-title"),
               },
             ]}
           >
@@ -315,13 +342,13 @@ const PageConfiguration = ({
             rules={[
               {
                 required: true,
-                message: "Por favor, selecione um template",
+                message: Cluar.plainDictionary("page-configuration-validation-template"),
               },
             ]}
           >
             <Select
               options={templateOptions.map((item) => ({
-                label: item.name,
+                label: item.info.label,
                 value: item.name,
               }))}
             />
@@ -338,26 +365,16 @@ const PageConfiguration = ({
               listType="picture-card"
               fileList={fileList}
               action={""}
-              onPreview={handlePreview}
               onChange={handleChange}
+              onRemove={() => {
+                form.setFieldValue("social_image", "")
+              }}
               beforeUpload={() => false}
               style={{ width: "100%" }}
             >
               {fileList.length >= 1 ? null : uploadButton}
             </Upload>
-            {previewImage && (
-              <Image
-                wrapperStyle={{
-                  display: "none",
-                }}
-                preview={{
-                  visible: previewOpen,
-                  onVisibleChange: (visible) => setPreviewOpen(visible),
-                  afterOpenChange: (visible) => !visible && setPreviewImage(""),
-                }}
-                src={previewImage}
-              />
-            )}
+
           </Form.Item>
           <Form.Item
             label={Cluar.plainDictionary("page-form-social-description")}
@@ -369,11 +386,11 @@ const PageConfiguration = ({
             label={Cluar.plainDictionary("page-form-link")}
             name="link"
             rules={[
-              { required: true, message: "Por favor, insira o link da página" },
+              { required: true, message: Cluar.plainDictionary("page-configuration-validation-link") },
             ]}
             tooltip={
               isRootLink
-                ? "O link da página inicial não pode ser alterado."
+                ? Cluar.plainDictionary("page-configuration-tooltip-link-root")
                 : ""
             }
           >
@@ -383,11 +400,11 @@ const PageConfiguration = ({
           <Form.Item
             label={Cluar.plainDictionary("page-form-parent")}
             name="parent_uid"
-            tooltip="Selecione a página parente desta página"
+            tooltip={Cluar.plainDictionary("page-configuration-tooltip-parent")}
           >
             <Select
               allowClear
-              placeholder="Selecione uma página pai"
+              placeholder={Cluar.plainDictionary("page-configuration-placeholder-parent")}
               options={pagesOptions}
               optionFilterProp="label"
               showSearch
@@ -403,8 +420,20 @@ const PageConfiguration = ({
           >
             <Switch />
           </Form.Item>
-          <Form.Item label={Cluar.plainDictionary("page-form-menu-title")} name="menu_title">
+          <Form.Item label={Cluar.plainDictionary("page-form-menu-title")} name="menu_title" dependencies={["menu"]} rules={[
+            {
+              required: !!menuEnabled,
+              message: Cluar.plainDictionary("page-configuration-validation-menu-title"),
+            },
+          ]}>
             <Input />
+          </Form.Item>
+          <Form.Item
+            label={Cluar.plainDictionary("page-form-sorter")}
+            name="sorter"
+            tooltip={Cluar.plainDictionary("page-configuration-tooltip-sorter")}
+          >
+            <InputNumber style={{ width: "100%" }} min={0} step={10} placeholder={Cluar.plainDictionary("page-form-sorter-placeholder")} />
           </Form.Item>
           <Form.Item
             label={Cluar.plainDictionary("page-form-navigable")}

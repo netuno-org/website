@@ -1,0 +1,116 @@
+@import "../../../../styles/global.less";
+@import "../../../../styles/variables.less";
+
+.pillars {
+    margin-top: 2.5rem;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+
+    @media (min-width: @screen-md) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    >* {
+        min-width: 0;
+    }
+}
+
+.pillar-card {
+    .surface-panel();
+    position: relative;
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: @radius-2xl;
+    padding: 1.5rem;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+
+    @media (min-width: @screen-sm) {
+        padding: 1.75rem;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: color-mix(in oklab, @color-cyan 40%, transparent);
+        .glow-ring();
+    }
+
+    &__orbit {
+        pointer-events: none;
+        position: absolute;
+        right: -40px;
+        top: -40px;
+        width: 150px;
+        height: 150px;
+        border-radius: 999px;
+        border: 1px dashed color-mix(in oklab, @color-cyan 20%, transparent);
+        animation: orbit-spin 26s linear infinite;
+    }
+
+    &__dot {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 8px;
+        height: 8px;
+        transform: translate(-50%, -50%);
+        border-radius: 999px;
+        background: @color-cyan;
+        box-shadow: 0 0 14px @color-cyan;
+    }
+
+    &__num {
+        position: relative;
+        font-family: @font-mono;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: @color-cyan;
+    }
+
+    &__title {
+        position: relative;
+        margin-top: 0.875rem;
+        font-family: @font-display;
+        color: oklch(0.97 0.01 240);
+        font-weight: 400;
+        font-size: 1.5rem;
+        letter-spacing: -0.01em;
+    }
+
+    &__body {
+        position: relative;
+        margin-top: 0.75rem;
+        max-width: 28rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: @color-muted-foreground;
+    }
+
+    &__tags {
+        position: relative;
+        margin-top: 1.25rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    &__tag {
+        border-radius: 999px;
+        border: 1px solid color-mix(in oklab, @color-cyan 15%, transparent);
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0.25rem 0.75rem;
+        font-family: @font-mono;
+        font-size: 0.75rem;
+        color: @color-muted-foreground;
+    }
+
+    &__more {
+        position: relative;
+        margin-top: 1.125rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: @color-cyan;
+    }
+}

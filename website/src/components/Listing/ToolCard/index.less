@@ -1,0 +1,25 @@
+@import "../../../styles/global.less";
+@import "../../../styles/variables.less";
+
+.home {
+    &__section {
+        margin: 0 auto;
+        max-width: 72rem;
+        padding: 4rem 1.25rem;
+
+        &--wide {
+            padding: 5rem 1.25rem;
+        }
+    }
+}
+
+.ecosystem__tools {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+
+    @media (min-width: @screen-md) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

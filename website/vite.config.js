@@ -5,7 +5,7 @@ export default defineConfig({
   server: {
     port: 3000,
     strictPort: true,
-    allowedHosts: ["joedson-souza.dev.netuno.org"]
+    allowedHosts: ["dev.netuno.org"]
   },
   plugins: [
     react()

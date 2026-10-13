@@ -14,7 +14,12 @@ const MARKER_ICON = `M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-1
   C20.1,15.8,20.2,15.8,20.2,15.7z`;
 const MARKER_SIZE = 50;
 
-function ContactMap({ section, type, title, content, actions }) {
+function ContactMap({ section, type, title, content, actions, html_content, edit_mode }) {
+
+  const resolvedContent = edit_mode === 'html'
+    ? (html_content || content)
+    : content;
+
   const [showPopup, setShowPopup] = useState(false);
   const latitude = Cluar.configurationNumber("map-latitude");
   const longitude = Cluar.configurationNumber("map-longitude");
@@ -24,41 +29,44 @@ function ContactMap({ section, type, title, content, actions }) {
   }
   return (
     <section className="map">
-      <h1 dangerouslySetInnerHTML={{ __html: title }} />
-      <div className="map__title-border"></div>
-      <Row>
-        <Col xs={24} sm={24} md={24} lg={24} xl={12}>
-          <div className="text">
-            <Row>
-              <Col>
-                <div dangerouslySetInnerHTML={{ __html: content }}></div>
-              </Col>
-            </Row>
-          </div>
-          <div className="text">
-            <Row>
-              <Col>
-                <br />
-              </Col>
-            </Row>
-            <Row>
-              <Col><HomeOutlined /></Col>
-              <Col>
-                <p></p>
-              </Col>
-            </Row>
-            <Row>
-              <Col><PhoneOutlined /></Col>
-              <Col><p></p></Col>
-            </Row>
-            <Row>
-              <Col><MailOutlined /></Col>
-              <Col><p></p></Col>
-            </Row>
-          </div>
-        </Col>
-        <Col xs={24} sm={24} md={24} lg={24} xl={12}>
-          {/* <div className="map__container">
+      <div className="map__wrapper">
+
+
+        <h1 dangerouslySetInnerHTML={{ __html: title }} />
+        <div className="map__title-border"></div>
+        <Row>
+          <Col xs={24} sm={24} md={24} lg={24} xl={12}>
+            <div className="text">
+              <Row>
+                <Col>
+                  <div dangerouslySetInnerHTML={{ __html: resolvedContent }} />
+                </Col>
+              </Row>
+            </div>
+            <div className="text">
+              <Row>
+                <Col>
+                  <br />
+                </Col>
+              </Row>
+              <Row>
+                <Col><HomeOutlined /></Col>
+                <Col>
+                  <p></p>
+                </Col>
+              </Row>
+              <Row>
+                <Col><PhoneOutlined /></Col>
+                <Col><p></p></Col>
+              </Row>
+              <Row>
+                <Col><MailOutlined /></Col>
+                <Col><p></p></Col>
+              </Row>
+            </div>
+          </Col>
+          <Col xs={24} sm={24} md={24} lg={24} xl={12}>
+            {/* <div className="map__container">
             <Map
               initialViewState={{
                   latitude,
@@ -105,13 +113,14 @@ function ContactMap({ section, type, title, content, actions }) {
               )}
             </Map>
           </div> */}
-        </Col>
-        {config.action && (
-          <Col lg={6} sm={24}>
-            <Actions {...{ section, type, actions }} />
           </Col>
-        )}
-      </Row>
+          {config.action && (
+            <Col lg={6} sm={24}>
+              <Actions {...{ section, type, actions }} />
+            </Col>
+          )}
+        </Row>
+      </div>
     </section>
   );
 }
